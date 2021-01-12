@@ -62,6 +62,9 @@
                     color: var(--bg-yellow);
                 }
             }
+            &.is-disabled {
+                pointer-events: none;
+            }
             &:hover span:nth-child(2) {
                 color: var(--color-green-tow);
             }
@@ -70,11 +73,33 @@
     &-chart {
         padding-top: 20px;
         overflow: hidden;
+        position: relative;
         &__holder {
             width: calc(100% + 20px);
             height: 270px;
             margin-left: -10px;
             margin-right: -10px;
+        }
+        &__error {
+            position: absolute;
+            height: 270px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10000;
+            background: var(--text-color-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 600;
+            font-size: var(--main-font-size);
+            line-height: 140%;
+            letter-spacing: 0.04em;
+            color: var(--bg-red);
+            &.is-hidden {
+                display: none;
+            }
         }
     }
 }

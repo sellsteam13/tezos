@@ -288,15 +288,15 @@
                 <div class="stats def-module">
                     <div class="stats-tabs">
                         <!-- .is-active - класс для активного элемента; .is-blocked - класс для заблокированного элемента -->
-                        <button class="stats-tabs__item is-active" onclick="statsChartTab.click(this)">
+                        <button class="stats-tabs__item is-active" data-url="./statsdata1.json">
                             <span>Income from investments</span>
                             <span>$82,589</span>
                         </button>
-                        <button class="stats-tabs__item" onclick="statsChartTab.click(this)">
+                        <button class="stats-tabs__item" data-url="./statsdata2.json">
                             <span>Income from partners</span>
                             <span>$86,589</span>
                         </button>
-                        <button class="stats-tabs__item" onclick="statsChartTab.click(this)">
+                        <button class="stats-tabs__item" data-url="./statsdata23.json">
                             <span>Binar income</span>
                             <span>$86,589</span>
                         </button>
@@ -304,6 +304,9 @@
                     <!-- //stats chart// -->
                     <div class="stats-chart">
                         <div class="stats-chart__holder" id="statsChart"></div>
+                        <div class="stats-chart__error is-hidden">
+                            Во время загрузки данных произошла ошибка <br> Пожалуйста обновите страницу
+                        </div>
                     </div>
                 </div>
             </section>

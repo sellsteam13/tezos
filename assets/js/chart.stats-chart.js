@@ -1,98 +1,155 @@
 am4core.ready(function() {
 
-    // Themes begin
-    am4core.useTheme(am4themes_animated);
-    // Themes end
+    var chart = null;
 
-    // Gradients
-    let greyGradient = new am4core.LinearGradient();
-    greyGradient.addColor(am4core.color("rgba(134, 139, 152, 0.49)"));
-    greyGradient.addColor(am4core.color("rgba(68, 68, 68, 0)"));
-    greyGradient.rotation = 90;
-    let greenGradient = new am4core.LinearGradient();
-    greenGradient.addColor(am4core.color("rgba(88, 149, 133, 0.49)"));
-    greenGradient.addColor(am4core.color("rgba(88, 149, 133, 0)"));
-    greenGradient.rotation = 90;
+    const createChart = (urlJson) => {
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
 
-    // Create chart
-    var chart = am4core.create("statsChart", am4charts.XYChart);
+        // Gradients
+        let greyGradient = new am4core.LinearGradient();
+        greyGradient.addColor(am4core.color("rgba(134, 139, 152, 0.49)"));
+        greyGradient.addColor(am4core.color("rgba(68, 68, 68, 0)"));
+        greyGradient.rotation = 90;
 
-    // Removing padding/margin and zoomBtn from chart
-    chart.paddingRight = 0;
-    chart.paddingLeft = 0;
-    chart.paddingTop = 0;
-    chart.paddingBottom = 0;
-    chart.zoomOutButton.disabled = true;
+        let greenGradient = new am4core.LinearGradient();
+        greenGradient.addColor(am4core.color("rgba(88, 149, 133, 0.49)"));
+        greenGradient.addColor(am4core.color("rgba(88, 149, 133, 0)"));
+        greenGradient.rotation = 90;
 
-    // chart.data = generateChartData();
-    chart.dataSource.url = "http://www.json-generator.com/api/json/get/cpuuvznCIy?indent=2";
-    window.statsChart = chart;
+        // Create chart
+        chart = am4core.create("statsChart", am4charts.XYChart);
+        chart.preloader.disabled = false;
 
-    let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        // Removing padding/margin and zoomBtn from chart
+        chart.paddingRight = 0;
+        chart.paddingLeft = 0;
+        chart.paddingTop = 0;
+        chart.paddingBottom = 0;
+        chart.zoomOutButton.disabled = true;
 
-    // Hiding chart labels
-    categoryAxis.renderer.labels.template.disabled = true;
-    categoryAxis.renderer.grid.template.disabled = true;
+        // chart.data = generateChartData();
+        chart.dataSource.url = urlJson;
 
-    let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        // data loading events
+        chart.dataSource.events.on("error", function(ev) {
+            $('.stats-tabs__item').not('.is-active').addClass('is-blocked');
+            $('.stats-chart__error').removeClass('is-hidden');
+        });
+        chart.dataSource.events.on("loadstarted", function(ev) {
+            $('.stats-tabs__item').not('.is-active').addClass('is-disabled');
+        });
+        chart.dataSource.events.on("done", function(ev) {
+            $('.stats-tabs__item').removeClass('is-disabled');
+        });
 
-    // Hiding chart labels
-    valueAxis.renderer.labels.template.disabled = true;
-    valueAxis.renderer.grid.template.disabled = true;
-    valueAxis.tooltip.disabled = true;
+        // creating axis
+        let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
 
-    let series = chart.series.push(new am4charts.LineSeries());
-    series.dataFields.categoryX = "category";
-    series.dataFields.valueY = "payments";
+        // Hiding chart labels
+        dateAxis.renderer.labels.template.disabled = true;
+        dateAxis.renderer.grid.template.disabled = true;
 
-    // Customizing chart
-    series.stroke = am4core.color("#589585");
-    series.strokeWidth = '3';
-    series.fill = greenGradient;
-    series.fillOpacity = 0.3;
+        let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
-    // Creating scrollbar
-    chart.scrollbarX = new am4charts.XYChartScrollbar();
-    chart.scrollbarX.series.push(series);
+        // Hiding chart labels
+        valueAxis.renderer.labels.template.disabled = true;
+        valueAxis.renderer.grid.template.disabled = true;
+        valueAxis.tooltip.disabled = true;
 
-    // Disabling scrollbar grip
-    chart.scrollbarX.endGrip.disabled = true;
-    chart.scrollbarX.startGrip.disabled = true;
-    chart.scrollbarX.endGrip.disabled = true;
+        let series = chart.series.push(new am4charts.LineSeries());
+        series.dataFields.dateX = "date";
+        series.dataFields.valueY = "payments";
 
-    // Positioning scrollbar
-    chart.scrollbarX.parent = chart.bottomAxesContainer;
+        // Customizing chart
+        series.stroke = am4core.color("#589585");
+        series.strokeWidth = '3';
+        series.fill = greenGradient;
+        series.fillOpacity = 0.3;
 
-    // Customizing scrollbar
-    chart.scrollbarX.background.fill = am4core.color("rgba(20, 20, 20, 0.3)");
-    chart.scrollbarX.unselectedOverlay.fill = am4core.color("rgba(20, 20, 20, 0.3)");
-    chart.scrollbarX.thumb.background.fill = am4core.color("rgba(0, 0, 0, 0.3)");
-    chart.scrollbarX.thumb.background.fillOpacity = 1;
-    chart.scrollbarX.thumb.strokeWidth = 0;
-    chart.scrollbarX.minHeight = 50;
-    chart.scrollbarX.marginTop = 0;
-    chart.scrollbarX.marginBottom = 0;
-    let scrollSeries1 = chart.scrollbarX.scrollbarChart.series.getIndex(0);
-    scrollSeries1.filters.clear();
-    scrollSeries1.stroke = am4core.color("rgba(20, 20, 20, 0)");
-    scrollSeries1.fill = greenGradient;
+        // Creating scrollbar
+        chart.scrollbarX = new am4charts.XYChartScrollbar();
+        chart.scrollbarX.series.push(series);
 
-    // Disabling scrollbar labels
-    let scrollAxis = chart.scrollbarX.scrollbarChart.xAxes.getIndex(0);
-    scrollAxis.renderer.labels.template.disabled = true;
-    scrollAxis.renderer.grid.template.disabled = true;
+        // Disabling scrollbar grip
+        chart.scrollbarX.endGrip.disabled = true;
+        chart.scrollbarX.startGrip.disabled = true;
+        chart.scrollbarX.endGrip.disabled = true;
 
-    // Scaling scrollbar
-    categoryAxis.start = 0.65;
-    categoryAxis.keepSelection = true;
+        // Positioning scrollbar
+        chart.scrollbarX.parent = chart.bottomAxesContainer;
+
+        // Customizing scrollbar
+        chart.scrollbarX.background.fill = am4core.color("rgba(20, 20, 20, 0.3)");
+        chart.scrollbarX.unselectedOverlay.fill = am4core.color("rgba(20, 20, 20, 0.3)");
+        chart.scrollbarX.thumb.background.fill = am4core.color("rgba(0, 0, 0, 0.3)");
+        chart.scrollbarX.thumb.background.fillOpacity = 1;
+        chart.scrollbarX.thumb.strokeWidth = 0;
+        chart.scrollbarX.minHeight = 50;
+        chart.scrollbarX.marginTop = 0;
+        chart.scrollbarX.marginBottom = 0;
+        let scrollSeries1 = chart.scrollbarX.scrollbarChart.series.getIndex(0);
+        scrollSeries1.filters.clear();
+        scrollSeries1.stroke = am4core.color("rgba(20, 20, 20, 0)");
+        scrollSeries1.fill = greenGradient;
+
+        // Disabling scrollbar labels
+        let scrollAxis = chart.scrollbarX.scrollbarChart.xAxes.getIndex(0);
+        scrollAxis.renderer.labels.template.disabled = true;
+        scrollAxis.renderer.grid.template.disabled = true;
+
+        // Scaling scrollbar
+        dateAxis.start = 0.65;
+        dateAxis.keepSelection = true;
+
+        // preloader
+        var indicator;
+        var indicatorInterval;
+
+        function showIndicator() {
+
+            if (!indicator) {
+                indicator = chart.tooltipContainer.createChild(am4core.Container);
+                indicator.background.fill = am4core.color("#21232F");
+                indicator.width = am4core.percent(100);
+                indicator.height = am4core.percent(100);
+
+                var indicatorLabel = indicator.createChild(am4core.Label);
+                indicatorLabel.text = "[font-size: 14px]Пожалуйста подождите...\nидёт загрузка графика";
+                indicatorLabel.align = "center";
+                indicatorLabel.valign = "middle";
+                indicatorLabel.textAlign = "middle";
+                indicatorLabel.fill = am4core.color("#2A2C3A");
+                indicatorLabel.dy = -25;
+            }
+
+            indicator.hide(0);
+            indicator.show();
+        }
+
+        showIndicator();
+
+        chart.events.on("ready", function(ev) {
+            indicator.hide();
+        });
+
+    };
+
+    // functions for tabs @@ creating chart and updating chart data
+    const allTabs = [...document.querySelectorAll('.stats-tabs__item')];
+    createChart(allTabs[0].dataset.url);
+
+    allTabs.forEach(eachBtn => {
+        eachBtn.addEventListener('click', () => {
+            allTabs.forEach(btn => {
+                btn != eachBtn ? btn.classList.remove('is-active') : btn.classList.add('is-active');
+            });
+
+            chart.dispose();
+            chart = null;
+            createChart(eachBtn.dataset.url);
+        });
+    });
 
 }); // end am4core.ready()
-
-
-const statsChartTab = {
-    click: (el) => {
-        [...document.querySelectorAll('.stats-tabs__item')].forEach(eachBtn => {
-            eachBtn != el ? eachBtn.classList.remove('is-active') : eachBtn.classList.add('is-active');
-        });
-    },
-}

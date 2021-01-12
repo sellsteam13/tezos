@@ -470,17 +470,45 @@ h2.section__title {
         display: none; }
       .stats-tabs__item.is-blocked span:nth-child(2) {
         color: var(--bg-yellow); }
+    .stats-tabs__item.is-disabled {
+      pointer-events: none; }
     .stats-tabs__item:hover span:nth-child(2) {
       color: var(--color-green-tow); }
 
 .stats-chart {
   padding-top: 20px;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
   .stats-chart__holder {
     width: calc(100% + 20px);
     height: 270px;
     margin-left: -10px;
     margin-right: -10px; }
+  .stats-chart__error {
+    position: absolute;
+    height: 270px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    background: var(--text-color-black);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--main-font-size);
+    line-height: 140%;
+    letter-spacing: 0.04em;
+    color: var(--bg-red); }
+    .stats-chart__error.is-hidden {
+      display: none; }
 
 .balance-widget {
   display: -webkit-box;
