@@ -1327,6 +1327,32 @@ h2.section__title {
     transition: opacity 0.175s ease; }
     .registration-form__login:hover {
       opacity: 0.7; }
+  .registration__back-link {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: var(--text-color-black);
+    -webkit-transition: opacity 0.175s ease;
+    transition: opacity 0.175s ease; }
+    .registration__back-link:hover {
+      opacity: 0.7; }
+    .registration__back-link:focus {
+      opacity: .5; }
+    .registration__back-link svg {
+      fill: var(--text-color-silver); }
 
 @-webkit-keyframes animateBulletwidth {
   0% {

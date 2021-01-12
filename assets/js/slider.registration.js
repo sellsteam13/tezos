@@ -11,6 +11,7 @@ const registrationSlider = {
                 },
                 autoplay: {
                     delay: 7000,
+                    disableOnInteraction: false
                 },
                 pagination: {
                     el: eachModule.querySelector('.registration-slider-controls'),

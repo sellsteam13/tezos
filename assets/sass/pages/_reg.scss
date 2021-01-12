@@ -232,6 +232,26 @@
             @include hover(.7)
         }
     }
+    &__back-link {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--text-color-black);
+        @include hover(.7);
+        &:focus {
+            opacity: .5;
+        }
+        svg {
+            fill: var(--text-color-silver);
+        }
+    }
 }
 
 @keyframes animateBulletwidth {
