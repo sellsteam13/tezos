@@ -1,0 +1,269 @@
+.dropdown {
+    position: relative;
+    button {
+        cursor: pointer;
+    }
+}
+
+.dropdownContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: #21232F;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    pointer-events: none;
+    transform: translateY(-4px);
+    opacity: 0;
+    transition: opacity .175s ease, transform .175s ease;
+    &.is-opened {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+        .dropdownContainerLink {
+            display: block;
+        }
+    }
+    &:before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -1px;
+        content: '';
+        height: 1px;
+        background-color: #589585;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: calc(100% + 1px);
+        left: 50%;
+        transform: translateX(-50%);
+        border-style: solid;
+        border-width: 0 6px 9px 6px;
+        border-color: transparent transparent #589585 transparent;
+    }
+    &Link {
+        display: none;
+        text-align: center;
+        padding: 8px 0;
+        line-height: 140%;
+        color: #CDD0DF;
+        transition: color .175s ease;
+        &:hover {
+            color: var(--text-color-silver);
+        }
+        &.is-active {
+            font-weight: 700;
+            color: var(--text-color-green);
+            pointer-events: none;
+        }
+    }
+}
+
+.dropdownLang {
+    &Container {
+        padding: 8px 0;
+    }
+}
+
+.dropdownNtf>.btnNav {
+    border-right: 1px solid var(--bg-main) !important;
+    @media only screen and (max-width: 850px) {
+        border-right: none !important;
+    }
+}
+
+.dropdownNtfContainer {
+    width: 240px;
+    @media only screen and (max-width: 850px) {
+        left: auto;
+        right: -52px;
+        width: 100vw;
+    }
+    &::before {
+        width: 60px;
+        @media only screen and (max-width: 850px) {
+            width: 52px;
+            right: 52px;
+            left: auto;
+        }
+    }
+    &::after {
+        left: 30px;
+        @media only screen and (max-width: 850px) {
+            left: auto;
+            right: 78px;
+            transform: translateX(50%);
+        }
+    }
+}
+
+.dropdownNtfItem {
+    padding: 15px 10px 15px 20px;
+    * {
+        white-space: normal;
+    }
+    time {
+        font-style: normal;
+        font-size: var(--small-font-size);
+        line-height: 140%;
+        margin-bottom: 2px;
+        color: var(--text-color-silver);
+    }
+    p {
+        line-height: 140%;
+        color: var(--text-silver);
+        font-size: .93rem;
+        span {
+            color: var(--text-color-green);
+            font-weight: 500;
+        }
+    }
+    +.dropdownNtfItem {
+        border-top: 1px solid #2A2C3A;
+    }
+}
+
+.dropdownUser {
+    .name {
+        height: 100%;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            right: 16px;
+            top: 18px;
+            width: 6px;
+            height: 4px;
+            background: url('../../svg/dropdown_arrow.svg') no-repeat center;
+        }
+    }
+    &Container {
+        padding: 5px 0;
+        @media only screen and (max-width: 850px) {
+            left: auto;
+            right: 0;
+            &:after {
+                right: 26px;
+                left: auto;
+                transform: translateX(50%);
+            }
+            &:before {
+                width: 52px;
+                left: auto;
+            }
+        }
+        .dropdownContainerLink {
+            margin: 10px;
+            padding: 0;
+            font-size: var(--main-font-size);
+            line-height: 140%;
+            text-align: center;
+        }
+    }
+}
+
+nav .flex .btnNav {
+    @media only screen and (max-width: 850px) {
+        width: 52px;
+    }
+}
+
+.dropdownUserMobile {
+    &Container {
+        left: auto;
+        width: 100vw;
+        padding: 20px 0 39px;
+        &:before {
+            width: 52px;
+            left: auto;
+        }
+        &:after {
+            left: auto;
+            right: 26px;
+            transform: translateX(50%);
+        }
+    }
+    &Name {
+        font-weight: 600;
+        font-size: rem(18);
+        line-height: 140%;
+        text-align: center;
+        color: var(--text-silver);
+        margin-bottom: 5px;
+    }
+    &Spec {
+        padding-bottom: 20px;
+        line-height: 140%;
+        text-align: center;
+        color: var(--text-color-silver);
+    }
+    &Balance {
+        padding: 20px 17px;
+        align-items: center;
+        border-bottom: 1px solid #2A2C3A;
+        border-top: 1px solid #2A2C3A;
+        p {
+            span {
+                display: block;
+                &:nth-child(1) {
+                    line-height: 140%;
+                    color: var(--text-color-silver);
+                }
+                &:nth-child(2) {
+                    font-weight: bold;
+                    line-height: 140%;
+                    color: var(--text-color-white);
+                }
+            }
+        }
+        a {
+            min-width: 135px;
+            color: var(--text-color-black);
+            text-align: center;
+            font-weight: 600;
+        }
+    }
+    &Lang {
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        a {
+            line-height: 140%;
+            color: #CDD0DF;
+            margin: 0 9px 9px;
+            &.is-active {
+                font-weight: bold;
+                color: var(--text-color-green);
+            }
+        }
+    }
+    &Close {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        bottom: 0;
+        left: 50%;
+        background: var(--color-green-tow);
+        border: 2px solid var(--text-color-black);
+        transform: translate(-50%, 50%) rotate(45deg);
+        filter: drop-shadow(0px 12px 24px rgba(0, 0, 0, 0.1));
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 21px;
+            height: 2px;
+            background: #131521;
+            transform: translate(-50%, -50%);
+        }
+        &:after {
+            transform: translate(-50%, -50%) rotate(-90deg);
+        }
+    }
+}

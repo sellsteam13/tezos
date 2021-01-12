@@ -1,0 +1,475 @@
+@import "../font/font.css";
+@import "root.css";
+* {
+    box-sizing: border-box;
+}
+
+.cont {
+    max-width: 1260px;
+    margin: 0 auto;
+    position: relative;
+    ;
+}
+
+.flex {
+    display: flex;
+    justify-content: flex-start;
+    ;
+}
+
+*[view="mobile"] {
+    display: none !important;
+    ;
+}
+
+*[view="tablet"] {
+    display: none !important;
+    ;
+}
+
+body {
+    background-color: var(--bg-main);
+    padding: 0;
+    margin: 0;
+    color: var(--text-color-white);
+    font-family: 'Segoe UI';
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    max-width: 990px;
+    width: 100%;
+    padding: 0 10px 0 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main .areaMenu {
+    max-width: 210px;
+    background-color: var(--text-color-black);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: block;
+    height: 100vh;
+    display: none;
+}
+
+main .areaMenu[data-viev="true"] {
+    display: block;
+}
+
+@media only screen and (min-width: 1060px) {
+    main .areaMenu {
+        display: none !important;
+    }
+}
+
+aside {
+    max-width: 270px;
+    width: 100%;
+    min-height: 100vh;
+    display: block;
+    border-right: 1px solid var(--text-color-black);
+}
+
+aside .logo {
+    width: 100%;
+    max-width: 170px;
+    height: 29px;
+    display: block;
+    margin: 46px auto;
+}
+
+aside .itemLink,
+main .areaMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 170px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+aside .itemLink li,
+main .areaMenu ul li {
+    margin: 20px 0;
+}
+
+aside .itemLink li a,
+main .areaMenu ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color-silver);
+    transition: color .175s ease;
+}
+
+aside .itemLink li a[data-active],
+main .areaMenu ul li a[data-active] {
+    color: var(--text-color-green);
+    pointer-events: none;
+}
+
+aside .itemLink li .icon,
+main .areaMenu ul li .icon {
+    width: 15px;
+    height: 15px;
+    fill: var(--text-color-silver);
+    flex-shrink: 0;
+    transition: fill .175s ease;
+}
+
+aside .itemLink li a:hover,
+main .areaMenu ul li a:hover {
+    color: var(--text-color-white);
+}
+
+aside .itemLink li a:hover .icon,
+main .areaMenu ul li a:hover .icon {
+    fill: var(--text-color-white);
+}
+
+aside .itemLink li a:focus,
+main .areaMenu ul li a:focus {
+    color: var(--text-color-green);
+}
+
+aside .itemLink li a:focus .icon,
+main .areaMenu ul li a:focus .icon {
+    fill: var(--text-color-green);
+}
+
+aside .itemLink li a[data-active] .icon,
+main .areaMenu ul li a[data-active] .icon {
+    fill: var(--text-color-green);
+}
+
+aside .itemLink li span,
+main .areaMenu ul li span {
+    margin-left: 10px;
+}
+
+aside .btnNav {
+    width: 50px;
+    height: 50px;
+    background-color: unset;
+    border: none;
+    border-top: 1px solid var(--bg-main);
+    border-bottom: 1px solid var(--bg-main);
+    color: orange;
+}
+
+@media only screen and (max-width: 1060px) {
+    aside {
+        max-width: 50px;
+    }
+    aside .logo {
+        max-width: 40px;
+        overflow: hidden;
+        margin-bottom: 0;
+    }
+    aside .btnNav {
+        margin: 16px auto;
+    }
+    aside .itemLink li a {
+        justify-content: center;
+    }
+    aside .itemLink li span {
+        display: none;
+    }
+    *[view="tablet"] {
+        display: block !important;
+    }
+    main .areaMenu {
+        left: -52px;
+        border-right: 1px solid var(--text-color-black);
+    }
+    main .areaMenu ul {
+        margin-top: 155px;
+        list-style: none;
+        ;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    aside {
+        display: none;
+    }
+    main .areaMenu {
+        left: 0;
+        height: auto;
+        max-width: 100%;
+        min-height: 250px;
+        border-right: none;
+        border-bottom: 1px solid var(--text-color-black);
+        top: 61px;
+    }
+    main .areaMenu ul {
+        display: flex;
+        max-width: 420px;
+        width: 100%;
+        margin: 20px auto;
+        flex-flow: wrap row;
+    }
+    main .areaMenu ul li {
+        max-width: 50%;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+nav {
+    background-color: var(--text-color-black);
+    width: 100%;
+    height: 60px;
+    margin: 30px auto;
+    max-width: 950px;
+}
+
+nav>.flex {
+    align-items: center;
+    height: 60px;
+    padding: 10px 0 10px 15px;
+    white-space: nowrap;
+    justify-content: space-between;
+}
+
+nav .flex[data-pos] {
+    flex-flow: nowrap;
+}
+
+nav .flex .btnNav {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    background: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: var(--text-color-silver);
+    font-weight: 600;
+}
+
+nav .flex .btnNav.has-label:after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-green-tow);
+    margin-right: -6px;
+    transform: translate(-3px, -10px);
+}
+
+nav .flex .btnNav .dropdown-icon {
+    margin-left: 5px;
+}
+
+nav .flex .btnNav {
+    border-left: 1px solid var(--bg-main) !important;
+}
+
+nav .flex .btnNav.brdr {
+    border-right: 1px solid var(--bg-main);
+}
+
+nav .name {
+    display: flex;
+    align-items: center;
+    flex-flow: wrap row;
+    max-width: 180px;
+    width: auto;
+    overflow: hidden;
+    padding: 10px 23px 10px 10px;
+    background-color: unset;
+    border: none;
+    text-align: left;
+}
+
+nav .name h4,
+p {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    line-height: 15px;
+}
+
+nav .name h4 {
+    font-size: var(--main-font-size);
+    color: var(--text-color-silver);
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    ;
+}
+
+nav .name p {
+    font-weight: normal;
+    font-size: var(--small-font-size);
+    line-height: 14px;
+    text-align: left;
+    color: var(--text-color-silver);
+}
+
+nav .bl {
+    margin-left: 20px;
+    font-weight: normal;
+    font-size: var(--main-font-size);
+    line-height: 16px;
+    color: var(--text-color-silver);
+    display: flex;
+    align-items: center;
+}
+
+nav .bl b {
+    color: var(--text-color-white);
+}
+
+nav .switch {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 850px) {
+    nav {
+        margin: 0;
+        ;
+    }
+    main {
+        padding: 0;
+    }
+    nav>.flex {
+        justify-content: space-between;
+        padding: 0;
+        ;
+    }
+    *[hidden="mobile"] {
+        display: none !important;
+    }
+    *[view="mobile"] {
+        display: block !important;
+    }
+}
+
+*[data-dropdown] {
+    position: relative;
+}
+
+*[data-dropdown]::before {
+    contain: '*';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background: blue;
+}
+
+.btn {
+    padding: 12px 14px;
+    display: inline-block;
+    background-color: var(--text-color-green);
+    border: none;
+    font-size: var(--main-font-size);
+    color: var(--text-color-black);
+    font-weight: 600;
+    cursor: pointer;
+    transition: box-shadow .175s ease-in-out;
+}
+
+.btn--red {
+    background-color: var(--bg-red);
+}
+
+.btn--small-fs {
+    font-size: var(--small-font-size);
+}
+
+.btn:hover {
+    box-shadow: 0px 20px 32px rgba(0, 0, 0, 0.24);
+}
+
+.btn:focus,
+.btn:active {
+    outline: none;
+    box-shadow: inset 0px 6px 12px rgba(0, 0, 0, 0.18);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 77px;
+    height: 40px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch .switch-icon {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: var(--text-color-silver);
+}
+
+.switch .switch-icon.switch-moon {
+    left: 12px;
+    fill: var(--text-color-black);
+}
+
+.switch .switch-icon.switch-sun {
+    right: 12px;
+}
+
+.switchAction {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-main);
+    ;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.switchAction:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    left: 5px;
+    top: 5px;
+    background-color: var(--text-color-green);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.switch input:checked+.switchAction {
+    background-color: var(--text-color-green);
+}
+
+.switch input:checked+.switchAction:before {
+    -webkit-transform: translateX(36px);
+    -ms-transform: translateX(36px);
+    transform: translateX(36px);
+    background-color: var(--bg-main);
+}
+
+.lock {
+    width: 100vw;
+    height: 110vh;
+    display: block;
+    position: fixed;
+}

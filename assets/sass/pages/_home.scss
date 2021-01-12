@@ -1,0 +1,30 @@
+.home {
+    display: grid;
+    grid-template-columns: 2.1fr 1fr;
+    gap: 40px 28px;
+    .w65 {
+        grid-column: 1;
+    }
+    .w35 {
+        grid-column: 2;
+    }
+    &-balance {
+        .balance-widget {
+            margin-bottom: 26px;
+        }
+    }
+    &-briefcases {
+        overflow: hidden;
+        position: relative;
+        height: 225px;
+        .briefcases-slider {
+            &-controls {
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}

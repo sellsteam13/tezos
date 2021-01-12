@@ -1,0 +1,80 @@
+.stats {
+    &-tabs {
+        padding: 20px;
+        border-bottom: 2px solid var(--bg-main);
+        display: flex;
+        &__item {
+            padding: 0;
+            text-align: left;
+            background-color: transparent;
+            border: none;
+            position: relative;
+            +* {
+                margin-left: 40px;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: calc(100% + 20px);
+                height: 2px;
+                background-color: var(--color-green-tow);
+                opacity: 0;
+                transition: opacity .175s ease;
+            }
+            span {
+                display: block;
+                &:nth-child(1) {
+                    font-size: var(--small-font-size);
+                    line-height: 140%;
+                    color: var( --text-silver);
+                }
+                &:nth-child(2) {
+                    margin-top: 5px;
+                    font-weight: bold;
+                    font-size: 18px;
+                    font-family: $termina;
+                    line-height: 140%;
+                    letter-spacing: 0.04em;
+                    text-transform: uppercase;
+                    color: var(--text-color-silver);
+                    transition: color $trans;
+                }
+            }
+            &.is-active {
+                pointer-events: none;
+                &:after {
+                    opacity: 1;
+                }
+                span {
+                    &:nth-child(2) {
+                        color: var(--color-green-tow);
+                    }
+                }
+            }
+            &.is-blocked {
+                pointer-events: none;
+                &:after {
+                    display: none;
+                }
+                span:nth-child(2) {
+                    color: var(--bg-yellow);
+                }
+            }
+            &:hover span:nth-child(2) {
+                color: var(--color-green-tow);
+            }
+        }
+    }
+    &-chart {
+        padding-top: 20px;
+        overflow: hidden;
+        &__holder {
+            width: calc(100% + 20px);
+            height: 270px;
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+    }
+}

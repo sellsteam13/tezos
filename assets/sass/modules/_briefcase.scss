@@ -1,0 +1,50 @@
+.briefcase {
+    height: 180px;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: hidden;
+    &-overall,
+    &-income {
+        position: relative;
+        z-index: 1;
+    }
+    &-overall {
+        &__summ {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 140%;
+            color: var(--text-silver);
+            margin-bottom: 10px;
+        }
+        &__link {
+            font-weight: 600;
+            font-size: var(--main-font-size);
+            color: var(--color-green-tow);
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            @include hover(.8)
+        }
+    }
+    &-income {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 140%;
+        color: var(--color-green-tow);
+        svg {
+            margin-left: 3px;
+        }
+    }
+    &-chart {
+        position: absolute;
+        left: -15px;
+        right: -15px;
+        bottom: -1px;
+        height: calc(100% - 85px);
+    }
+}

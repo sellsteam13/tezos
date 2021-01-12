@@ -1,0 +1,12 @@
+h2 {
+    &.section__title {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--text-silver);
+        margin: 0 0 1.1em;
+        font-family: $termina;
+    }
+}

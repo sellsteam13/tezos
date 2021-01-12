@@ -1,0 +1,18 @@
+.footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0 20px;
+    &__copyrights {
+        font-size: var(--main-font-size);
+        line-height: 140%;
+        color: var(--text-color-silver);
+    }
+    &__terms {
+        font-size: var(--main-font-size);
+        line-height: 140%;
+        color: var(--text-color-silver);
+        text-decoration: underline;
+    }
+}

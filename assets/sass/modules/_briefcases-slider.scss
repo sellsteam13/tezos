@@ -1,0 +1,62 @@
+.briefcases-slider {
+    &__arrow {
+        width: 25px;
+        height: 25px;
+        background: var( --color-green-tow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        @include hover(.7);
+        &.swiper-button-disabled {
+            opacity: .2;
+            pointer-events: none;
+        }
+        +* {
+            margin-left: 15px;
+        }
+        svg {
+            fill: var(--text-color-black);
+        }
+    }
+    &__prev {
+        transform: rotate(-90deg);
+    }
+    &__next {
+        transform: rotate(90deg);
+    }
+}
+
+.briefcases-empty {
+    border: 2px dashed #589585;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 180px;
+    transition: border-color $trans;
+    &:hover {
+        border-color: var(--bg-yellow);
+        >svg {
+            fill: var(--bg-yellow);
+        }
+        span {
+            color: var(--bg-yellow);
+        }
+    }
+    >svg {
+        margin-bottom: 18px;
+        fill: var(--color-green-tow);
+        transition: fill $trans;
+    }
+    span {
+        font-weight: bold;
+        font-size: var(--main-font-size);
+        line-height: 140%;
+        color: var(--color-green-tow);
+        transition: color $trans;
+    }
+}

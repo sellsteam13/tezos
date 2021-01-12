@@ -1,0 +1,35 @@
+.balance-widget {
+    .def-module__icon {
+        border-color: var(--color-green-tow);
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 43px 20px 20px;
+    &__summ {
+        font-family: $termina;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 140%;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--color-green-tow);
+    }
+    &__currency {
+        font-size: var(--small-font-size);
+        line-height: 140%;
+        color: var(--text-color-blue);
+    }
+    &-manage {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 20px;
+        margin-top: 26px;
+        .btn {
+            padding: 12px 0;
+            width: 100%;
+        }
+    }
+}
