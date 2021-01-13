@@ -18,6 +18,9 @@
             letter-spacing: 0.04em;
             text-transform: uppercase;
             color: var(--text-silver);
+            @media (max-width: 600px) {
+                font-size: 18px;
+            }
         }
         &-more {
             width: 20px;
@@ -70,6 +73,9 @@
                     font-size: 24px;
                     letter-spacing: 0.04em;
                     text-transform: uppercase;
+                    @media (max-width: 600px) {
+                        font-size: 18px;
+                    }
                 }
                 &:nth-child(2) {
                     font-size: 12px;

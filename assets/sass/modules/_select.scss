@@ -1,0 +1,50 @@
+.selectize-control.single .selectize-input {
+    box-shadow: none;
+    background: var(--bg-main) !important;
+    border: 1px solid var(--text-color-black);
+    padding: 10px 20px;
+}
+
+.selectize-dropdown,
+.selectize-input,
+.selectize-input input {
+    line-height: 105%;
+    font-size: var(--main-font-size);
+    line-height: 140%;
+    color: var(--text-color-silver);
+}
+
+.selectize-input.input-active {
+    border-radius: 0;
+    border-color: var(--color-green-tow) !important;
+    border-bottom-color: var(--text-color-black) !important;
+    &:before {
+        display: none !important;
+    }
+}
+
+.selectize-dropdown {
+    padding: 13px 0;
+    width: calc(100% - 2px);
+    left: 1px;
+    background: var(--bg-main);
+    margin: -1px 0 0 0;
+    box-shadow: none;
+    border-radius: 0;
+    border: 1px solid var(--color-green-tow) !important;
+    border-top-color: var(--text-color-black) !important;
+}
+
+.selectize-dropdown-content .option {
+    background: none !important;
+    &.active {
+        color: var(--color-green-tow) !important;
+    }
+}
+
+.selectize-dropdown .option,
+.selectize-dropdown .optgroup-header,
+.selectize-dropdown .no-results,
+.selectize-dropdown .create {
+    padding: 7px 20px;
+}

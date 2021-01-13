@@ -51,6 +51,11 @@ button {
 
 .btn {
     height: 40px;
+    &--trans {
+        background-color: transparent;
+        border: 1px solid #4F515D;
+        color: var(--text-color-silver);
+    }
 }
 
 .btn.is-disabled {
@@ -85,6 +90,9 @@ button {
 @import "./modules/_briefcases-slider";
 @import "./modules/_calculator";
 @import "./modules/_history-widget";
+@import "./modules/_modals";
+@import "./modules/_form";
+@import "./modules/_select";
 
 /** pages **/
 

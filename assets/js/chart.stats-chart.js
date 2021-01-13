@@ -31,6 +31,7 @@ am4core.ready(function() {
 
         // chart.data = generateChartData();
         chart.dataSource.url = urlJson;
+        chart.dateFormatter.dateFormat = "MMM YYYY";
 
         // data loading events
         chart.dataSource.events.on("error", function(ev) {
@@ -50,6 +51,7 @@ am4core.ready(function() {
         // Hiding chart labels
         dateAxis.renderer.labels.template.disabled = true;
         dateAxis.renderer.grid.template.disabled = true;
+        dateAxis.tooltip.disabled = true;
 
         let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
@@ -102,6 +104,20 @@ am4core.ready(function() {
         // Scaling scrollbar
         dateAxis.start = 0.65;
         dateAxis.keepSelection = true;
+
+        // Adding tooltip
+        chart.cursor = new am4charts.XYCursor();
+        chart.cursor.lineX.disabled = true;
+        chart.cursor.lineY.disabled = true;
+        series.tooltip.pointerOrientation = "vertical";
+        series.tooltip.background.fillOpacity = 1;
+        series.tooltip.background.fill = am4core.color("rgba(33, 35, 47, 0.5)");
+        series.tooltip.background.stroke = am4core.color("#589585");
+        series.tooltip.background.strokeWidth = 2;
+        series.tooltipText = "[text-transform: uppercase; font-size: 12px; #D3D5DA]{dateX}\n[font-weight: 600; font-size: 12px; #589585]+{valueY}";
+        series.tooltip.getFillFromObject = false;
+        series.tooltip.background.cornerRadius = 0;
+        series.tooltip.label.textAlign = "middle";
 
         // preloader
         var indicator;

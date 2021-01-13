@@ -9,13 +9,14 @@
 
     <!-- Connecting styles -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/selectize.default.css">
     <link rel="stylesheet" href="assets/css/new.style.css">
     <link rel="stylesheet" href="assets/css/custom.min.css">
 </head>
 
 <!-- Begin of content -->
 
-<body class="cont flex" onload='themeToggler.load()'>
+<body class="cont flex" onload='themeToggler.load(); select.load()'>
 
     <!-- @@ Aside module -->
     <aside>
@@ -324,8 +325,8 @@
                     <div class="balance-widget__summ">7 323.66</div>
                     <div class="balance-widget__currency">USDtz</div>
                     <div class="balance-widget-manage">
-                        <button class="btn btn--small-fs" aria-label="button">Top up balance</button>
-                        <button class="btn btn--small-fs btn--red" aria-label="button">Withdraw money</button>
+                        <button class="btn btn--small-fs" aria-label="button" onclick="openModal(document.querySelector('.modal-topup'))">Top up balance</button>
+                        <button class="btn btn--small-fs btn--red" aria-label="button" onclick="openModal(document.querySelector('.modal-withdraw'))">Withdraw money</button>
                     </div>
                 </div>
 
@@ -336,7 +337,7 @@
                     </div>
                     <div class="status-widget__title">
                         <div class="status-widget__title-main">Leader</div>
-                        <button aria-label="button" class="status-widget__title-more">
+                        <button aria-label="button" class="status-widget__title-more" onclick="openModal(document.querySelector('.status-modal'))">
                             <img src="./svg/circle-question.svg" alt="circle-question-icon">
                         </button>
                     </div>
@@ -358,7 +359,7 @@
                     <div class="invest-manage">
                         <div class="invest-manage__label">Enter the amount:</div>
                         <div class="invest-manage__input">
-                            <input type="text" maxlength="7" onfocus="input.focus(this)" onblur="input.blur(this)" oninput="calculateInvest.input(this)" data-label="USDtz" value="420 USDtz" class="def-input">
+                            <input type="text" maxlength="7" onfocus="input.focus(this)" onblur="input.blur(this, true)" oninput="calculateInvest.input(this)" data-label="USDtz" value="420 USDtz" class="def-input">
                         </div>
                         <div class="invest-manage__label">Expected profit:</div>
                         <div class=" invest-manage__result">
@@ -567,6 +568,14 @@
                         </div>
                     </div>
                     <a href="#" class="history-widget__link">View all operations</a>
+                    <!--
+                        Если история пустая:
+                        <div class="history-widget__empty">
+                            <img src="./svg/history-empty.svg" alt="history empty illstr">
+                            <div class="history-widget__empty-title">История транзакций пустая</div>
+                            <div class="history-widget__empty-subtitle">Не волнуйтесь, все ещё впереди!</div>
+                        </div>
+                    -->
                 </div>
             </section>
 
@@ -582,6 +591,78 @@
 </body>
 <!-- End of content -->
 
+<!-- modals -->
+<div class="overlay">
+    <div class="modal status-modal">
+        <div class="status-modal__title" style="color: var(--bg-yellow)">Top Leader</div>
+        <div class="status-modal__text">The turnover of the structure is $ 30,000 or the volume of the personal active investment portfolio $ 3,000 Weekly investment limit $ 3000, withdrawal $ 1000</div>
+        <div class="status-modal-row">
+            <div class="status-modal-row__item">
+                Affiliate deposit bonus: <br> 1 line - 10% <br> 2nd line - 3% <br> 3 line - 1% <br> 4 line - 1% <br> 5 line - 1%
+            </div>
+            <div class="status-modal-row__item">
+                Affiliate Profit Bonus: <br> 1 line - 7% <br> 2nd line - 3% <br> 3 line - 3% <br> 4 line - 1% <br> 5 line - 1%
+            </div>
+        </div>
+        <div class="status-modal__icon" style="background-color: var(--bg-yellow)">
+            <img src="./svg/stars-3-black.svg" alt="stars">
+        </div>
+        <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
+    </div>
+    <div class="modal modal-topup def-modal">
+        <div class="modal__title">Top up balance</div>
+        <form class="modal-topup-form" onsubmit="topupForm.submit(this);return false;">
+            <div class="form-message">Выбрана не существующая валюта</div>
+            <label class="form-input">
+                <span class="form__label">Select a deposit method</span>
+                <select data-selectize name="select">
+                    <option value="btc">Bitcoin</option>
+                    <option value="eth">Etherium</option>
+                    <option value="usd">USDtz</option>
+                </select>
+            </label>
+            <button type="submit" aria-label="button" class="btn modal-topup-form__submit">
+                Продолжить
+            </button>
+        </form>
+        <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
+    </div>
+    <div class="modal modal-withdraw def-modal">
+        <div class="modal__title">Withdraw balance</div>
+        <form class="modal-withdraw-form" onsubmit="withdrawForm.submit(this);return false;">
+            <div class="form-message">Выбрана не существующая валюта</div>
+            <label class="form-input">
+                <span class="form__label">Select a deposit method</span>
+                <select data-selectize name="method">
+                    <option value="btc">Bitcoin</option>
+                    <option value="eth">Etherium</option>
+                    <option value="usd">USDtz</option>
+                </select>
+            </label>
+            <label class="form-input">
+                <span class="form__label">Введите сумму:</span>
+                <input type="text" class="custom-input" name="summ" placeholder="Enter the amount USDtz" onfocus="input.focus(this)" onblur="input.blur(this, true)" data-label="">
+            </label>
+            <label class="form-input">
+                <span class="form__label">Куда отправить деньги?</span>
+                <input type="text" class="custom-input" name="dist" placeholder="Enter u adress">
+            </label>
+            <div class="modal-withdraw__receive">
+                <span>You will receive: </span><span>0</span>
+            </div>
+            <div class="modal-withdraw-form-manage">
+                <button class="btn btn--trans btn--small-fs" aria-label="button" onclick="closeModal(this.parentNode)">Отменить</button>
+                <button type="submit" aria-label="button" class="btn btn--small-fs modal-withdraw-form__submit">
+                    Продолжить
+                </button>
+            </div>
+        </form>
+        <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
+    </div>
+    <div class="overlay-trigger"></div>
+</div>
+<!-- end of modals-->
+
 <!-- Connecting scripts -->
 
 <!-- jquery -->
@@ -589,6 +670,12 @@
 
 <!-- swiper -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- selectize -->
+<script src="assets/js/selectize.js"></script>
+
+<!-- modals -->
+<script src="assets/js/core.modals.js"></script>
 
 <!-- amcharts -->
 <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
@@ -605,5 +692,8 @@
 <script src="assets/js/module.briefcase.js"></script>
 <script src="assets/js/slider.briefcases.js"></script>
 <script src="assets/js/calculate.calculator.js"></script>
+<script src="assets/js/select.selectize.js"></script>
+<script src="assets/js/form.topup.js"></script>
+<script src="assets/js/form.withdraw.js"></script>
 
 </html>

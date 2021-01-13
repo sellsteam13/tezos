@@ -42,7 +42,7 @@ a {
 main {
     max-width: 990px;
     width: 100%;
-    padding: 0 10px 0 30px;
+    padding: 0 10px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -66,6 +66,15 @@ main .areaMenu[data-viev="true"] {
 @media only screen and (min-width: 1060px) {
     main .areaMenu {
         display: none !important;
+    }
+    main {
+        padding: 0 10px 0 30px;
+    }
+}
+
+@media (max-width: 1060px) and (min-width: 851px) {
+    main {
+        max-width: calc(100% - 50px);
     }
 }
 

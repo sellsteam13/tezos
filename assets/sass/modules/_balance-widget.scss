@@ -7,6 +7,9 @@
     align-items: center;
     text-align: center;
     padding: 43px 20px 20px;
+    @media (max-width: 600px) {
+        padding-top: 35px;
+    }
     &__summ {
         font-family: $termina;
         font-weight: bold;
@@ -15,6 +18,9 @@
         letter-spacing: 0.04em;
         text-transform: uppercase;
         color: var(--color-green-tow);
+        @media (max-width: 600px) {
+            font-size: 18px;
+        }
     }
     &__currency {
         font-size: var(--small-font-size);
@@ -27,6 +33,9 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 10px 20px;
         margin-top: 26px;
+        @media (max-width: 600px) {
+            margin-top: 15px;
+        }
         .btn {
             padding: 12px 0;
             width: 100%;

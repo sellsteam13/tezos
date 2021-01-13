@@ -7,11 +7,28 @@
     &__subtitle,
     &__result {
         width: calc(100% - 170px);
+        @media (max-width: 600px) {
+            width: calc(100% - 140px);
+        }
     }
     &__input,
     &__submit {
         max-width: 170px;
         width: 100%;
+        @media (max-width: 600px) {
+            max-width: 140px;
+        }
+    }
+    &__submit {
+        @media (max-width: 600px) {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    }
+    &__input {
+        @media (max-width: 600px) {
+            text-align: center;
+        }
     }
     &-range {
         width: 100%;
@@ -65,6 +82,9 @@
                 font-size: var(--main-font-size);
                 line-height: 140%;
                 color: var(--text-color-blue);
+                @media (max-width: 600px) {
+                    font-size: 10px;
+                }
             }
         }
     }
@@ -73,12 +93,22 @@
         font-size: 18px;
         line-height: 140%;
         color: var(--text-silver);
+        @media (max-width: 600px) {
+            font-size: var(--main-font-size);
+        }
     }
     &__result {
         font-weight: 600;
         font-size: 18px;
         line-height: 140%;
         color: var(--text-silver);
+        @media (max-width: 600px) {
+            width: 100%;
+            font-size: var(--main-font-size);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
         &-holder {
             font-weight: bold;
             color: var(--color-green-tow);

@@ -4,6 +4,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 60px 0 20px;
+    @media (max-width: 850px) {
+        padding: 60px 16px 20px;
+    }
     &__copyrights {
         font-size: var(--main-font-size);
         line-height: 140%;
