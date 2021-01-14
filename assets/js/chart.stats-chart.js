@@ -161,7 +161,7 @@ am4core.ready(function() {
             allTabs.forEach(btn => {
                 btn != eachBtn ? btn.classList.remove('is-active') : btn.classList.add('is-active');
             });
-
+            $('.stats-tabs__item').addClass('is-disabled');
             chart.dispose();
             chart = null;
             createChart(eachBtn.dataset.url);
