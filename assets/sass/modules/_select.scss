@@ -3,6 +3,10 @@
     background: var(--bg-main) !important;
     border: 1px solid var(--text-color-black);
     padding: 10px 20px;
+    cursor: pointer !important;
+    input {
+        cursor: pointer !important;
+    }
 }
 
 .selectize-dropdown,

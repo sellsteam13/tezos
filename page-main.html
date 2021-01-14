@@ -222,7 +222,7 @@
                             <img src="./svg/bell.svg" alt="bell-icon">
                         </button>
                         <div class="dropdownContainer dropdownNtfContainer">
-                            <div class="dropdownNtfItem">
+                            <!-- <div class="dropdownNtfItem">
                                 <time>21.09.2020 18:00</time>
                                 <p>Investment Income <span> 120 USDtz</span></p>
                             </div>
@@ -233,6 +233,11 @@
                             <div class="dropdownNtfItem">
                                 <time>21.09.2020 18:00</time>
                                 <p>New answer to the question "Question name"</p>
+                            </div> -->
+                            <div class="dropdownNtfContainerEmpty">
+                                <img src="./svg/ntf-empty.svg" alt="ntf empty icon">
+                                <span>Нет уведомлений</span>
+                                <span>Не волнуйтесь, все ещё впереди!</span>
                             </div>
                         </div>
                     </div>
@@ -611,7 +616,7 @@
     </div>
     <div class="modal modal-topup def-modal">
         <div class="modal__title">Top up balance</div>
-        <form class="modal-topup-form" onsubmit="topupForm.submit(this);return false;">
+        <form class="topup-form" onsubmit="topupForm.submit(this);return false;">
             <div class="form-message">Выбрана не существующая валюта</div>
             <label class="form-input">
                 <span class="form__label">Select a deposit method</span>
@@ -621,7 +626,7 @@
                     <option value="usd">USDtz</option>
                 </select>
             </label>
-            <button type="submit" aria-label="button" class="btn modal-topup-form__submit">
+            <button type="submit" aria-label="button" class="btn topup-form__submit">
                 Продолжить
             </button>
         </form>
@@ -629,7 +634,7 @@
     </div>
     <div class="modal modal-withdraw def-modal">
         <div class="modal__title">Withdraw balance</div>
-        <form class="modal-withdraw-form" onsubmit="withdrawForm.submit(this);return false;">
+        <form class="withdraw-form" onsubmit="withdrawForm.submit(this);return false;">
             <div class="form-message">Выбрана не существующая валюта</div>
             <label class="form-input">
                 <span class="form__label">Select a deposit method</span>
@@ -647,12 +652,12 @@
                 <span class="form__label">Куда отправить деньги?</span>
                 <input type="text" class="custom-input" name="dist" placeholder="Enter u adress">
             </label>
-            <div class="modal-withdraw__receive">
+            <div class="withdraw__receive">
                 <span>You will receive: </span><span>0</span>
             </div>
-            <div class="modal-withdraw-form-manage">
-                <button class="btn btn--trans btn--small-fs" aria-label="button" onclick="closeModal(this.parentNode)">Отменить</button>
-                <button type="submit" aria-label="button" class="btn btn--small-fs modal-withdraw-form__submit">
+            <div class="withdraw-form-manage">
+                <button class="btn btn--trans btn--small-fs" type="button" aria-label="button" onclick="closeModal(this.parentNode)">Отменить</button>
+                <button type="submit" aria-label="button" class="btn btn--small-fs withdraw-form__submit">
                     Продолжить
                 </button>
             </div>

@@ -1,6 +1,6 @@
 const withdrawForm = {
     submit: (el) => {
-        const submitBtn = el.querySelector('.modal-withdraw-form__submit');
+        const submitBtn = el.querySelector('.withdraw-form__submit');
         const messageInner = el.querySelector('.form-message');
         if (submitBtn) submitBtn.classList.add('is-disabled');
         el.classList.add('is-disabled');

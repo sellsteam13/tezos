@@ -1,6 +1,6 @@
 const topupForm = {
     submit: (el) => {
-        const submitBtn = el.querySelector('.modal-topup-form__submit');
+        const submitBtn = el.querySelector('.topup-form__submit');
         const allInputs = el.querySelectorAll('select');
         const messageInner = el.querySelector('.form-message');
         if (submitBtn) submitBtn.classList.add('is-disabled');

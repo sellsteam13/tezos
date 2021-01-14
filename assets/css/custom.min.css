@@ -279,6 +279,22 @@ h2.section__title {
         right: 78px;
         -webkit-transform: translateX(50%);
                 transform: translateX(50%); } }
+  .dropdownNtfContainerEmpty {
+    text-align: center;
+    padding: 50px 10px;
+    white-space: normal; }
+    .dropdownNtfContainerEmpty span {
+      display: block; }
+      .dropdownNtfContainerEmpty span:nth-of-type(1) {
+        margin: 10px 0 4px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        color: var(--text-silver); }
+      .dropdownNtfContainerEmpty span:nth-of-type(2) {
+        font-size: var(--main-font-size);
+        line-height: 140%;
+        color: var(--text-color-silver); }
 
 .dropdownNtfItem {
   padding: 15px 10px 15px 20px; }
@@ -526,7 +542,7 @@ h2.section__title {
       .stats-tabs__item.is-blocked:after {
         display: none; }
       .stats-tabs__item.is-blocked span:nth-child(2) {
-        color: var(--bg-yellow); }
+        color: #4F515D; }
     .stats-tabs__item.is-disabled {
       pointer-events: none; }
     .stats-tabs__item:hover span:nth-child(2) {
@@ -1396,54 +1412,8 @@ h2.section__title {
   width: 320px;
   max-width: calc(100% - 32px); }
 
-.modal-topup-form.is-disabled {
-  pointer-events: none; }
-
-.modal-topup-form__submit {
-  width: 100%;
-  margin-top: 20px; }
-
 .modal-withdraw .modal__title {
   text-align: left; }
-
-.modal-withdraw .form-input {
-  margin-bottom: 20px;
-  display: block; }
-  .modal-withdraw .form-input input {
-    width: 100%; }
-
-.modal-withdraw-form.is-disabled {
-  pointer-events: none; }
-  .modal-withdraw-form.is-disabled input.custom-input {
-    border: 1px solid var(--text-color-silver);
-    color: var(--text-color-silver); }
-
-.modal-withdraw-form-manage {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  gap: 0 27px; }
-
-.modal-withdraw__receive {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 20px; }
-  .modal-withdraw__receive span {
-    font-size: var(--main-font-size);
-    line-height: 140%; }
-    .modal-withdraw__receive span:nth-child(1) {
-      color: var(--text-color-silver); }
-    .modal-withdraw__receive span:nth-child(2) {
-      font-weight: bold;
-      color: var(--text-silver); }
 
 .form-message {
   margin-bottom: 20px;
@@ -1491,12 +1461,61 @@ h2.section__title {
     .form__label {
       margin-bottom: 4px; } }
 
+.withdraw-form.is-disabled {
+  pointer-events: none; }
+  .withdraw-form.is-disabled input.custom-input {
+    border: 1px solid var(--text-color-silver);
+    color: var(--text-color-silver); }
+
+.withdraw-form-manage {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 0 27px; }
+
+.withdraw-form .form-input {
+  margin-bottom: 20px;
+  display: block; }
+  .withdraw-form .form-input input {
+    width: 100%; }
+
+.withdraw__receive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px; }
+  .withdraw__receive span {
+    font-size: var(--main-font-size);
+    line-height: 140%; }
+    .withdraw__receive span:nth-child(1) {
+      color: var(--text-color-silver); }
+    .withdraw__receive span:nth-child(2) {
+      font-weight: bold;
+      color: var(--text-silver); }
+
+.topup-form.is-disabled {
+  pointer-events: none; }
+
+.topup-form__submit {
+  width: 100%;
+  margin-top: 20px; }
+
 .selectize-control.single .selectize-input {
   -webkit-box-shadow: none;
           box-shadow: none;
   background: var(--bg-main) !important;
   border: 1px solid var(--text-color-black);
-  padding: 10px 20px; }
+  padding: 10px 20px;
+  cursor: pointer !important; }
+  .selectize-control.single .selectize-input input {
+    cursor: pointer !important; }
 
 .selectize-dropdown,
 .selectize-input,
@@ -1791,7 +1810,8 @@ h2.section__title {
       .registration-form__input {
         margin-bottom: 15px; } }
     .registration-form__input .custom-input {
-      width: 100%; }
+      width: 100%;
+      background: #343647; }
       @media (max-width: 700px) {
         .registration-form__input .custom-input {
           height: 32px; } }
