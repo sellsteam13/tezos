@@ -52,7 +52,6 @@
         width: 17px;
         height: 17px;
         margin: 0;
-        visibility: hidden;
         &:checked {
             ~.custom-checkbox__bg {
                 background-color: var(--color-green-tow);
@@ -61,6 +60,9 @@
             ~.custom-checkbox__check {
                 opacity: 1;
             }
+        }
+        &:focus~.custom-checkbox__bg {
+            outline: auto;
         }
     }
     &__bg {

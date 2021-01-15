@@ -54,3 +54,52 @@ const rangeInput = {
         }
     }
 }
+
+const calculator = {
+    updateValues: () => {
+        const paymentAmountValue = Number.parseInt(document.getElementById('calculatorPaymentAmount').value)
+        const daysAmountValue = Number.parseInt(document.getElementById('calculatorDaysAmount').value);
+        const resultInner = document.querySelector('[data-calculator-output]')
+        if (!isNaN(paymentAmountValue) && typeof(paymentAmountValue) === 'number' && !isNaN(daysAmountValue) && typeof(daysAmountValue) === 'number') {
+            calculator.getResult(paymentAmountValue, daysAmountValue)
+            if (resultInner) resultInner.innerHTML = calculator.getResult(paymentAmountValue, daysAmountValue);
+        }
+    },
+    getResult: (amount, days) => {
+        return ((amount * 0.1) * days + amount).toFixed(0);
+    },
+    submit: (el) => {
+        const submitBtn = el.querySelector('.calculator__submit');
+        if (submitBtn) submitBtn.setAttribute('disabled', true);
+        document.body.addEventListener('click', (e) => {
+            if ((e.target.classList.contains('info__cancel') || e.target.classList.contains('overlay-trigger')) && submitBtn) submitBtn.removeAttribute('disabled');
+        });
+        var formData = {
+            'amount': $('input[name=calculatorAmount]').val(),
+            'days': $('input[name=calculatorDays]').val()
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '#',
+            data: formData,
+            dataType: 'json',
+            encode: true,
+            success: function(data) {
+                const calcResult = calculator.getResult(
+                    Number.parseInt(formData.amount),
+                    Number.parseInt(formData.days)
+                )
+                $('.modal-info .info-block__amount')[0].innerHTML = formData.amount + ' USDtz';
+                $('.modal-info .info-block__amount')[1].innerHTML = calcResult + ' USDtz';
+                openModal(document.querySelector('.modal-info'));
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                setTimeout(() => {
+                    if (submitBtn) submitBtn.removeAttribute('disabled');
+                    console.group(xhr.status + '//' + thrownError, '| Data: ' + JSON.stringify(formData));
+                }, 5000)
+            }
+        })
+    }
+}

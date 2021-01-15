@@ -17,13 +17,13 @@
         left: 0;
         right: 0;
         height: 58px;
-        background: url('../../svg/registration-bg.svg') center no-repeat;
+        background: url('../svg/registration-bg/registration-bg.svg') center no-repeat;
         background-size: 1366px 58px;
         pointer-events: none;
     }
     &:before {
         top: 0;
-        background-image: url('../../svg/registration-bg-top.svg');
+        background-image: url('../svg/registration-bg/registration-bg-top.svg');
     }
     &:after {
         bottom: 0;

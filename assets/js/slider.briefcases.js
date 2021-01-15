@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const briefcasesSlider = new Swiper(eachModule.parentNode, {
                 slidesPerView: 1,
                 effect: 'fade',
+                allowTouchMove: false,
                 fadeEffect: {
                     crossFade: true
                 },

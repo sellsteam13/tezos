@@ -1,9 +1,9 @@
 const registrationForm = {
     submit: (el) => {
         const submitBtn = el.querySelector('.registration-form__submit');
-        const allInputs = el.querySelectorAll('input');
         const messageInner = el.querySelector('.registration-form__message');
-        if (submitBtn) submitBtn.classList.add('is-disabled');
+        if (submitBtn) submitBtn.setAttribute('disabled', true);
+        form.toggleInputs(el);
         el.classList.add('is-disabled');
         var formData = {
             'login': $('input[name=login]').val(),
@@ -21,7 +21,8 @@ const registrationForm = {
             success: function(data) {
                 console.log(data);
 
-                if (submitBtn) submitBtn.classList.remove('is-disabled');
+                if (submitBtn) submitBtn.removeAttribute('disabled');
+                form.toggleInputs(el);
                 el.classList.remove('is-disabled');
 
                 if (data.success) {
@@ -35,10 +36,13 @@ const registrationForm = {
                 }
             },
             error: function(xhr, ajaxOptions, thrownError) {
-                messageInner.classList.add('is-shown');
-                if (submitBtn) submitBtn.classList.remove('is-disabled');
-                el.classList.remove('is-disabled');
-                messageInner.innerHTML = xhr.status + '//' + thrownError;
+                setTimeout(() => {
+                    messageInner.classList.add('is-shown');
+                    if (submitBtn) submitBtn.removeAttribute('disabled');
+                    form.toggleInputs(el);
+                    el.classList.remove('is-disabled');
+                    messageInner.innerHTML = xhr.status + '//' + thrownError;
+                }, 5000);
             }
         })
     }

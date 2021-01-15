@@ -119,10 +119,7 @@
         overflow: hidden;
         position: relative;
         &__holder {
-            width: calc(100% + 20px);
             height: 270px;
-            margin-left: -10px;
-            margin-right: -10px;
             @media (max-width: 1060px) {
                 height: 255px;
             }

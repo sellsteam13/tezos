@@ -42,11 +42,3 @@
     font-style: italic;
     font-display: swap;
 }
-
-@font-face {
-    font-family: 'Termina';
-    src: url('Termina-Bold.otf') format("opentype");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}

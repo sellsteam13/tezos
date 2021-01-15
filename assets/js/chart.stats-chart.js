@@ -74,10 +74,31 @@ am4core.ready(function() {
         chart.scrollbarX = new am4charts.XYChartScrollbar();
         chart.scrollbarX.series.push(series);
 
-        // Disabling scrollbar grip
-        chart.scrollbarX.endGrip.disabled = true;
-        chart.scrollbarX.startGrip.disabled = true;
-        chart.scrollbarX.endGrip.disabled = true;
+        // Customizing scrollbar grip
+        function customizeGrip(grip) {
+            grip.icon.disabled = true;
+            grip.background.fill = am4core.color("#589585");
+            grip.background.fillOpacity = 1;
+            grip.background.disabled = true;
+            // Add vertical bar
+            let line = grip.createChild(am4core.Rectangle);
+            line.height = 50;
+            line.width = 3;
+            line.fill = am4core.color("#589585");
+            line.align = "center";
+            line.valign = "middle";
+            // add middle icon
+            let img = grip.createChild(am4core.Rectangle);
+            img.width = 10;
+            img.height = 10;
+            img.fill = am4core.color("#589585");
+            img.rotation = 45;
+            img.align = "center";
+            img.valign = "middle";
+        }
+
+        customizeGrip(chart.scrollbarX.startGrip);
+        customizeGrip(chart.scrollbarX.endGrip);
 
         // Positioning scrollbar
         chart.scrollbarX.parent = chart.bottomAxesContainer;
