@@ -62,7 +62,7 @@ button {
     }
 }
 
-.btn[disabled="true"] {
+.btn:disabled {
     background: #A6A7AC;
     display: flex;
     align-items: center;

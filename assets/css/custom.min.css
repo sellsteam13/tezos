@@ -43,7 +43,7 @@ button {
     border: 1px solid #4F515D;
     color: var(--text-color-silver); }
 
-.btn[disabled="true"] {
+.btn:disabled {
   background: #A6A7AC;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,7 +55,7 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
   pointer-events: none; }
-  .btn[disabled="true"]:before {
+  .btn:disabled:before {
     content: '';
     width: 18px;
     height: 18px;
