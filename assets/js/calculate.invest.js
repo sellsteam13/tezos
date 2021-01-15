@@ -51,7 +51,7 @@ const calculateInvest = {
                     calculateInvest.getResult(Number.parseInt(formData.amount))[0] + calculateInvest.getResult(Number.parseInt(formData.amount))[1]
                 ) / 2;
                 $('.modal-info .info-block__amount')[0].innerHTML = formData.amount;
-                $('.modal-info .info-block__amount')[1].innerHTML = calcResult + ' USDtz';
+                $('.modal-info .info-block__amount')[1].innerHTML = calcResult.toFixed(0) + ' USDtz';
                 openModal(document.querySelector('.modal-info'));
             }
         })

@@ -1421,6 +1421,16 @@ h2.section__title {
 .modal-withdraw .modal__title {
   text-align: left; }
 
+.modal-invest {
+  width: 390px;
+  max-width: calc(100vw - 32px); }
+  .modal-invest .invest-manage {
+    border: none;
+    padding: 0; }
+  .modal-invest .modal__title {
+    text-align: left;
+    margin-bottom: 20px; }
+
 .form-message {
   margin-bottom: 20px;
   background: #CF5959;
@@ -1964,3 +1974,37 @@ h2.section__title {
     width: 0; }
   100% {
     width: 190px; } }
+
+@media (max-width: 850px) {
+  .briefcases-list {
+    padding: 30px 16px 0; } }
+
+.briefcases-list-inner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 28px; }
+  @media (max-width: 850px) {
+    .briefcases-list-inner {
+      -ms-grid-columns: (1fr)[2];
+          grid-template-columns: repeat(2, 1fr);
+      gap: 30px; }
+      .briefcases-list-inner .briefcase,
+      .briefcases-list-inner .briefcases-empty {
+        height: 230px; } }
+  @media (max-width: 600px) {
+    .briefcases-list-inner {
+      -ms-grid-columns: (1fr)[1];
+          grid-template-columns: repeat(1, 1fr);
+      gap: 16px; }
+      .briefcases-list-inner .briefcase-overall__summ {
+        font-size: 16px;
+        margin-bottom: 10px; }
+      .briefcases-list-inner .briefcase-income {
+        font-size: 16px; } }
+  .briefcases-list-inner .briefcases-empty {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    background-color: transparent; }
