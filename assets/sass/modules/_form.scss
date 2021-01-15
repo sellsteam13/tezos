@@ -52,10 +52,6 @@
 .withdraw-form {
     &.is-disabled {
         pointer-events: none;
-        input.custom-input {
-            border: 1px solid var(--text-color-silver);
-            color: var(--text-color-silver);
-        }
     }
     &-manage {
         display: grid;

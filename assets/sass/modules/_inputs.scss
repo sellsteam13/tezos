@@ -41,6 +41,10 @@
         border-color: var(--bg-red) !important;
         color: var(--bg-red) !important;
     }
+    &:disabled {
+        border: 1px solid var(--text-color-silver);
+        color: var(--text-color-silver);
+    }
     &:focus {
         border-color: var(--color-green-tow);
         outline: none;

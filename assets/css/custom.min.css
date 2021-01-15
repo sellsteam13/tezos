@@ -124,6 +124,9 @@ h2.section__title {
   .custom-input[data-error="true"] {
     border-color: var(--bg-red) !important;
     color: var(--bg-red) !important; }
+  .custom-input:disabled {
+    border: 1px solid var(--text-color-silver);
+    color: var(--text-color-silver); }
   .custom-input:focus {
     border-color: var(--color-green-tow);
     outline: none; }
@@ -1479,9 +1482,6 @@ h2.section__title {
 
 .withdraw-form.is-disabled {
   pointer-events: none; }
-  .withdraw-form.is-disabled input.custom-input {
-    border: 1px solid var(--text-color-silver);
-    color: var(--text-color-silver); }
 
 .withdraw-form-manage {
   display: -ms-grid;
@@ -1881,16 +1881,27 @@ h2.section__title {
         font-size: 16px;
         margin-bottom: 15px; } }
   .registration-form__input {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    position: relative; }
     @media (max-width: 700px) {
       .registration-form__input {
         margin-bottom: 15px; } }
     .registration-form__input .custom-input {
       width: 100%;
       background: #343647; }
-      @media (max-width: 700px) {
-        .registration-form__input .custom-input {
-          height: 32px; } }
+    .registration-form__input--pass {
+      position: absolute;
+      bottom: 12px;
+      right: 16px;
+      background: none;
+      padding: 0;
+      border: none;
+      width: 16px;
+      height: 16px;
+      -webkit-transition: opacity 0.175s ease;
+      transition: opacity 0.175s ease; }
+      .registration-form__input--pass:hover {
+        opacity: 0.7; }
   .registration-form__checkbox {
     display: -webkit-box;
     display: -ms-flexbox;
