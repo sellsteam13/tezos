@@ -11,6 +11,10 @@
     width: 100%;
     border: 1px solid transparent;
     transition: box-shadow $trans, border-color $trans;
+    &[data-error="true"] {
+        border-color: var(--bg-red) !important;
+        color: var(--bg-red) !important;
+    }
     @media (max-width: 600px) {
         text-align: unset;
     }
@@ -33,6 +37,10 @@
     background: var(--bg-main);
     border: 1px solid var(--text-color-black);
     transition: border-color $trans;
+    &[data-error="true"] {
+        border-color: var(--bg-red) !important;
+        color: var(--bg-red) !important;
+    }
     &:focus {
         border-color: var(--color-green-tow);
         outline: none;

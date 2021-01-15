@@ -96,6 +96,9 @@ h2.section__title {
   transition: border-color 0.175s ease, -webkit-box-shadow 0.175s ease;
   transition: box-shadow 0.175s ease, border-color 0.175s ease;
   transition: box-shadow 0.175s ease, border-color 0.175s ease, -webkit-box-shadow 0.175s ease; }
+  .def-input[data-error="true"] {
+    border-color: var(--bg-red) !important;
+    color: var(--bg-red) !important; }
   @media (max-width: 600px) {
     .def-input {
       text-align: unset; } }
@@ -118,6 +121,9 @@ h2.section__title {
   border: 1px solid var(--text-color-black);
   -webkit-transition: border-color 0.175s ease;
   transition: border-color 0.175s ease; }
+  .custom-input[data-error="true"] {
+    border-color: var(--bg-red) !important;
+    color: var(--bg-red) !important; }
   .custom-input:focus {
     border-color: var(--color-green-tow);
     outline: none; }
