@@ -424,11 +424,11 @@ h2.section__title {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-  .dropdownUserMobileLang a {
+  .dropdownUserMobileLang > * {
     line-height: 140%;
     color: var(--text-silver);
     margin: 0 9px 9px; }
-    .dropdownUserMobileLang a.is-active {
+    .dropdownUserMobileLang > *.is-active {
       font-weight: bold;
       color: var(--text-color-green); }
 

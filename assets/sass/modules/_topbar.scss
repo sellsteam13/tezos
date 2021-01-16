@@ -251,7 +251,7 @@ nav .flex .btnNav {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        a {
+        >* {
             line-height: 140%;
             color: var(--text-silver);
             margin: 0 9px 9px;
