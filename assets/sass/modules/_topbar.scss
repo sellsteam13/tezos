@@ -10,7 +10,7 @@
     left: 0;
     right: 0;
     top: 100%;
-    background: #21232F;
+    background: var(--text-color-black);
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 5;
     pointer-events: none;
@@ -32,7 +32,7 @@
         top: -1px;
         content: '';
         height: 1px;
-        background-color: #589585;
+        background-color: var(--color-green-tow);
     }
     &:after {
         content: '';
@@ -42,14 +42,14 @@
         transform: translateX(-50%);
         border-style: solid;
         border-width: 0 6px 9px 6px;
-        border-color: transparent transparent #589585 transparent;
+        border-color: transparent transparent var(--color-green-tow) transparent;
     }
     &Link {
         display: none;
         text-align: center;
         padding: 8px 0;
         line-height: 140%;
-        color: #CDD0DF;
+        color: var(--text-silver);
         transition: color .175s ease;
         &:hover {
             color: var(--text-color-silver);
@@ -142,7 +142,7 @@
         }
     }
     +.dropdownNtfItem {
-        border-top: 1px solid #2A2C3A;
+        border-top: 1px solid var(--bg-main);
     }
 }
 
@@ -223,8 +223,8 @@ nav .flex .btnNav {
     &Balance {
         padding: 20px 17px;
         align-items: center;
-        border-bottom: 1px solid #2A2C3A;
-        border-top: 1px solid #2A2C3A;
+        border-bottom: 1px solid var(--bg-main);
+        border-top: 1px solid var(--bg-main);
         p {
             span {
                 display: block;
@@ -253,7 +253,7 @@ nav .flex .btnNav {
         flex-wrap: wrap;
         a {
             line-height: 140%;
-            color: #CDD0DF;
+            color: var(--text-silver);
             margin: 0 9px 9px;
             &.is-active {
                 font-weight: bold;
@@ -279,7 +279,7 @@ nav .flex .btnNav {
             top: 50%;
             width: 21px;
             height: 2px;
-            background: #131521;
+            background: var(--text-color-black);
             transform: translate(-50%, -50%);
         }
         &:after {

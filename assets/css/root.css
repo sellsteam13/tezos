@@ -15,3 +15,15 @@
     --small-font-size: 12px;
     --big-size: 18px;
 }
+
+.is-white:root {
+    --bg-main: #E3E4EC;
+    --bg-red: #CF5959;
+    --bg-yellow: #F2DC15;
+    --text-color-silver: #878994;
+    --text-silver: #ECEEF4;
+    --text-color-green: #47A68A;
+    --color-green-tow: #589585;
+    --text-color-black: #ECEEF4;
+    --text-color-white: #000000;
+}

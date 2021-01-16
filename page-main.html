@@ -16,7 +16,7 @@
 
 <!-- Begin of content -->
 
-<body class="cont flex" onload='themeToggler.load(); select.load()'>
+<body class="cont flex" onload='select.load()'>
 
     <!-- @@ Aside module -->
     <aside>
@@ -233,7 +233,7 @@
 
                     <div class="dropdown dropdownNtf">
                         <button class="btnNav has-label" title="Иконка уведомлений" onclick="dropdown.open(this)">
-                            <img src="./assets/svg/default/bell.svg" alt="bell-icon">
+                            <img src="./assets/svg/def/bell.svg" alt="bell-icon">
                         </button>
                         <div class="dropdownContainer dropdownNtfContainer">
                             <!-- <div class="dropdownNtfItem">
@@ -339,7 +339,7 @@
                 <!-- //balance module// -->
                 <div class="balance-widget def-module has-icon">
                     <div class="def-module__icon">
-                        <img src="./assets/svg/default/wallet.svg" alt="wallet-icon">
+                        <img src="./assets/svg/def/wallet.svg" alt="wallet-icon">
                     </div>
                     <div class="balance-widget__summ">7 323.66</div>
                     <div class="balance-widget__currency">USDtz</div>
@@ -357,7 +357,7 @@
                     <div class="status-widget__title">
                         <div class="status-widget__title-main">Leader</div>
                         <button aria-label="button" class="status-widget__title-more" onclick="openModal(document.querySelector('.status-modal'))">
-                            <img src="./assets/svg/default/circle-question.svg" alt="circle-question-icon">
+                            <img src="./assets/svg/def/circle-question.svg" alt="circle-question-icon">
                         </button>
                     </div>
                     <div class="status-widget__subtitle">Partner status</div>
@@ -387,7 +387,7 @@
                         <div class="invest-manage-btns">
                             <button type="submit" aria-label="button" class="btn invest-manage__submit">Open deposit</button>
                             <button type="button" aria-label="button" class="invest-manage__more" onclick="openModal(document.querySelector('.modal-descr'))">
-                                <img src="./assets/svg/default/question.svg" alt="question-icon">
+                                <img src="./assets/svg/def/question.svg" alt="question-icon">
                             </button>
                         </div>
                     </form>
@@ -768,7 +768,6 @@
 <!-- connecting custom scripts -->
 <script src="./assets/js/new.formMethods.js"></script>
 <script src="assets/js/new.navbar.js"></script>
-<script src="assets/js/new.theme-changer.js"></script>
 <script src="assets/js/new.dropdown.js"></script>
 <script src="assets/js/chart.stats-chart.js"></script>
 <script src="assets/js/new.input.js"></script>
@@ -779,5 +778,9 @@
 <script src="assets/js/select.selectize.js"></script>
 <script src="assets/js/form.topup.js"></script>
 <script src="assets/js/form.withdraw.js"></script>
+<script src="assets/js/new.theme-changer.js"></script>
+<script>
+    themeToggler.load();
+</script>
 
 </html>

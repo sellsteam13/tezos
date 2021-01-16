@@ -6,10 +6,12 @@ const themeToggler = {
             // Включаем светлую тему
             window.localStorage.setItem('wmode', true);
             console.log('white theme');
+            themeToggler.toggle(true);
         } else {
             // Включаем темную тему
             window.localStorage.setItem('wmode', false);
             console.log('dark theme');
+            themeToggler.toggle(false);
         }
     },
 
@@ -20,9 +22,20 @@ const themeToggler = {
         if (wmode === 'true') {
             $('#themeStateHolder').prop("checked", true);
             console.log('white theme');
+            themeToggler.toggle(true);
         } else {
             $('#themeStateHolder').prop("checked", false);
             console.log('dark theme');
+            themeToggler.toggle(false);
+        }
+    },
+
+    toggle: (state) => {
+        const rootElement = document.querySelector('html');
+        if (state) {
+            rootElement.classList.add('is-white')
+        } else {
+            rootElement.classList.remove('is-white')
         }
     }
 

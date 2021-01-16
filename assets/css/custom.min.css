@@ -208,7 +208,7 @@ h2.section__title {
   left: 0;
   right: 0;
   top: 100%;
-  background: #21232F;
+  background: var(--text-color-black);
   -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 5;
@@ -234,7 +234,7 @@ h2.section__title {
     top: -1px;
     content: '';
     height: 1px;
-    background-color: #589585; }
+    background-color: var(--color-green-tow); }
   .dropdownContainer:after {
     content: '';
     position: absolute;
@@ -244,13 +244,13 @@ h2.section__title {
             transform: translateX(-50%);
     border-style: solid;
     border-width: 0 6px 9px 6px;
-    border-color: transparent transparent #589585 transparent; }
+    border-color: transparent transparent var(--color-green-tow) transparent; }
   .dropdownContainerLink {
     display: none;
     text-align: center;
     padding: 8px 0;
     line-height: 140%;
-    color: #CDD0DF;
+    color: var(--text-silver);
     -webkit-transition: color .175s ease;
     transition: color .175s ease; }
     .dropdownContainerLink:hover {
@@ -326,7 +326,7 @@ h2.section__title {
       color: var(--text-color-green);
       font-weight: 500; }
   .dropdownNtfItem + .dropdownNtfItem {
-    border-top: 1px solid #2A2C3A; }
+    border-top: 1px solid var(--bg-main); }
 
 .dropdownUser .name {
   height: 100%;
@@ -397,8 +397,8 @@ h2.section__title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid #2A2C3A;
-  border-top: 1px solid #2A2C3A; }
+  border-bottom: 1px solid var(--bg-main);
+  border-top: 1px solid var(--bg-main); }
   .dropdownUserMobileBalance p span {
     display: block; }
     .dropdownUserMobileBalance p span:nth-child(1) {
@@ -426,7 +426,7 @@ h2.section__title {
       flex-wrap: wrap; }
   .dropdownUserMobileLang a {
     line-height: 140%;
-    color: #CDD0DF;
+    color: var(--text-silver);
     margin: 0 9px 9px; }
     .dropdownUserMobileLang a.is-active {
       font-weight: bold;
@@ -451,7 +451,7 @@ h2.section__title {
     top: 50%;
     width: 21px;
     height: 2px;
-    background: #131521;
+    background: var(--text-color-black);
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
   .dropdownUserMobileClose:after {
@@ -1344,7 +1344,7 @@ h2.section__title {
       content: '';
       width: 20px;
       height: 20px;
-      background: url("../svg/default/cross.svg") no-repeat center; }
+      background: url("../svg/def/cross.svg") no-repeat center; }
   .modal__title {
     font-family: "Montserrat", sans-serif;
     margin: 10px 0 30px;
@@ -1455,7 +1455,7 @@ h2.section__title {
     position: absolute;
     width: 4px;
     height: 20px;
-    background: url("../svg/default/attention.svg") no-repeat center;
+    background: url("../svg/def/attention.svg") no-repeat center;
     left: 18px;
     top: 50%;
     -webkit-transform: translateY(-50%);
