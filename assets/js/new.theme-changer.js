@@ -20,11 +20,9 @@ const themeToggler = {
         const wmode = window.localStorage.getItem('wmode', '');
         // Меняем текущий стейт переключателя
         if (wmode === 'true') {
-            $('#themeStateHolder').prop("checked", true);
             console.log('white theme');
             themeToggler.toggle(true);
         } else {
-            $('#themeStateHolder').prop("checked", false);
             console.log('dark theme');
             themeToggler.toggle(false);
         }
@@ -33,9 +31,15 @@ const themeToggler = {
     toggle: (state) => {
         const rootElement = document.querySelector('html');
         if (state) {
-            rootElement.classList.add('is-white')
+            $('#themeStateHolder').prop("checked", true);
+            rootElement.classList.add('is-white');
+            $('#whiteThemeLink').prop('disabled', false);
+            $('#darkThemeLink').prop('disabled', true);
         } else {
-            rootElement.classList.remove('is-white')
+            $('#themeStateHolder').prop("checked", false);
+            rootElement.classList.remove('is-white');
+            $('#whiteThemeLink').prop('disabled', true);
+            $('#darkThemeLink').prop('disabled', false);
         }
     }
 

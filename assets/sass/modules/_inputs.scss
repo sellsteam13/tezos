@@ -1,7 +1,7 @@
 .def-input {
     text-align: center;
-    background: #343647;
-    border: 1px solid #21232C;
+    background: var(--bg-main);
+    border: 1px solid var(--text-color-black);
     box-sizing: border-box;
     height: 40px;
     padding: 0 15px;
@@ -83,7 +83,7 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background: #343647;
+        background: var(--bg-main);
         border: 1px solid var(--text-color-black);
         transition: background-color $trans, border-color $trans;
     }

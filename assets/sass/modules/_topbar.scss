@@ -287,3 +287,12 @@ nav .flex .btnNav {
         }
     }
 }
+
+@media only screen and (max-width: 850px) {
+    .burgerMenu {
+        padding: 0 16px;
+        >ul {
+            margin-bottom: 0 !important;
+        }
+    }
+}

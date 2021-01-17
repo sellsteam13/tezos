@@ -1,29 +1,12 @@
 :root {
     --transition-all: 0.3s;
-    --bg-main: #2A2C3A;
     --z-index: 10;
     --bg-red: #CF5959;
     --bg-yellow: #F2DC15;
-    --text-color-silver: #A6A7AC;
-    --text-silver: #D3D5DA;
     --text-color-green: #47A68A;
     --color-green-tow: #589585;
-    --text-color-black: #21232F;
-    --text-color-white: #ffffff;
     --text-color-blue: #878994;
     --main-font-size: 14px;
     --small-font-size: 12px;
     --big-size: 18px;
-}
-
-.is-white:root {
-    --bg-main: #E3E4EC;
-    --bg-red: #CF5959;
-    --bg-yellow: #F2DC15;
-    --text-color-silver: #878994;
-    --text-silver: #ECEEF4;
-    --text-color-green: #47A68A;
-    --color-green-tow: #589585;
-    --text-color-black: #ECEEF4;
-    --text-color-white: #000000;
 }

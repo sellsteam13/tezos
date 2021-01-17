@@ -30,21 +30,30 @@
 }
 
 .briefcases-empty {
-    border: 2px dashed #589585;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
     height: 180px;
-    transition: border-color $trans;
+    transition: background-color $trans, box-shadow $trans;
+    position: relative;
+    border: none;
+    &:after {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        bottom: 2px;
+        right: 2px;
+        border: 2px dashed var(--color-green-tow);
+        transition: transform $trans;
+    }
     &:hover {
-        border-color: var(--bg-yellow);
-        >svg {
-            fill: var(--bg-yellow);
-        }
-        span {
-            color: var(--bg-yellow);
+        background-color: var(--text-color-black);
+        box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.1);
+        &:after {
+            transform: scale(.95);
         }
     }
     >svg {

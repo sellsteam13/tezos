@@ -1,8 +1,8 @@
 .form {
     &-message {
         margin-bottom: 20px;
-        background: #CF5959;
-        border: 1px solid #21232C;
+        background: var(--bg-red);
+        border: 1px solid var(--text-color-black);
         position: relative;
         display: none;
         @media (max-width: 700px) {
@@ -28,13 +28,13 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            background-color: #21232F;
+            background-color: var(--text-color-black);
         }
         padding: 10px 12px 10px 48px;
         font-weight: 600;
         font-size: var(--small-font-size);
         line-height: 140%;
-        color: #21232F;
+        color: var(--text-color-black);
     }
     &__label {
         display: block;

@@ -30,6 +30,9 @@
         .briefcases-empty {
             order: 1;
             background-color: transparent;
+            &:hover {
+                background-color: var(--text-color-black);
+            }
         }
     }
 }

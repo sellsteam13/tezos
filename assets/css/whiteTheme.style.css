@@ -1,0 +1,75 @@
+/** styles for white mode **/
+
+.btnNavWhiteMode+.btnNav {
+    display: none !important;
+}
+
+.is-white:root {
+    --bg-main: #E3E4EC;
+    --text-color-silver: #878994;
+    --text-silver: #21232F;
+    --text-color-black: #ECEEF4;
+    --text-color-white: #000000;
+}
+
+.is-white aside {
+    border-color: #DADBE7;
+}
+
+.is-white .status-widget-info__block span {
+    color: var(--text-silver);
+}
+
+.is-white .overlay {
+    background-color: rgba(135, 137, 148, 0.7);
+}
+
+.is-white .modal-close:before {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+@media (max-width: 850px) {
+    .is-white .btnNavWhiteMode {
+        display: none !important;
+    }
+    .is-white .btnNavWhiteMode+.btnNav {
+        display: block !important;
+    }
+}
+
+.is-white .registration-form__input .custom-input {
+    background: #fff;
+}
+
+.is-white .registration-slider {
+    -webkit-box-shadow: 0px 12px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+.is-white .registration:before,
+.is-white .registration:after {
+    opacity: .05;
+}
+
+.is-white .registration-form__input .custom-input {
+    background: #fff;
+}
+
+.is-white .custom-checkbox__check {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+.is-white .form-message:before {
+    -webkit-filter: invert(1) brightness(100);
+    filter: invert(1) brightness(100);
+}
+
+.is-white .stats-tabs__item.is-blocked span:nth-child(2) {
+    color: #d4d5de;
+}
+
+.is-white .stats:before {
+    display: none;
+}

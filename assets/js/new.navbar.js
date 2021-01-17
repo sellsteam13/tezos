@@ -5,10 +5,10 @@ const navbar = {
 
         //  Создаём область для нового меню
         let area = document.createElement('div');
-        area.className = "areaMenu";
+        area.className = "areaMenu burgerMenu";
         area.dataset.viev = "true";
         area.style.zIndex = 5;
-        area.innerHTML = "<ul>" + menu.html() + "</ul>";
+        area.innerHTML = "<ul>" + menu.html() + "</ul>" + "<button view=mobile hidden=desktop class=dropdownUserMobileClose onclick=navbar.closed()></button>";
 
         // Обновляем контент меню в новом блоке
         $('main').append(area);

@@ -2,11 +2,11 @@
     &__title {
         padding-bottom: 16px;
         margin-bottom: 20px;
-        border-bottom: 1px solid #2A2C3A;
+        border-bottom: 1px solid var(--bg-main);
         font-weight: 600;
         font-size: 16px;
         line-height: 140%;
-        color: #D3D5DA;
+        color: var(--text-silver);
     }
     &-block {
         position: relative;
@@ -27,12 +27,12 @@
             margin-bottom: 2px;
             font-size: var(--main-font-size);
             line-height: 140%;
-            color: #D3D5DA;
+            color: var(--text-silver);
         }
         &__descr {
             font-size: var(--main-font-size);
             line-height: 140%;
-            color: #A6A7AC;
+            color: var(--text-color-silver);
         }
     }
     &__subtitle {
@@ -40,13 +40,13 @@
         font-weight: 300;
         font-size: var(--main-font-size);
         line-height: 140%;
-        color: #A6A7AC;
+        color: var(--text-color-silver);
     }
     &__subdescr {
         margin-bottom: 20px;
         font-size: var(--main-font-size);
         line-height: 140%;
-        color: #D3D5DA;
+        color: var(--text-silver);
     }
     &-manage {
         display: grid;

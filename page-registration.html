@@ -10,11 +10,23 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/new.style.css">
     <link rel="stylesheet" href="assets/css/custom.min.css">
+    <link rel="stylesheet" href="assets/css/whiteTheme.style.css" disabled id="whiteThemeLink">
+    <link rel="stylesheet" href="assets/css/darkTheme.style.css" disabled id="darkThemeLink">
+    <script>
+        if (window.localStorage.getItem('wmode', '') === 'true') {
+            document.getElementById('whiteThemeLink').removeAttribute('disabled')
+        } else {
+            document.getElementById('darkThemeLink').removeAttribute('disabled')
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = 1
+        })
+    </script>
 </head>
 
 <!-- Begin of content -->
 
-<body onload="registrationSlider.init()">
+<body onload="registrationSlider.init(); themeToggler.load();">
 
     <!-- @@ Register module -->
     <section class="registration">
@@ -103,5 +115,6 @@
 <script src="./assets/js/new.formMethods.js"></script>
 <script src="./assets/js/slider.registration.js"></script>
 <script src="./assets/js/form.registration.js"></script>
+<script src="assets/js/new.theme-changer.js"></script>
 
 </html>
