@@ -1,9 +1,5 @@
 /** styles for white mode **/
 
-.btnNavWhiteMode+.btnNav {
-    display: none !important;
-}
-
 .is-white:root {
     --bg-main: #E3E4EC;
     --text-color-silver: #878994;
