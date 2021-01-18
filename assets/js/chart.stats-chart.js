@@ -2,7 +2,7 @@ am4core.ready(function() {
 
     var chart = null;
 
-    const createChart = (urlJson) => {
+    const createChart = (urlJson, scrollbarEnable) => {
         // Themes begin
         am4core.useTheme(am4themes_animated);
         // Themes end
@@ -70,61 +70,63 @@ am4core.ready(function() {
         series.fill = greenGradient;
         series.fillOpacity = 0.3;
 
-        // Creating scrollbar
-        chart.scrollbarX = new am4charts.XYChartScrollbar();
-        chart.scrollbarX.series.push(series);
+        if (scrollbarEnable) {
+            // Creating scrollbar
+            chart.scrollbarX = new am4charts.XYChartScrollbar();
+            chart.scrollbarX.series.push(series);
 
-        // Customizing scrollbar grip
-        function customizeGrip(grip) {
-            grip.icon.disabled = true;
-            grip.background.fill = am4core.color("#589585");
-            grip.background.fillOpacity = 1;
-            grip.background.disabled = true;
-            // Add vertical bar
-            let line = grip.createChild(am4core.Rectangle);
-            line.height = 50;
-            line.width = 3;
-            line.fill = am4core.color("#589585");
-            line.align = "center";
-            line.valign = "middle";
-            // add middle icon
-            let img = grip.createChild(am4core.Rectangle);
-            img.width = 10;
-            img.height = 10;
-            img.fill = am4core.color("#589585");
-            img.rotation = 45;
-            img.align = "center";
-            img.valign = "middle";
+            // Customizing scrollbar grip
+            function customizeGrip(grip) {
+                grip.icon.disabled = true;
+                grip.background.fill = am4core.color("#589585");
+                grip.background.fillOpacity = 1;
+                grip.background.disabled = true;
+                // Add vertical bar
+                let line = grip.createChild(am4core.Rectangle);
+                line.height = 50;
+                line.width = 3;
+                line.fill = am4core.color("#589585");
+                line.align = "center";
+                line.valign = "middle";
+                // add middle icon
+                let img = grip.createChild(am4core.Rectangle);
+                img.width = 10;
+                img.height = 10;
+                img.fill = am4core.color("#589585");
+                img.rotation = 45;
+                img.align = "center";
+                img.valign = "middle";
+            }
+
+            customizeGrip(chart.scrollbarX.startGrip);
+            customizeGrip(chart.scrollbarX.endGrip);
+
+            // Positioning scrollbar
+            chart.scrollbarX.parent = chart.bottomAxesContainer;
+
+            // Customizing scrollbar
+            chart.scrollbarX.background.fill = am4core.color("rgba(20, 20, 20, 0.3)");
+            chart.scrollbarX.unselectedOverlay.fill = am4core.color("rgba(20, 20, 20, 0.3)");
+            chart.scrollbarX.thumb.background.fill = am4core.color("rgba(0, 0, 0, 0.3)");
+            chart.scrollbarX.thumb.background.fillOpacity = 1;
+            chart.scrollbarX.thumb.strokeWidth = 0;
+            chart.scrollbarX.minHeight = 50;
+            chart.scrollbarX.marginTop = 16;
+            chart.scrollbarX.marginBottom = 0;
+            let scrollSeries1 = chart.scrollbarX.scrollbarChart.series.getIndex(0);
+            scrollSeries1.filters.clear();
+            scrollSeries1.stroke = am4core.color("rgba(20, 20, 20, 0)");
+            scrollSeries1.fill = greenGradient;
+
+            // Disabling scrollbar labels
+            let scrollAxis = chart.scrollbarX.scrollbarChart.xAxes.getIndex(0);
+            scrollAxis.renderer.labels.template.disabled = true;
+            scrollAxis.renderer.grid.template.disabled = true;
+
+            // Scaling scrollbar
+            dateAxis.start = 0.65;
+            dateAxis.keepSelection = true;
         }
-
-        customizeGrip(chart.scrollbarX.startGrip);
-        customizeGrip(chart.scrollbarX.endGrip);
-
-        // Positioning scrollbar
-        chart.scrollbarX.parent = chart.bottomAxesContainer;
-
-        // Customizing scrollbar
-        chart.scrollbarX.background.fill = am4core.color("rgba(20, 20, 20, 0.3)");
-        chart.scrollbarX.unselectedOverlay.fill = am4core.color("rgba(20, 20, 20, 0.3)");
-        chart.scrollbarX.thumb.background.fill = am4core.color("rgba(0, 0, 0, 0.3)");
-        chart.scrollbarX.thumb.background.fillOpacity = 1;
-        chart.scrollbarX.thumb.strokeWidth = 0;
-        chart.scrollbarX.minHeight = 50;
-        chart.scrollbarX.marginTop = 0;
-        chart.scrollbarX.marginBottom = 0;
-        let scrollSeries1 = chart.scrollbarX.scrollbarChart.series.getIndex(0);
-        scrollSeries1.filters.clear();
-        scrollSeries1.stroke = am4core.color("rgba(20, 20, 20, 0)");
-        scrollSeries1.fill = greenGradient;
-
-        // Disabling scrollbar labels
-        let scrollAxis = chart.scrollbarX.scrollbarChart.xAxes.getIndex(0);
-        scrollAxis.renderer.labels.template.disabled = true;
-        scrollAxis.renderer.grid.template.disabled = true;
-
-        // Scaling scrollbar
-        dateAxis.start = 0.65;
-        dateAxis.keepSelection = true;
 
         // Adding tooltip
         chart.cursor = new am4charts.XYCursor();
@@ -173,20 +175,24 @@ am4core.ready(function() {
 
     };
 
+    window.createChart = createChart;
+
     // functions for tabs @@ creating chart and updating chart data
     const allTabs = [...document.querySelectorAll('.stats-tabs__item')];
-    createChart(allTabs[0].dataset.url);
+    if (allTabs.length > 0) {
+        createChart(allTabs[0].dataset.url, true);
 
-    allTabs.forEach(eachBtn => {
-        eachBtn.addEventListener('click', () => {
-            allTabs.forEach(btn => {
-                btn != eachBtn ? btn.classList.remove('is-active') : btn.classList.add('is-active');
+        allTabs.forEach(eachBtn => {
+            eachBtn.addEventListener('click', () => {
+                allTabs.forEach(btn => {
+                    btn != eachBtn ? btn.classList.remove('is-active') : btn.classList.add('is-active');
+                });
+                $('.stats-tabs__item').addClass('is-disabled');
+                chart.dispose();
+                chart = null;
+                createChart(eachBtn.dataset.url);
             });
-            $('.stats-tabs__item').addClass('is-disabled');
-            chart.dispose();
-            chart = null;
-            createChart(eachBtn.dataset.url);
         });
-    });
+    }
 
 }); // end am4core.ready()

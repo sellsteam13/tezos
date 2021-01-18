@@ -1,0 +1,156 @@
+.case {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    @media (max-width: 1060px) {
+        grid-template-columns: 1fr;
+    }
+    @media (max-width: 850px) {
+        padding: 30px 16px 0;
+    }
+    &__title,
+    &__chart {
+        grid-column: 1/3;
+        @media (max-width: 1060px) {
+            grid-column: unset;
+        }
+    }
+    &__chart {
+        overflow: hidden;
+        padding: 106px 30px 16px;
+        @media (max-width: 1060px) {
+            padding: 86px 20px 16px;
+        }
+        @media (max-width: 600px) {
+            padding: 86px 10px 16px;
+        }
+        .stats-chart {
+            padding-top: 0;
+            &__holder {
+                height: 255px;
+            }
+            &__error {
+                height: 345px;
+                @media (max-width: 1060px) {
+                    height: 325px;
+                }
+            }
+        }
+    }
+    &-module {
+        padding: 20px;
+        &__subtitle {
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 140%;
+            color: var(--text-silver);
+            @media (max-width: 600px) {
+                font-size: var(--main-font-size);
+            }
+        }
+    }
+    &-overall {
+        @media (max-width: 1060px) and (min-width: 601px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            .case-module__subtitle {
+                grid-column: 1/3;
+                margin-bottom: 4px;
+            }
+        }
+        &__row {
+            position: relative;
+            padding-left: 36px;
+            &-tooltip {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                background: none;
+                border: none;
+                width: 26px;
+                height: 26px;
+                padding: 0;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+                @include hover(.7)
+            }
+            &-content,
+            &-name {
+                font-size: var(--main-font-size);
+                line-height: 140%;
+                color: var(--text-silver);
+            }
+            &-content {
+                font-weight: bold;
+            }
+            +* {
+                margin-top: 10px;
+                @media (max-width: 1060px) and (min-width: 601px) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    &-info {
+        display: flex;
+        flex-direction: column;
+        &__row {
+            font-size: var(--main-font-size);
+            line-height: 140%;
+            color: var(--text-silver);
+            span {
+                font-weight: bold;
+                &.is-bad {
+                    color: var(--bg-red);
+                }
+                &.is-good {
+                    color: var(--color-green-tow);
+                }
+            }
+        }
+        &-manage {
+            padding-top: 20px;
+            margin-top: auto;
+            display: grid;
+            grid-template-columns: 1fr 120px;
+            gap: 20px;
+            @media (max-width: 600px) {
+                grid-template-columns: 1fr;
+            }
+        }
+        &-bar {
+            &__text {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                span {
+                    font-size: var(--main-font-size);
+                    line-height: 140%;
+                    color: var(--text-silver);
+                    &:nth-child(2) {
+                        font-weight: bold;
+                    }
+                }
+            }
+            &__inner {
+                position: relative;
+                height: 11px;
+                background: var(--bg-main);
+                width: 100%;
+                span {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    background: var(--color-green-tow);
+                }
+            }
+        }
+    }
+}

@@ -5,11 +5,9 @@
     <!-- Page settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Верстка Tezos - Главная</title>
+    <title>Верстка Tezos - Briefcases active</title>
 
     <!-- Connecting styles -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/selectize.default.css">
     <link rel="stylesheet" href="assets/css/new.style.css">
     <link rel="stylesheet" href="assets/css/custom.min.css">
     <link rel="stylesheet" href="assets/css/whiteTheme.style.css" disabled id="whiteThemeLink">
@@ -28,7 +26,7 @@
 
 <!-- Begin of content -->
 
-<body class="cont flex" onload='select.load(); themeToggler.load();' style="opacity: 0;">
+<body class="cont flex" onload='themeToggler.load()' style="opacity: 0;">
 
     <!-- @@ Aside module -->
     <aside>
@@ -324,306 +322,84 @@
             </div>
         </nav>
 
-        <!-- @@ Home section-->
-        <section class="home">
-
-            <!-- @@ Home-stats section -->
-            <section class="home-stats w65">
-                <h2 class="section__title">Statistics</h2>
-                <div class="stats def-module">
-                    <div class="stats-tabs">
-                        <!-- .is-active - класс для активного элемента; .is-blocked - класс для заблокированного элемента -->
-                        <button class="stats-tabs__item is-active" data-url="./statsdata1.json">
-                            <span>Income from investments</span>
-                            <span>$82,589</span>
-                        </button>
-                        <button class="stats-tabs__item" data-url="./statsdata2.json">
-                            <span>Income from partners</span>
-                            <span>$86,589</span>
-                        </button>
-                        <button class="stats-tabs__item" data-url="./statsdata23.json">
-                            <span>Binar income</span>
-                            <span>$86,589</span>
-                        </button>
-                    </div>
-                    <!-- //stats chart// -->
-                    <div class="stats-chart">
-                        <div class="stats-chart__holder" id="statsChart"></div>
-                        <div class="stats-chart__error is-hidden">
-                            Во время загрузки данных произошла ошибка <br> Пожалуйста обновите страницу
+        <!-- @@ opened briefcase section-->
+        <div class="case">
+            <h1 class="page__title case__title">
+                <a href="#" class="btn--back">
+                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.12579 10.251C5.84916 10.5277 5.40067 10.5277 5.12405 10.251L0.874051 6.00103C0.59743 5.72441 0.59743 5.27592 0.874051 4.9993L5.12405 0.749296C5.40067 0.472674 5.84917 0.472674 6.12579 0.749296C6.40241 1.02592 6.40241 1.47441 6.12579 1.75103L2.37665 5.50016L6.12579 9.2493C6.40241 9.52592 6.40241 9.97441 6.12579 10.251Z" fill="#21232F"/>
+                    </svg>
+                </a>
+                <span>#234235751hsdgf83</span>
+            </h1>
+            <div class="case-overall case-module def-module">
+                <div class="case-module__subtitle">Общая информация</div>
+                <div class="case-overall__row">
+                    <button class="case-overall__row-tooltip" aria-label="button"><img src="assets/svg/def/circle-question.svg" alt="circle question icon"></button>
+                    <div class="case-overall__row-content">5,039 USDtz</div>
+                    <div class="case-overall__row-name">Заработано сегодня </div>
+                </div>
+                <div class="case-overall__row">
+                    <button class="case-overall__row-tooltip" aria-label="button"><img src="assets/svg/def/circle-question.svg" alt="circle question icon"></button>
+                    <div class="case-overall__row-content">244 422,039 USDtz</div>
+                    <div class="case-overall__row-name">Заработано за весь период</div>
+                </div>
+                <div class="case-overall__row">
+                    <button class="case-overall__row-tooltip" aria-label="button"><img src="assets/svg/def/circle-question.svg" alt="circle question icon"></button>
+                    <div class="case-overall__row-content">400 USDtz</div>
+                    <div class="case-overall__row-name">Тело депозита </div>
+                </div>
+                <div class="case-overall__row">
+                    <button class="case-overall__row-tooltip" aria-label="button"><img src="assets/svg/def/circle-question.svg" alt="circle question icon"></button>
+                    <div class="case-overall__row-content">22.12.2020</div>
+                    <div class="case-overall__row-name">Дата инвестиции </div>
+                </div>
+                <div class="case-overall__row">
+                    <button class="case-overall__row-tooltip" aria-label="button"><img src="assets/svg/def/circle-question.svg" alt="circle question icon"></button>
+                    <div class="case-overall__row-content">20 из 100</div>
+                    <div class="case-overall__row-name">Прошло штрафных дней</div>
+                </div>
+                <div class="case-overall__row">
+                    <button class="case-overall__row-tooltip" aria-label="button"><img src="assets/svg/def/circle-question.svg" alt="circle question icon"></button>
+                    <div class="case-overall__row-content">#234235751hsdgf83</div>
+                    <div class="case-overall__row-name">Номер инвестиции:</div>
+                </div>
+            </div>
+            <div class="case-info case-module def-module">
+                <div class="case-module__subtitle">Комиссия за досрочный вывод тела инвестиций из проекта (не путать с прибылью)</div>
+                <div class="case-info__row"><span class="is-bad">50%</span> — если заявка на вывод тела депозита будет создана до 30 дней, с момента создания депозита;</div>
+                <div class="case-info__row"><span class="is-bad">40%</span> — вывод тела депозита в период от 30 до 60 дней;</div>
+                <div class="case-info__row"><span class="is-bad">30%</span> — вывод тела депозита в период от 60 до 80 дней;</div>
+                <div class="case-info__row"><span class="is-bad">20%</span> — вывод тела депозита в период от 80 до 100 дней;</div>
+                <div class="case-info__row"><span class="is-good">0%</span> — вывод тела депозита после 100 дней его работы.</div>
+                <div class="case-info-manage">
+                    <div class="case-info-bar">
+                        <div class="case-info-bar__text">
+                            <span>Прошло штрафных дней:</span><span>20 из 100</span>
                         </div>
+                        <div class="case-info-bar__inner">
+                            <span style="width: 66.66%;"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn--small-fs case-info__sell">Продать кейс</button>
+                </div>
+            </div>
+            <div class="case__chart def-module">
+                <!-- //stats chart// -->
+                <div class="stats-chart">
+                    <div class="stats-chart__holder" id="statsChart"></div>
+                    <div class="stats-chart__error is-hidden">
+                        Во время загрузки данных произошла ошибка <br> Пожалуйста обновите страницу
                     </div>
                 </div>
-            </section>
+                <script>
+                    window.addEventListener('DOMContentLoaded', () => {
+                        createChart('./statsdata1.json', true)
+                    })
+                </script>
+            </div>
+        </div>
 
-            <!-- @@ Home-balance section -->
-            <section class="home-balance w35">
-
-                <h2 class="section__title">balance</h2>
-
-                <!-- //balance module// -->
-                <div class="balance-widget def-module has-icon">
-                    <div class="def-module__icon">
-                        <img src="./assets/svg/def/wallet.svg" alt="wallet-icon">
-                    </div>
-                    <div class="balance-widget__summ">7 323.66</div>
-                    <div class="balance-widget__currency">USDtz</div>
-                    <div class="balance-widget-manage">
-                        <button class="btn btn--small-fs" aria-label="button" onclick="openModal(document.querySelector('.modal-topup'))">Top up balance</button>
-                        <button class="btn btn--small-fs btn--red" aria-label="button" onclick="openModal(document.querySelector('.modal-withdraw'))">Withdraw money</button>
-                    </div>
-                </div>
-
-                <!-- //status module// -->
-                <div class="status-widget def-module has-icon">
-                    <div class="def-module__icon">
-                        <img src="./assets/svg/stars/stars-4-red.svg" alt="stars-icon">
-                    </div>
-                    <div class="status-widget__title">
-                        <div class="status-widget__title-main">Leader</div>
-                        <button aria-label="button" class="status-widget__title-more" onclick="openModal(document.querySelector('.status-modal'))">
-                            <img src="./assets/svg/def/circle-question.svg" alt="circle-question-icon">
-                        </button>
-                    </div>
-                    <div class="status-widget__subtitle">Partner status</div>
-                    <div class="status-widget-info">
-                        <div class="status-widget-info__block"><span>6</span><span>Active partners</span></div>
-                        <div class="status-widget-info__block"><span>12</span><span>My partners</span></div>
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- @@ Home-invest section -->
-            <section class="home-invest w65">
-                <h2 class="section__title">Make an investment</h2>
-                <div class="invest def-module">
-
-                    <!-- //invest calculator// -->
-                    <form onsubmit="calculateInvest.submit(this); return false;" class="invest-manage">
-                        <div class="invest-manage__label">Enter the amount:</div>
-                        <div class="invest-manage__input">
-                            <input name="investAmount" type="text" maxlength="7" onfocus="input.focus(this)" onblur="input.blur(this, true)" oninput="calculateInvest.input(this)" data-label="USDtz" value="500 USDtz" class="def-input">
-                        </div>
-                        <div class="invest-manage__label">Expected profit:</div>
-                        <div class=" invest-manage__result">
-                            <span class="invest-manage__result-holder" id="investCalculateResult">50-100USDtz</span> per month
-                        </div>
-                        <div class="invest-manage-btns">
-                            <button type="submit" aria-label="button" class="btn invest-manage__submit">Open deposit</button>
-                            <button type="button" aria-label="button" class="invest-manage__more" onclick="openModal(document.querySelector('.modal-descr'))">
-                                <img src="./assets/svg/def/question.svg" alt="question-icon">
-                            </button>
-                        </div>
-                    </form>
-
-                    <!-- //invest course// -->
-                    <div class="invest-course">
-                        <div class="invest-course__title">Tezos course</div>
-                        <div class="invest-course-list">
-                            <div class="invest-course-list__row is-good">
-                                <span>XTZ/USDT</span>
-                                <span>
-                                    23.4442
-                                    <svg width="8" height="8" viewBox="0 0 8 8" stroke="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.08333 0.5C0.761167 0.5 0.5 0.761167 0.5 1.08333C0.5 1.4055 0.761167 1.66667 1.08333 1.66667H5.466L0.670854 6.50419C0.443049 6.73199 0.443049 7.10134 0.670854 7.32915C0.89866 7.55695 1.26801 7.55695 1.49581 7.32915L6.33333 2.44887V6.91667C6.33333 7.23883 6.5945 7.5 6.91667 7.5C7.23883 7.5 7.5 7.23883 7.5 6.91667V1.08333C7.5 0.761167 7.23883 0.5 6.91667 0.5H1.08333Z"/>
-                                    </svg>
-                                </span>
-                            </div>
-                            <div class="invest-course-list__row is-good">
-                                <span>XTZ/BTC</span>
-                                <span>
-                                    0.004442
-                                    <svg width="8" height="8" viewBox="0 0 8 8" stroke="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.08333 0.5C0.761167 0.5 0.5 0.761167 0.5 1.08333C0.5 1.4055 0.761167 1.66667 1.08333 1.66667H5.466L0.670854 6.50419C0.443049 6.73199 0.443049 7.10134 0.670854 7.32915C0.89866 7.55695 1.26801 7.55695 1.49581 7.32915L6.33333 2.44887V6.91667C6.33333 7.23883 6.5945 7.5 6.91667 7.5C7.23883 7.5 7.5 7.23883 7.5 6.91667V1.08333C7.5 0.761167 7.23883 0.5 6.91667 0.5H1.08333Z"/>
-                                    </svg>
-                                </span>
-                            </div>
-                            <div class="invest-course-list__row is-bad">
-                                <span>XTZ/ETH</span>
-                                <span>
-                                    15.4442
-                                    <svg width="8" height="8" viewBox="0 0 8 8" stroke="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.08333 0.5C0.761167 0.5 0.5 0.761167 0.5 1.08333C0.5 1.4055 0.761167 1.66667 1.08333 1.66667H5.466L0.670854 6.50419C0.443049 6.73199 0.443049 7.10134 0.670854 7.32915C0.89866 7.55695 1.26801 7.55695 1.49581 7.32915L6.33333 2.44887V6.91667C6.33333 7.23883 6.5945 7.5 6.91667 7.5C7.23883 7.5 7.5 7.23883 7.5 6.91667V1.08333C7.5 0.761167 7.23883 0.5 6.91667 0.5H1.08333Z"/>
-                                    </svg>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- @@ Home-briefcases section -->
-            <section class="home-briefcases w35">
-                <h2 class="section__title">Briefcases</h2>
-                <div class="briefcases-slider-holder">
-
-                    <div class="briefcases-slider">
-
-                        <!-- //briefcase module// -->
-                        <div class="briefcase def-module">
-                            <div class="briefcase-overall">
-                                <div class="briefcase-overall__summ">25,039 USDtz</div>
-                                <a href="#" class="briefcase-overall__link">Смотреть детали</a>
-                            </div>
-                            <div class="briefcase-income">
-                                10%
-                                <svg width="15" height="15" viewBox="0 0 15 15" fill="#589585" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 6L2.55 7.05L6.75 2.85L6.75 15L8.25 15L8.25 2.85L12.45 7.05L13.5 6L7.5 6.91406e-07L1.5 6Z"/>
-                                </svg>
-                            </div>
-                            <div class="briefcase-chart"></div>
-                        </div>
-
-                        <!-- //briefcase module// -->
-                        <div class="briefcase def-module">
-                            <div class="briefcase-overall">
-                                <div class="briefcase-overall__summ">25,039 USDtz</div>
-                                <a href="#" class="briefcase-overall__link">Смотреть детали</a>
-                            </div>
-                            <div class="briefcase-income">
-                                10%
-                                <svg width="15" height="15" viewBox="0 0 15 15" fill="#589585" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 6L2.55 7.05L6.75 2.85L6.75 15L8.25 15L8.25 2.85L12.45 7.05L13.5 6L7.5 6.91406e-07L1.5 6Z"/>
-                                </svg>
-                            </div>
-                            <div class="briefcase-chart"></div>
-                        </div>
-
-                        <!-- //briefcase module// -->
-                        <div class="briefcase def-module">
-                            <div class="briefcase-overall">
-                                <div class="briefcase-overall__summ">25,039 USDtz</div>
-                                <a href="#" class="briefcase-overall__link">Смотреть детали</a>
-                            </div>
-                            <div class="briefcase-income">
-                                10%
-                                <svg width="15" height="15" viewBox="0 0 15 15" fill="#589585" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.5 6L2.55 7.05L6.75 2.85L6.75 15L8.25 15L8.25 2.85L12.45 7.05L13.5 6L7.5 6.91406e-07L1.5 6Z"/>
-                                </svg>
-                            </div>
-                            <div class="briefcase-chart"></div>
-                        </div>
-
-                    </div>
-
-                    <!-- Если слайд один, то не выводить div.briefcases-slider-controls: -->
-                    <div class="briefcases-slider-controls">
-                        <button aria-label="button" class="briefcases-slider__arrow briefcases-slider__prev">
-                            <svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.5 6L2.55 7.05L6.75 2.85L6.75 15L8.25 15L8.25 2.85L12.45 7.05L13.5 6L7.5 6.91406e-07L1.5 6Z"/>
-                            </svg>
-                        </button>
-                        <button aria-label="button" class="briefcases-slider__arrow briefcases-slider__next">
-                            <svg width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.5 6L2.55 7.05L6.75 2.85L6.75 15L8.25 15L8.25 2.85L12.45 7.05L13.5 6L7.5 6.91406e-07L1.5 6Z"/>
-                            </svg>
-                        </button>
-                    </div>
-
-                </div>
-                <!--
-                    Если нет слайдов, то не выводить div.briefcases-slider-holder, а использовать разметку:
-                    <a href="#" class="briefcases-empty">
-                        <svg width="54" height="45" viewBox="0 0 54 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M26.9982 0.736816C25.1036 0.736816 23.2161 0.788138 21.7668 0.908964C21.0422 0.969201 20.4315 1.04682 19.9468 1.15064C19.7045 1.20237 19.4959 1.25375 19.2693 1.35934C19.156 1.41213 19.0329 1.47587 18.8884 1.61583C18.744 1.75544 18.5625 2.034 18.5625 2.37579V7.99525H4.5C2.43872 7.99525 0.75 9.68576 0.75 11.747V40.8132C0.75 42.8745 2.43872 44.5633 4.5 44.5633H49.4982C51.5595 44.5633 53.2482 42.8745 53.2482 40.8132V20.267C53.2524 20.2158 53.2524 20.1644 53.2482 20.1132V11.7471C53.2482 9.68587 51.5595 7.99525 49.4982 7.99525H35.4357V2.37579C35.4357 2.03386 35.2542 1.75572 35.1098 1.61594C34.9653 1.47598 34.8422 1.41249 34.7289 1.35934C34.5022 1.25339 34.2938 1.20237 34.0514 1.15064C33.5667 1.04682 32.9559 0.969309 32.2313 0.909072C30.7821 0.788246 28.8927 0.736816 26.9982 0.736816H26.9982ZM26.9982 2.61185C28.8536 2.61185 30.7161 2.66279 32.0793 2.77653C32.7191 2.83004 33.2179 2.90306 33.5588 2.97074V7.99514H20.4375C20.4375 7.99514 20.4375 4.94585 20.4375 2.97074C20.7784 2.90306 21.2791 2.83004 21.9188 2.77653C23.2821 2.66279 25.1427 2.61185 26.9982 2.61185ZM4.5 9.87007H49.4982C50.5531 9.87007 51.3732 10.692 51.3732 11.7469V19.2488H40.1268V17.3719C40.1268 16.3494 39.2744 15.4969 38.2518 15.4969H36.3768C35.3543 15.4969 34.5018 16.3494 34.5018 17.3719V19.2488H19.4963V17.3719C19.4963 16.3494 18.6439 15.4969 17.6213 15.4969H15.7537C14.7311 15.4969 13.8787 16.3494 13.8787 17.3719V19.2488H2.625V11.7469C2.625 10.692 3.44503 9.87007 4.5 9.87007ZM15.7537 17.3719H17.6213V22.9987H15.7537V17.3719ZM36.3768 17.3719H38.2518V22.9987H36.3768V20.3913C36.4082 20.2539 36.4082 20.1112 36.3768 19.9738V17.3719ZM2.625 21.1237H13.8787V22.9987C13.8787 24.0213 14.7311 24.8756 15.7537 24.8756H17.6213C18.6439 24.8756 19.4963 24.0213 19.4963 22.9987V21.1237H34.5018V22.9987C34.5018 24.0213 35.3543 24.8756 36.3768 24.8756H38.2518C39.2744 24.8756 40.1268 24.0213 40.1268 22.9987V21.1237H51.3732V40.8131C51.3732 41.8681 50.5531 42.688 49.4982 42.688H4.5C3.44503 42.688 2.625 41.8681 2.625 40.8131V21.1237Z"/>
-                        </svg>
-                        <span>Create a new briefcases</span>
-                    </a>
-                -->
-            </section>
-
-            <!-- @@ Home-calculator section -->
-            <section class="home-calculator w65">
-                <h2 class="section__title">calculator</h2>
-                <form class="calculator def-module" onsubmit="calculator.submit(this);return false;">
-                    <div class="calculator__subtitle">Investment <br> amount</div>
-                    <input onfocus="input.focus(this)" id="calculatorPaymentAmount" onblur="input.blur(this)" onchange="rangeInput.change(this); calculator.updateValues()" type="text" data-range="0" class="def-input calculator__input" value="300000 USDtz" data-label="USDtz">
-                    <div class="calculator-range">
-                        <div class="calculator-range-labels">
-                            <span>1000</span>
-                            <span>225 000</span>
-                            <span>465 000</span>
-                            <span>705 000</span>
-                            <span>1 000 000</span>
-                        </div>
-                        <input type="range" name="calculatorAmount" class="calculator-range__input" oninput="range.input(this); calculator.updateValues()" data-input="0" min="1000" max="1000000" value="300000">
-                        <div class="calculator-range__fill"></div>
-                    </div>
-                    <div class="calculator__subtitle">Investment <br> term</div>
-                    <input id="calculatorDaysAmount" onfocus="input.focus(this)" onblur="input.blur(this)" onchange="rangeInput.change(this); calculator.updateValues()" type="text" data-range="1" class="def-input calculator__input" value="9 month(s)" data-label="month(s)">
-                    <div class="calculator-range">
-                        <div class="calculator-range-labels">
-                            <span>1</span>
-                            <span>6</span>
-                            <span>12</span>
-                            <span>18</span>
-                            <span>24</span>
-                            <span>30</span>
-                            <span>36</span>
-                        </div>
-                        <input type="range" name="calculatorDays" class="calculator-range__input" oninput="range.input(this); calculator.updateValues()" data-input="1" min="1" max="36" value="9">
-                        <div class="calculator-range__fill"></div>
-                    </div>
-                    <div class="calculator__result">
-                        Your income: <span class="calculator__result-holder"><span data-calculator-output>570 000</span> $</span>
-                    </div>
-                    <button type="submit" aria-label="button" class="btn btn--small-fs calculator__submit"> Contribute</button>
-                </form>
-            </section>
-
-            <!-- @@ Home-history section -->
-            <section class="home-history w35">
-                <h2 class="section__title">History</h2>
-                <div class="history-widget def-module">
-                    <div class="history-widget-list">
-                        <div class="history-widget__row is-good">
-                            <span>Investments</span>
-                            <span>+22 000.66 USDtz</span>
-                        </div>
-                        <div class="history-widget__row is-good">
-                            <span>Binary Marketing</span>
-                            <span>+7 323.66 USDtz</span>
-                        </div>
-                        <div class="history-widget__row is-good">
-                            <span>Binary Marketing</span>
-                            <span>+7 323.66 USDtz</span>
-                        </div>
-                        <div class="history-widget__row is-bad">
-                            <span>Withdraw funds</span>
-                            <span>-7 323.66 USDtz</span>
-                        </div>
-                        <div class="history-widget__row is-good">
-                            <span>Binary Marketing</span>
-                            <span>+7 323.66 USDtz</span>
-                        </div>
-                        <div class="history-widget__row is-bad">
-                            <span>Withdraw funds</span>
-                            <span>-7 323.66 USDtz</span>
-                        </div>
-                        <div class="history-widget__row is-good">
-                            <span>Binary Marketing</span>
-                            <span>+7 323.66 USDtz</span>
-                        </div>
-                        <div class="history-widget__row is-good">
-                            <span>Binary Marketing</span>
-                            <span>+7 323.66 USDtz</span>
-                        </div>
-                    </div>
-                    <a href="#" class="history-widget__link">View all operations</a>
-                    <!--
-                        Если история пустая:
-                        <div class="history-widget__empty">
-                            <img src="./assets/svg/empty-icons/history-empty.svg" alt="history empty illstr">
-                            <div class="history-widget__empty-title">История транзакций пустая</div>
-                            <div class="history-widget__empty-subtitle">Не волнуйтесь, все ещё впереди!</div>
-                        </div>
-                    -->
-                </div>
-            </section>
-
-        </section>
 
         <!-- @@ Footer -->
         <footer class="footer">
@@ -637,67 +413,22 @@
 
 <!-- modals -->
 <div class="overlay">
-    <div class="modal status-modal">
-        <div class="status-modal__title" style="color: var(--bg-yellow)">Top Leader</div>
-        <div class="status-modal__text">The turnover of the structure is $ 30,000 or the volume of the personal active investment portfolio $ 3,000 Weekly investment limit $ 3000, withdrawal $ 1000</div>
-        <div class="status-modal-row">
-            <div class="status-modal-row__item">
-                Affiliate deposit bonus: <br> 1 line - 10% <br> 2nd line - 3% <br> 3 line - 1% <br> 4 line - 1% <br> 5 line - 1%
+    <div class="modal modal-invest def-modal">
+        <div class="modal__title">Make an investment</div>
+        <!-- //invest calculator// -->
+        <form onsubmit="calculateInvest.submit(this); return false;" class="invest-manage">
+            <div class="invest-manage__label">Enter the amount:</div>
+            <div class="invest-manage__input">
+                <input name="investAmount" type="text" maxlength="7" onfocus="input.focus(this)" onblur="input.blur(this, true)" oninput="calculateInvest.input(this)" data-label="USDtz" value="500 USDtz" class="def-input">
             </div>
-            <div class="status-modal-row__item">
-                Affiliate Profit Bonus: <br> 1 line - 7% <br> 2nd line - 3% <br> 3 line - 3% <br> 4 line - 1% <br> 5 line - 1%
+            <div class="invest-manage__label">Expected profit:</div>
+            <div class=" invest-manage__result">
+                <span class="invest-manage__result-holder" id="investCalculateResult">50-100USDtz</span> per month
             </div>
-        </div>
-        <div class="status-modal__icon" style="background-color: var(--bg-yellow)">
-            <img src="./assets/svg/stars/stars-3-black.svg" alt="stars">
-        </div>
-        <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
-    </div>
-    <div class="modal modal-topup def-modal">
-        <div class="modal__title">Top up balance</div>
-        <form class="topup-form" onsubmit="topupForm.submit(this);return false;">
-            <div class="form-message">Выбрана не существующая валюта</div>
-            <label class="form-input">
-                <span class="form__label">Select a deposit method</span>
-                <select data-selectize name="select">
-                    <option value="btc">Bitcoin</option>
-                    <option value="eth">Etherium</option>
-                    <option value="usd">USDtz</option>
-                </select>
-            </label>
-            <button type="submit" aria-label="button" class="btn topup-form__submit">
-                Продолжить
-            </button>
-        </form>
-        <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
-    </div>
-    <div class="modal modal-withdraw def-modal">
-        <div class="modal__title">Withdraw balance</div>
-        <form class="withdraw-form" onsubmit="withdrawForm.submit(this);return false;">
-            <div class="form-message">Выбрана не существующая валюта</div>
-            <label class="form-input">
-                <span class="form__label">Select a deposit method</span>
-                <select data-selectize name="method">
-                    <option value="btc">Bitcoin</option>
-                    <option value="eth">Etherium</option>
-                    <option value="usd">USDtz</option>
-                </select>
-            </label>
-            <label class="form-input">
-                <span class="form__label">Введите сумму:</span>
-                <input type="text" class="custom-input" name="summ" placeholder="Enter the amount USDtz" onfocus="input.focus(this)" onblur="input.blur(this, true)" data-label="">
-            </label>
-            <label class="form-input">
-                <span class="form__label">Куда отправить деньги?</span>
-                <input type="text" class="custom-input" name="dist" placeholder="Enter u adress">
-            </label>
-            <div class="withdraw__receive">
-                <span>You will receive: </span><span>0</span>
-            </div>
-            <div class="withdraw-form-manage">
-                <button class="btn btn--trans btn--small-fs" type="button" aria-label="button" onclick="closeModal(this.parentNode.parentNode)">Отменить</button>
-                <button type="submit" aria-label="button" class="btn btn--small-fs withdraw-form__submit">
-                    Продолжить
+            <div class="invest-manage-btns">
+                <button type="submit" aria-label="button" class="btn invest-manage__submit">Open deposit</button>
+                <button type="button" aria-label="button" class="invest-manage__more" onclick="openModal(document.querySelector('.modal-descr'))">
+                    <img src="./assets/svg/def/question.svg" alt="question-icon">
                 </button>
             </div>
         </form>
@@ -771,16 +502,11 @@
 </div>
 <!-- end of modals-->
 
+
 <!-- Connecting scripts -->
 
 <!-- jquery -->
 <script src="assets/js/jquery-3.2.1.min.js"></script>
-
-<!-- swiper -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<!-- selectize -->
-<script src="assets/js/selectize.js"></script>
 
 <!-- modals -->
 <script src="assets/js/core.modals.js"></script>
@@ -791,18 +517,9 @@
 <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
 <!-- connecting custom scripts -->
-<script src="./assets/js/new.formMethods.js"></script>
-<script src="assets/js/new.navbar.js"></script>
-<script src="assets/js/new.dropdown.js"></script>
-<script src="assets/js/chart.stats-chart.js"></script>
 <script src="assets/js/new.input.js"></script>
-<script src="assets/js/calculate.invest.js"></script>
-<script src="assets/js/module.briefcase.js"></script>
-<script src="assets/js/slider.briefcases.js"></script>
-<script src="assets/js/calculate.calculator.js"></script>
-<script src="assets/js/select.selectize.js"></script>
-<script src="assets/js/form.topup.js"></script>
-<script src="assets/js/form.withdraw.js"></script>
+<script src="assets/js/new.navbar.js"></script>
 <script src="assets/js/new.theme-changer.js"></script>
+<script src="assets/js/chart.stats-chart.js"></script>
 
 </html>

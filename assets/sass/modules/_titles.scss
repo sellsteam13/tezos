@@ -14,3 +14,26 @@ h2 {
         }
     }
 }
+
+h1 {
+    &.page__title {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        font-family: $termina;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--text-silver);
+        word-wrap: break-word;
+        @media (max-width: 600px) {
+            font-size: 16px;
+        }
+        .btn--back {
+            margin-right: 10px;
+        }
+    }
+}

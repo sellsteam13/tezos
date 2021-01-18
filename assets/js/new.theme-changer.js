@@ -5,12 +5,10 @@ const themeToggler = {
         if (el.checked === true) {
             // Включаем светлую тему
             window.localStorage.setItem('wmode', true);
-            console.log('white theme');
             themeToggler.toggle(true);
         } else {
             // Включаем темную тему
             window.localStorage.setItem('wmode', false);
-            console.log('dark theme');
             themeToggler.toggle(false);
         }
     },
@@ -20,10 +18,8 @@ const themeToggler = {
         const wmode = window.localStorage.getItem('wmode', '');
         // Меняем текущий стейт переключателя
         if (wmode === 'true') {
-            console.log('white theme');
             themeToggler.toggle(true);
         } else {
-            console.log('dark theme');
             themeToggler.toggle(false);
         }
     },
