@@ -190,7 +190,7 @@ am4core.ready(function() {
                 $('.stats-tabs__item').addClass('is-disabled');
                 chart.dispose();
                 chart = null;
-                createChart(eachBtn.dataset.url);
+                createChart(eachBtn.dataset.url, true);
             });
         });
     }

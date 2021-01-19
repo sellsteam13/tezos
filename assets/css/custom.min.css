@@ -462,7 +462,8 @@ h1.page__title {
     min-width: 135px;
     color: var(--text-color-black);
     text-align: center;
-    font-weight: 600; }
+    font-weight: 600;
+    line-height: 1.05; }
 
 .dropdownUserMobileLang {
   padding-top: 20px;
