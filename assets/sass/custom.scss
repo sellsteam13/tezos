@@ -59,6 +59,7 @@ button {
 
 .btn {
     height: 40px;
+    white-space: nowrap;
     &--trans {
         background-color: transparent;
         border: 1px solid #4F515D;

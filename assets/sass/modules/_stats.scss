@@ -67,9 +67,6 @@
                     font-size: var(--small-font-size);
                     line-height: 140%;
                     color: var( --text-silver);
-                    @media (max-width: 1060px) {
-                        font-size: 10px;
-                    }
                 }
                 &:nth-child(2) {
                     margin-top: 5px;

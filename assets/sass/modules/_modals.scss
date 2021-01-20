@@ -105,7 +105,7 @@
     &__text {
         padding-bottom: 12px;
         margin-bottom: 10px;
-        font-size: var(--small-font-size);
+        font-size: var(--main-font-size);
         line-height: 180%;
         text-align: center;
         color: var(--text-color-blue);
@@ -168,5 +168,25 @@
     .modal__title {
         text-align: left;
         margin-bottom: 20px;
+    }
+}
+
+.modal-topup-info {
+    .modal__title {
+        margin-bottom: 25px;
+    }
+    .withdraw-form-manage {
+        margin-top: 20px;
+        @media (max-width: 600px) {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+    }
+}
+
+.modal-witdraw-info {
+    .withdraw-form-manage {
+        margin-top: 30px;
     }
 }

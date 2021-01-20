@@ -612,14 +612,16 @@
                         </div>
                     </div>
                     <a href="#" class="history-widget__link">View all operations</a>
+
                     <!--
                         Если история пустая:
                         <div class="history-widget__empty">
-                            <img src="./assets/svg/empty-icons/history-empty.svg" alt="history empty illstr">
+                            <img src="./assets/svg/empty-illstr/history-empty.svg" alt="history empty illstr">
                             <div class="history-widget__empty-title">История транзакций пустая</div>
                             <div class="history-widget__empty-subtitle">Не волнуйтесь, все ещё впереди!</div>
                         </div>
                     -->
+
                 </div>
             </section>
 
@@ -642,10 +644,10 @@
         <div class="status-modal__text">The turnover of the structure is $ 30,000 or the volume of the personal active investment portfolio $ 3,000 Weekly investment limit $ 3000, withdrawal $ 1000</div>
         <div class="status-modal-row">
             <div class="status-modal-row__item">
-                Affiliate deposit bonus: <br> 1 line - 10% <br> 2nd line - 3% <br> 3 line - 1% <br> 4 line - 1% <br> 5 line - 1%
+                <span style="display: inline-block;min-height: 40px;">Affiliate bonus:</span> <br> 1 line - 10% <br> 2nd line - 3% <br> 3 line - 1% <br> 4 line - 1% <br> 5 line - 1%
             </div>
             <div class="status-modal-row__item">
-                Affiliate Profit Bonus: <br> 1 line - 7% <br> 2nd line - 3% <br> 3 line - 3% <br> 4 line - 1% <br> 5 line - 1%
+                <span style="display: inline-block;min-height: 40px;">Affiliate Profit Custom bonus:</span> <br> 1 line - 7% <br> 2nd line - 3% <br> 3 line - 3% <br> 4 line - 1% <br> 5 line - 1%
             </div>
         </div>
         <div class="status-modal__icon" style="background-color: var(--bg-yellow)">
@@ -767,6 +769,67 @@
         </div>
         <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
     </div>
+    <div class="modal def-modal modal-topup-info">
+        <div class="modal__title">Top up balance</div>
+        <div class="info">
+            <div class="info__subdescr">Для пополнения счёта, пожалуйста переведите любую сумму на указанный ниже адрес. Полученная сумма будет автоматически зачислена на ваш счёт</div>
+            <div class="info__subtitle">Биткоин:</div>
+            <div class="info__highlighted">FASFHASF*ASFASF_ASF(**&#@&+7124717dsfsdf723451258</div>
+        </div>
+        <div class="withdraw-form-manage">
+            <button class="btn btn--trans btn--small-fs" type="button" aria-label="button">Как это работает?</button>
+            <button type="submit" aria-label="button" class="btn btn--small-fs withdraw-form__submit">
+                Скопировать
+            </button>
+        </div>
+        <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
+    </div>
+    <div class="modal def-modal modal-witdraw-info">
+        <div class="modal__title">Withdraw balance</div>
+        <div class="info">
+            <div class="info-block">
+                <div class="info-block__icon">
+                    <svg width="14" height="26" viewBox="0 0 14 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.52122 11.504C4.4886 10.7016 3.51336 9.87201 3.51336 8.58001C3.51336 7.09761 4.86267 6.06401 7.12043 6.06401C9.49843 6.06401 10.3802 7.22001 10.4603 8.92001H13.4128C13.3193 6.58081 11.9165 4.43201 9.12436 3.73841V0.76001H5.1165V3.69761C2.52475 4.26881 0.440667 5.98241 0.440667 8.60721C0.440667 11.7488 2.99234 13.3128 6.71964 14.224C10.0595 15.04 10.7275 16.2368 10.7275 17.5016C10.7275 18.44 10.0729 19.936 7.12043 19.936C4.36837 19.936 3.28625 18.6848 3.13929 17.08H0.200195C0.36051 20.0584 2.55147 21.7312 5.1165 22.2888V25.24H9.12436V22.316C11.7295 21.8128 13.8002 20.276 13.8002 17.488C13.8002 13.6256 10.5538 12.3064 7.52122 11.504Z" fill="#A6A7AC"/>
+                    </svg>
+                </div>
+                <div class="info-block__amount">45646 USDtz</div>
+                <div class="info-block__descr">Сумма к выводу:</div>
+            </div>
+            <div class="info-block">
+                <div class="info-block__icon">
+                    <svg width="14" height="26" viewBox="0 0 14 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.52122 11.504C4.4886 10.7016 3.51336 9.87201 3.51336 8.58001C3.51336 7.09761 4.86267 6.06401 7.12043 6.06401C9.49843 6.06401 10.3802 7.22001 10.4603 8.92001H13.4128C13.3193 6.58081 11.9165 4.43201 9.12436 3.73841V0.76001H5.1165V3.69761C2.52475 4.26881 0.440667 5.98241 0.440667 8.60721C0.440667 11.7488 2.99234 13.3128 6.71964 14.224C10.0595 15.04 10.7275 16.2368 10.7275 17.5016C10.7275 18.44 10.0729 19.936 7.12043 19.936C4.36837 19.936 3.28625 18.6848 3.13929 17.08H0.200195C0.36051 20.0584 2.55147 21.7312 5.1165 22.2888V25.24H9.12436V22.316C11.7295 21.8128 13.8002 20.276 13.8002 17.488C13.8002 13.6256 10.5538 12.3064 7.52122 11.504Z" fill="#A6A7AC"/>
+                    </svg>
+                </div>
+                <div class="info-block__amount">10 USDtz</div>
+                <div class="info-block__descr">Комиссия:</div>
+            </div>
+            <div class="info-block">
+                <div class="info-block__icon">
+                    <svg width="14" height="26" viewBox="0 0 14 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.52122 11.504C4.4886 10.7016 3.51336 9.87201 3.51336 8.58001C3.51336 7.09761 4.86267 6.06401 7.12043 6.06401C9.49843 6.06401 10.3802 7.22001 10.4603 8.92001H13.4128C13.3193 6.58081 11.9165 4.43201 9.12436 3.73841V0.76001H5.1165V3.69761C2.52475 4.26881 0.440667 5.98241 0.440667 8.60721C0.440667 11.7488 2.99234 13.3128 6.71964 14.224C10.0595 15.04 10.7275 16.2368 10.7275 17.5016C10.7275 18.44 10.0729 19.936 7.12043 19.936C4.36837 19.936 3.28625 18.6848 3.13929 17.08H0.200195C0.36051 20.0584 2.55147 21.7312 5.1165 22.2888V25.24H9.12436V22.316C11.7295 21.8128 13.8002 20.276 13.8002 17.488C13.8002 13.6256 10.5538 12.3064 7.52122 11.504Z" fill="#A6A7AC"/>
+                    </svg>
+                </div>
+                <div class="info-block__amount">BitCoin</div>
+                <div class="info-block__descr">Платёжный шлюз:</div>
+            </div>
+            <div class="info__subtitle">Реквизиты получателя:</div>
+            <div class="info__highlighted">FASFHASF*ASFASF_ASF(**&#@&+7124717dsfsdf723451258</div>
+        </div>
+        <div class="withdraw-form-manage">
+            <button class="btn btn--trans btn--small-fs" type="button" aria-label="button" onclick="closeModal(this.parentNode.parentNode)">Cancel</button>
+            <button type="submit" aria-label="button" class="btn btn--small-fs withdraw-form__submit">
+                Вывести
+            </button>
+        </div>
+        <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            openModal(document.querySelector('.modal-witdraw-info'))
+        })
+    </script>
     <div class="overlay-trigger"></div>
 </div>
 <!-- end of modals-->
