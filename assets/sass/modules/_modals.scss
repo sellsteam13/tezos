@@ -111,6 +111,34 @@
         color: var(--text-color-blue);
         border-bottom: 1px dashed var(--text-color-green);
     }
+    &__list {
+        padding: 0 0 12px;
+        margin: 0 0 10px;
+        font-size: var(--main-font-size);
+        line-height: 140%;
+        text-align: left;
+        color: var(--text-color-blue);
+        border-bottom: 1px dashed var(--text-color-green);
+        li {
+            list-style: none;
+            position: relative;
+            padding-left: 12px;
+            +* {
+                margin-top: 3px;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                top: 7px;
+                box-shadow: inset 0px -2px 2px 0px rgba(0, 0, 0, 0.35);
+                left: 0;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: var(--color-green-tow);
+            }
+        }
+    }
     &-row {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

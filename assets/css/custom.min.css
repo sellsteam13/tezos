@@ -1458,6 +1458,31 @@ h1.page__title {
     text-align: center;
     color: var(--text-color-blue);
     border-bottom: 1px dashed var(--text-color-green); }
+  .status-modal__list {
+    padding: 0 0 12px;
+    margin: 0 0 10px;
+    font-size: var(--main-font-size);
+    line-height: 140%;
+    text-align: left;
+    color: var(--text-color-blue);
+    border-bottom: 1px dashed var(--text-color-green); }
+    .status-modal__list li {
+      list-style: none;
+      position: relative;
+      padding-left: 12px; }
+      .status-modal__list li + * {
+        margin-top: 3px; }
+      .status-modal__list li:before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        -webkit-box-shadow: inset 0px -2px 2px 0px rgba(0, 0, 0, 0.35);
+                box-shadow: inset 0px -2px 2px 0px rgba(0, 0, 0, 0.35);
+        left: 0;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: var(--color-green-tow); }
   .status-modal-row {
     display: -ms-grid;
     display: grid;
