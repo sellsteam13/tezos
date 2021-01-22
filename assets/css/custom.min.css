@@ -2237,6 +2237,8 @@ h1.page__title {
       font-size: var(--main-font-size);
       line-height: 140%;
       color: var(--text-silver); }
+    .case-overall__row-name {
+      color: var(--text-color-silver); }
     .case-overall__row-content {
       font-weight: bold; }
     .case-overall__row + * {
