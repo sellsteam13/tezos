@@ -69,3 +69,7 @@
 .is-white .stats:before {
     display: none;
 }
+
+.is-white .partners-search__input {
+    background-color: #d4d5de;
+}

@@ -5,7 +5,7 @@
     <!-- Page settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Верстка Tezos - Главная</title>
+    <title>Верстка Tezos - Партнёры</title>
 
     <!-- Connecting styles -->
     <link rel="stylesheet" href="assets/css/new.style.css">
@@ -79,7 +79,13 @@
             </svg>
         </a>
 
-        <button class="btnNav" title="Вызов меню" view="tablet" hidden="mobile" onclick="navbar.open(this)">MU</button>
+        <button class="btnNav" title="Вызов меню" view="tablet" hidden="mobile" onclick="navbar.open(this)">
+            <svg width="20" height="17" viewBox="0 0 20 17" stroke="none" fill="#A6A7AC" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="2"/>
+                <rect y="8" width="15" height="2"/>
+                <rect y="15" width="20" height="2"/>
+            </svg>
+        </button>
 
         <ul class="itemLink">
             <li>
@@ -253,7 +259,7 @@
                             <img src="./assets/svg/def/bell.svg" alt="bell-icon">
                         </button>
                         <div class="dropdownContainer dropdownNtfContainer">
-                            <div class="dropdownNtfItem">
+                            <!-- <div class="dropdownNtfItem">
                                 <time>21.09.2020 18:00</time>
                                 <p>Investment Income <span> 120 USDtz</span></p>
                             </div>
@@ -264,12 +270,12 @@
                             <div class="dropdownNtfItem">
                                 <time>21.09.2020 18:00</time>
                                 <p>New answer to the question "Question name"</p>
-                            </div>
-                            <!-- <div class="dropdownNtfContainerEmpty">
+                            </div> -->
+                            <div class="dropdownNtfContainerEmpty">
                                 <img src="./assets/svg/empty-illstr/ntf-empty.svg" alt="ntf empty icon">
                                 <span>Нет уведомлений</span>
                                 <span>Не волнуйтесь, все ещё впереди!</span>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
 
@@ -316,34 +322,105 @@
             </div>
         </nav>
 
-        <!-- @@ Home section-->
-        <section class="home">
-
-            <style>
-                ol li a {
-                    color: var(--text-color-white);
-                }
-                
-                ol li a:hover {
-                    text-decoration: underline;
-                }
-                
-                ol li {
-                    margin-bottom: 15px;
-                }
-            </style>
-
-            <ol>
-                <li><a href="./page-main.html">Главная</a></li>
-                <li><a href="./page-registration.html">Регистрация</a></li>
-                <li><a href="./page-briefcases.html">Активные брифкейсы</a></li>
-                <li><a href="./page-case.html">Просмотр брифкейса</a></li>
-                <li><a href="./page-affiliate-programm.html">Affiliate programm - NEW!</a></li>
-                <li><a href="./page-partners.html">Партнёры - NEW!</a></li>
-                <li><a href="./page-history.html">История - NEW!</a></li>
-            </ol>
-
+        <!-- @@ partners section-->
+        <section class="partners">
+            <h1 class="page__title partners__title">My partners</h1>
+            <form class="partners-search">
+                <input type="text" class="partners-search__input" placeholder="Поиск среди партнеров">
+                <button type="submit" class="partners-search__submit"><img src="./assets/svg/def/search.svg" alt="search-icon"></button>
+            </form>
+            <div class="partners-sort">
+                <label class="partners-sort__item" style="pointer-events: none;" tabindex="-1">
+                    <input type="checkbox" hidden checked>
+                    <span>1</span>
+                    <span>1 линия</span>
+                </label>
+                <label class="partners-sort__item" style="pointer-events: none;" tabindex="-1">
+                    <input type="checkbox" hidden disabled>
+                    <span>2</span>
+                    <span>2 линия</span>
+                </label>
+                <label class="partners-sort__item" tabindex="-1">
+                    <input type="checkbox" hidden>
+                    <span>3</span>
+                    <span>3 линия</span>
+                </label>
+            </div>
+            <div class="partners-list">
+                <div class="partners-item def-module">
+                    <div class="partners-item-heading">
+                        <div class="partners-item-heading__icon" style="background: #589585;">
+                            <img src="./assets/svg/stars/stars-3-black.svg" alt="stars">
+                        </div>
+                        <div class="partners-item-heading__title">USD24214</div>
+                        <div class="partners-item-heading__name">Анатолий Демьянчук</div>
+                    </div>
+                    <div class="partners-item__block"><span>465484 USDt</span><span>Доход от депозита</span></div>
+                    <div class="partners-item__block"><span>465484 USDt</span><span>Доход от дохода</span></div>
+                    <button class="partners-item__btn btn btn--trans btn--small-fs" aria-label="button" onclick="openModal(document.querySelector('.modal-info'))">Подробнее</button>
+                </div>
+                <div class="partners-item def-module">
+                    <div class="partners-item-heading">
+                        <div class="partners-item-heading__icon" style="background: #589585;">
+                            <img src="./assets/svg/stars/stars-3-black.svg" alt="stars">
+                        </div>
+                        <div class="partners-item-heading__title">USD24214</div>
+                        <div class="partners-item-heading__name">Анатолий Демьянчук</div>
+                    </div>
+                    <div class="partners-item__block"><span>465484 USDt</span><span>Доход от депозита</span></div>
+                    <div class="partners-item__block"><span>465484 USDt</span><span>Доход от дохода</span></div>
+                    <div class="partners-item__block"><span>465484 USDt</span><span>Общий оборот структуры</span></div>
+                    <button class="partners-item__btn btn btn--trans btn--small-fs" aria-label="button">Подробнее</button>
+                </div>
+                <div class="partners-item def-module">
+                    <div class="partners-item-heading">
+                        <div class="partners-item-heading__icon" style="background: #589585;">
+                            <img src="./assets/svg/stars/stars-3-black.svg" alt="stars">
+                        </div>
+                        <div class="partners-item-heading__title">USD24214</div>
+                        <div class="partners-item-heading__name">Анатолий Демьянчук</div>
+                    </div>
+                    <div class="partners-item__block"><span>465484 USDt</span><span>Доход от депозита</span></div>
+                    <div class="partners-item__block"><span>465484 USDt</span><span>Доход от дохода</span></div>
+                    <div class="partners-item__block"><span>465484 USDt</span><span>Общий оборот структуры</span></div>
+                    <button class="partners-item__btn btn btn--trans btn--small-fs" aria-label="button">Подробнее</button>
+                </div>
+                <div class="partners-item def-module">
+                    <div class="partners-item-heading">
+                        <div class="partners-item-heading__icon" style="background: #589585;">
+                            <img src="./assets/svg/stars/stars-3-black.svg" alt="stars">
+                        </div>
+                        <div class="partners-item-heading__title">USD24214</div>
+                        <div class="partners-item-heading__name">Анатолий Демьянчук</div>
+                    </div>
+                    <div class="partners-item__block"><span>465484 USDt</span><span>Доход от депозита</span></div>
+                    <div class="partners-item__block"><span>465484 USDt</span><span>Доход от дохода</span></div>
+                    <div class="partners-item__block"><span>465484 USDt</span><span>Общий оборот структуры</span></div>
+                    <button class="partners-item__btn btn btn--trans btn--small-fs" aria-label="button">Подробнее</button>
+                </div>
+            </div>
+            <div class="pagination">
+                <a href="#" class="pagination__arrow pagination__arrow--prev">
+                    <img src="./assets/svg/def/chevron.svg" alt="chevron-icon">
+                </a>
+                <a href="#" class="pagination__link">01</a>
+                <a href="#" class="pagination__link is-active">02</a>
+                <a href="#" class="pagination__link">03</a>
+                <a href="#" class="pagination__link" style="pointer-events: none;">...</a>
+                <a href="#" class="pagination__link">05</a>
+                <a href="#" class="pagination__arrow pagination__arrow--next">
+                    <img src="./assets/svg/def/chevron.svg" alt="chevron-icon">
+                </a>
+            </div>
+            <!-- <div class="partners-empty">
+                <img src="./assets/svg/empty-illstr/partners-empty.svg" alt="partners empty">
+                <div class="partners-empty__title">У вас ещё нет партнеров</div>
+                <div class="partners-empty__subtitle">
+                    У вас пока нет активных партнёров. Воспользуйте своей <a href="#">реферальной ссылкой</a> для привлечения новых партнёров.
+                </div>
+            </div> -->
         </section>
+
 
         <!-- @@ Footer -->
         <footer class="footer">
@@ -355,15 +432,92 @@
 </body>
 <!-- End of content -->
 
+<!-- modals -->
+<div class="overlay">
+    <div class="modal modal-info custom-modal def-modal">
+        <div class="info">
+            <div class="info__title">User Login be is long text an...</div>
+            <div class="info__status">Status</div>
+            <hr>
+            <div class="info__subtitle">Основная информация</div>
+            <div class="info-block">
+                <div class="info-block__icon">
+                    <img src="./assets/svg/partners-icons/amount.svg" alt="">
+                </div>
+                <div class="info-block__amount">24</div>
+                <div class="info-block__descr">Всего партнёров</div>
+            </div>
+            <div class="info-block">
+                <div class="info-block__icon">
+                    <img src="./assets/svg/partners-icons/active.svg" alt="">
+                </div>
+                <div class="info-block__amount">24</div>
+                <div class="info-block__descr">Активных партнёров</div>
+            </div>
+            <div class="info-block">
+                <div class="info-block__icon">
+                    <img src="./assets/svg/partners-icons/status.svg" alt="">
+                </div>
+                <div class="info-block__amount">Leader</div>
+                <div class="info-block__descr">Статус партнёра</div>
+            </div>
+            <hr>
+            <div class="info__subtitle">Информация о доходах</div>
+            <div class="info-block">
+                <div class="info-block__icon">
+                    <img src="./assets/svg/partners-icons/income.svg" alt="">
+                </div>
+                <div class="info-block__amount">465484 USDt</div>
+                <div class="info-block__descr">Доход от вклада</div>
+            </div>
+            <div class="info-block">
+                <div class="info-block__icon">
+                    <img src="./assets/svg/partners-icons/income2.svg" alt="">
+                </div>
+                <div class="info-block__amount">465484 USDt</div>
+                <div class="info-block__descr">Доход от структуры</div>
+            </div>
+            <div class="info-block">
+                <div class="info-block__icon">
+                    <img src="./assets/svg/partners-icons/invest.svg" alt="">
+                </div>
+                <div class="info-block__amount">465484 USDt</div>
+                <div class="info-block__descr">Вклад партнёра</div>
+            </div>
+            <div class="info-block">
+                <div class="info-block__icon">
+                    <img src="./assets/svg/partners-icons/income2.svg" alt="">
+                </div>
+                <div class="info-block__amount">465484 USDt</div>
+                <div class="info-block__descr">Общий оборот</div>
+            </div>
+            <button aria-label="button" class="btn btn--small-fs custom-modal__btn">
+                Показать всех партнеров
+            </button>
+        </div>
+        <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
+    </div>
+    <div class="overlay-trigger"></div>
+</div>
+<!-- end of modals-->
+
 <!-- Connecting scripts -->
 
 <!-- jquery -->
 <script src="assets/js/jquery-3.2.1.min.js"></script>
 
+<!-- modals -->
+<script src="assets/js/core.modals.js"></script>
+
+<!-- amcharts -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
 <!-- connecting custom scripts -->
-<script src="./assets/js/new.formMethods.js"></script>
 <script src="assets/js/new.navbar.js"></script>
 <script src="assets/js/new.theme-changer.js"></script>
+<script src="assets/js/chart.stats-chart.js"></script>
 <script src="assets/js/new.dropdown.js"></script>
 
 </html>

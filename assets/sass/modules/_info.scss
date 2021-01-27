@@ -8,6 +8,13 @@
         line-height: 140%;
         color: var(--text-silver);
     }
+    &__status {
+        font-weight: 600;
+        font-size: var(--main-font-size);
+        line-height: 140%;
+        color: #CF5959;
+        margin-bottom: 10px;
+    }
     &-block {
         position: relative;
         margin-bottom: 15px;
@@ -60,5 +67,12 @@
         line-height: 140%;
         color: var(--text-silver);
         word-wrap: break-word;
+    }
+    &__hash {
+        margin-bottom: -10px;
+        font-weight: 600;
+        font-size: var(--main-font-size);
+        line-height: 140%;
+        color: #4F515D;
     }
 }

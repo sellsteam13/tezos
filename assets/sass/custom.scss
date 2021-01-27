@@ -94,6 +94,140 @@ button {
     }
 }
 
+.tip {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 15px);
+    transform: translate(-50%, -5px);
+    background: var(--text-color-black);
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $trans, transform $trans;
+    z-index: 10;
+    will-change: transform;
+    &--holder {
+        position: relative;
+        cursor: pointer;
+        &:hover .tip,
+        &:focus .tip {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 9.5px 0 9.5px;
+        z-index: -1;
+        border-color: #589585 transparent transparent transparent;
+    }
+    &__title {
+        margin-bottom: 15px;
+        font-size: var(--main-font-size);
+        line-height: 140%;
+        color: var(--text-silver);
+    }
+    &__content {
+        p {
+            font-size: var(--small-font-size);
+            line-height: 180%;
+            color: var(--text-color-silver);
+            span {
+                color: var(--text-silver);
+            }
+            +p {
+                margin-top: 8px;
+            }
+        }
+    }
+    &--centered {
+        text-align: center;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    &__arrow {
+        @include hover(.5);
+        width: 20px;
+        height: 20px;
+        &--prev {
+            margin-right: 20px;
+            @media (max-width: 850px) {
+                margin-right: 10px;
+            }
+        }
+        &--next {
+            margin-left: 20px;
+            @media (max-width: 850px) {
+                margin-left: 10px;
+            }
+            img {
+                transform: scale(-1, 1);
+            }
+        }
+    }
+    &__link {
+        line-height: 20px;
+        padding: 0 20px;
+        border-right: 2px solid var(--text-color-black);
+        font-weight: 600;
+        font-size: var(--main-font-size);
+        line-height: 140%;
+        color: var(--text-color-silver);
+        transition: color $trans;
+        @media (max-width: 850px) {
+            line-height: 15px;
+            padding: 0 10px;
+        }
+        +.partners-pagination__link {
+            border-right: 2px solid var(--text-color-black);
+        }
+        &:nth-last-child(2) {
+            border: none;
+        }
+        &.is-active,
+        &:hover {
+            color: var(--color-green-tow);
+        }
+        &.is-active {
+            pointer-events: none;
+        }
+    }
+}
+
+.tooltip {
+    padding: 4px 6px;
+    text-align: left;
+    background: var(--text-color-black);
+    font-size: var(--small-font-size);
+    line-height: 140%;
+    text-align: center;
+    color: var(--text-color-silver);
+    position: absolute;
+    left: 50%;
+    transform: translateY(-50%);
+    min-width: fit-content;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity $trans;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    word-break: break-word;
+}
+
 
 /** styles for white mode **/
 
@@ -127,3 +261,6 @@ button {
 @import "./pages/reg";
 @import "./pages/briefcases";
 @import "./pages/case";
+@import "./pages/programm";
+@import "./pages/partners";
+@import "./pages/history";

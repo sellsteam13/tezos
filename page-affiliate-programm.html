@@ -5,7 +5,7 @@
     <!-- Page settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Верстка Tezos - Главная</title>
+    <title>Верстка Tezos - Affiliate programm</title>
 
     <!-- Connecting styles -->
     <link rel="stylesheet" href="assets/css/new.style.css">
@@ -79,7 +79,13 @@
             </svg>
         </a>
 
-        <button class="btnNav" title="Вызов меню" view="tablet" hidden="mobile" onclick="navbar.open(this)">MU</button>
+        <button class="btnNav" title="Вызов меню" view="tablet" hidden="mobile" onclick="navbar.open(this)">
+            <svg width="20" height="17" viewBox="0 0 20 17" stroke="none" fill="#A6A7AC" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="2"/>
+                <rect y="8" width="15" height="2"/>
+                <rect y="15" width="20" height="2"/>
+            </svg>
+        </button>
 
         <ul class="itemLink">
             <li>
@@ -253,7 +259,7 @@
                             <img src="./assets/svg/def/bell.svg" alt="bell-icon">
                         </button>
                         <div class="dropdownContainer dropdownNtfContainer">
-                            <div class="dropdownNtfItem">
+                            <!-- <div class="dropdownNtfItem">
                                 <time>21.09.2020 18:00</time>
                                 <p>Investment Income <span> 120 USDtz</span></p>
                             </div>
@@ -264,12 +270,12 @@
                             <div class="dropdownNtfItem">
                                 <time>21.09.2020 18:00</time>
                                 <p>New answer to the question "Question name"</p>
-                            </div>
-                            <!-- <div class="dropdownNtfContainerEmpty">
+                            </div> -->
+                            <div class="dropdownNtfContainerEmpty">
                                 <img src="./assets/svg/empty-illstr/ntf-empty.svg" alt="ntf empty icon">
                                 <span>Нет уведомлений</span>
                                 <span>Не волнуйтесь, все ещё впереди!</span>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
 
@@ -316,34 +322,145 @@
             </div>
         </nav>
 
-        <!-- @@ Home section-->
-        <section class="home">
-
-            <style>
-                ol li a {
-                    color: var(--text-color-white);
-                }
-                
-                ol li a:hover {
-                    text-decoration: underline;
-                }
-                
-                ol li {
-                    margin-bottom: 15px;
-                }
-            </style>
-
-            <ol>
-                <li><a href="./page-main.html">Главная</a></li>
-                <li><a href="./page-registration.html">Регистрация</a></li>
-                <li><a href="./page-briefcases.html">Активные брифкейсы</a></li>
-                <li><a href="./page-case.html">Просмотр брифкейса</a></li>
-                <li><a href="./page-affiliate-programm.html">Affiliate programm - NEW!</a></li>
-                <li><a href="./page-partners.html">Партнёры - NEW!</a></li>
-                <li><a href="./page-history.html">История - NEW!</a></li>
-            </ol>
-
+        <!-- @@ affiliate programm section-->
+        <section class="programm">
+            <h1 class="page__title programm__title">Affiliate programm</h1>
+            <section class="programm-status def-module">
+                <h2 class="programm__subtitle">
+                    <img src="./assets/svg/programm-titles-icons/star.svg" alt="star-icon"> Partner status
+                </h2>
+                <div class="programm-status-actual">
+                    <div class="programm-status__current">
+                        <span>Действующтй статус</span>
+                        <span style="color: #CF5959;">
+                            Leader
+                            <button aria-label="button" type="button" onclick="openModal(document.querySelector('.status-modal'))">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="var(--text-color-silver)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.0003 14.9999C10.4606 14.9999 10.8337 14.6268 10.8337 14.1666C10.8337 13.7063 10.4606 13.3333 10.0003 13.3333C9.54009 13.3333 9.16699 13.7063 9.16699 14.1666C9.16699 14.6268 9.54009 14.9999 10.0003 14.9999Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2971 7.13313C9.89245 7.15089 9.67667 7.3137 9.60197 7.4724C9.40598 7.88882 8.90953 8.06752 8.49311 7.87153C8.07669 7.67555 7.89799 7.17909 8.09398 6.76267C8.52913 5.83808 9.46658 5.50131 10.224 5.46806C10.9526 5.43609 11.8593 5.66816 12.361 6.3223C12.747 6.82567 12.9639 7.46376 12.8763 8.13468C12.7875 8.81497 12.3994 9.42521 11.7698 9.8884C10.929 10.5069 10.9305 10.8225 10.9307 10.8685C10.9308 10.8691 10.9308 10.8698 10.9308 10.8703C10.9308 11.3306 10.5577 11.7036 10.0974 11.7036C9.63718 11.7036 9.26409 11.3306 9.26409 10.8703C9.26409 10.0731 9.72782 9.32155 10.7822 8.54589C11.1063 8.30748 11.2027 8.07936 11.2236 7.91895C11.2458 7.74915 11.1977 7.54418 11.0384 7.33651C11.0272 7.3219 10.9664 7.26112 10.8139 7.20635C10.6684 7.15405 10.4855 7.12486 10.2971 7.13313Z"/>
+                                    <path d="M10.0002 19.1666C4.91683 19.1666 0.833496 15.0833 0.833496 9.99992C0.833496 4.91658 4.91683 0.833252 10.0002 0.833252C15.0835 0.833252 19.1668 4.91658 19.1668 9.99992C19.1668 15.0833 15.0835 19.1666 10.0002 19.1666ZM10.0002 2.49992C5.8335 2.49992 2.50016 5.83325 2.50016 9.99992C2.50016 14.1666 5.8335 17.4999 10.0002 17.4999C14.1668 17.4999 17.5002 14.1666 17.5002 9.99992C17.5002 5.83325 14.1668 2.49992 10.0002 2.49992Z"/>
+                                </svg>
+                            </button>
+                        </span>
+                    </div>
+                    <div class="programm-status__next">
+                        <span>Следующий статус</span>
+                        <span style="color: #D1C768;">
+                            <button aria-label="button" type="button" onclick="openModal(document.querySelector('.status-modal'))">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="var(--text-color-silver)" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.0003 14.9999C10.4606 14.9999 10.8337 14.6268 10.8337 14.1666C10.8337 13.7063 10.4606 13.3333 10.0003 13.3333C9.54009 13.3333 9.16699 13.7063 9.16699 14.1666C9.16699 14.6268 9.54009 14.9999 10.0003 14.9999Z"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2971 7.13313C9.89245 7.15089 9.67667 7.3137 9.60197 7.4724C9.40598 7.88882 8.90953 8.06752 8.49311 7.87153C8.07669 7.67555 7.89799 7.17909 8.09398 6.76267C8.52913 5.83808 9.46658 5.50131 10.224 5.46806C10.9526 5.43609 11.8593 5.66816 12.361 6.3223C12.747 6.82567 12.9639 7.46376 12.8763 8.13468C12.7875 8.81497 12.3994 9.42521 11.7698 9.8884C10.929 10.5069 10.9305 10.8225 10.9307 10.8685C10.9308 10.8691 10.9308 10.8698 10.9308 10.8703C10.9308 11.3306 10.5577 11.7036 10.0974 11.7036C9.63718 11.7036 9.26409 11.3306 9.26409 10.8703C9.26409 10.0731 9.72782 9.32155 10.7822 8.54589C11.1063 8.30748 11.2027 8.07936 11.2236 7.91895C11.2458 7.74915 11.1977 7.54418 11.0384 7.33651C11.0272 7.3219 10.9664 7.26112 10.8139 7.20635C10.6684 7.15405 10.4855 7.12486 10.2971 7.13313Z"/>
+                                    <path d="M10.0002 19.1666C4.91683 19.1666 0.833496 15.0833 0.833496 9.99992C0.833496 4.91658 4.91683 0.833252 10.0002 0.833252C15.0835 0.833252 19.1668 4.91658 19.1668 9.99992C19.1668 15.0833 15.0835 19.1666 10.0002 19.1666ZM10.0002 2.49992C5.8335 2.49992 2.50016 5.83325 2.50016 9.99992C2.50016 14.1666 5.8335 17.4999 10.0002 17.4999C14.1668 17.4999 17.5002 14.1666 17.5002 9.99992C17.5002 5.83325 14.1668 2.49992 10.0002 2.49992Z"/>
+                                </svg>
+                            </button>
+                            Top Leader
+                        </span>
+                    </div>
+                    <div class="programm-status__bar">
+                        <span style="width: 55%; background-color: #D1C768;"></span>
+                    </div>
+                    <button class="programm-status__tip tip--holder">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="var(--text-color-silver)" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.0003 14.9999C10.4606 14.9999 10.8337 14.6268 10.8337 14.1666C10.8337 13.7063 10.4606 13.3333 10.0003 13.3333C9.54009 13.3333 9.16699 13.7063 9.16699 14.1666C9.16699 14.6268 9.54009 14.9999 10.0003 14.9999Z"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2971 7.13313C9.89245 7.15089 9.67667 7.3137 9.60197 7.4724C9.40598 7.88882 8.90953 8.06752 8.49311 7.87153C8.07669 7.67555 7.89799 7.17909 8.09398 6.76267C8.52913 5.83808 9.46658 5.50131 10.224 5.46806C10.9526 5.43609 11.8593 5.66816 12.361 6.3223C12.747 6.82567 12.9639 7.46376 12.8763 8.13468C12.7875 8.81497 12.3994 9.42521 11.7698 9.8884C10.929 10.5069 10.9305 10.8225 10.9307 10.8685C10.9308 10.8691 10.9308 10.8698 10.9308 10.8703C10.9308 11.3306 10.5577 11.7036 10.0974 11.7036C9.63718 11.7036 9.26409 11.3306 9.26409 10.8703C9.26409 10.0731 9.72782 9.32155 10.7822 8.54589C11.1063 8.30748 11.2027 8.07936 11.2236 7.91895C11.2458 7.74915 11.1977 7.54418 11.0384 7.33651C11.0272 7.3219 10.9664 7.26112 10.8139 7.20635C10.6684 7.15405 10.4855 7.12486 10.2971 7.13313Z"/>
+                            <path d="M10.0002 19.1666C4.91683 19.1666 0.833496 15.0833 0.833496 9.99992C0.833496 4.91658 4.91683 0.833252 10.0002 0.833252C15.0835 0.833252 19.1668 4.91658 19.1668 9.99992C19.1668 15.0833 15.0835 19.1666 10.0002 19.1666ZM10.0002 2.49992C5.8335 2.49992 2.50016 5.83325 2.50016 9.99992C2.50016 14.1666 5.8335 17.4999 10.0002 17.4999C14.1668 17.4999 17.5002 14.1666 17.5002 9.99992C17.5002 5.83325 14.1668 2.49992 10.0002 2.49992Z"/>
+                        </svg>
+                        <div class="tip" style="width: 360px">
+                            <div class="tip__title">Для получения статуса <span style="color: #D1C768;">Top Leader</span> необходимо: </div>
+                            <div class="tip__content">
+                                <p>Оборот структуры: <span>4900$ из 5000$</span></p>
+                                <p>Личные инвестиции: <span>390$ из 500$</span></p>
+                            </div>
+                        </div>
+                    </button>
+                    <div class="programm-status__lvls">Активных уровней: <span>3</span></div>
+                    <div class="programm-status__lvls-inner">
+                        <span style="background-color: #589585;"></span>
+                        <span style="background-color: #589585;"></span>
+                        <span style="background-color: #589585;"></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <button class="programm-status__tip tip--holder">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="var(--text-color-silver)" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.0003 14.9999C10.4606 14.9999 10.8337 14.6268 10.8337 14.1666C10.8337 13.7063 10.4606 13.3333 10.0003 13.3333C9.54009 13.3333 9.16699 13.7063 9.16699 14.1666C9.16699 14.6268 9.54009 14.9999 10.0003 14.9999Z"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2971 7.13313C9.89245 7.15089 9.67667 7.3137 9.60197 7.4724C9.40598 7.88882 8.90953 8.06752 8.49311 7.87153C8.07669 7.67555 7.89799 7.17909 8.09398 6.76267C8.52913 5.83808 9.46658 5.50131 10.224 5.46806C10.9526 5.43609 11.8593 5.66816 12.361 6.3223C12.747 6.82567 12.9639 7.46376 12.8763 8.13468C12.7875 8.81497 12.3994 9.42521 11.7698 9.8884C10.929 10.5069 10.9305 10.8225 10.9307 10.8685C10.9308 10.8691 10.9308 10.8698 10.9308 10.8703C10.9308 11.3306 10.5577 11.7036 10.0974 11.7036C9.63718 11.7036 9.26409 11.3306 9.26409 10.8703C9.26409 10.0731 9.72782 9.32155 10.7822 8.54589C11.1063 8.30748 11.2027 8.07936 11.2236 7.91895C11.2458 7.74915 11.1977 7.54418 11.0384 7.33651C11.0272 7.3219 10.9664 7.26112 10.8139 7.20635C10.6684 7.15405 10.4855 7.12486 10.2971 7.13313Z"/>
+                            <path d="M10.0002 19.1666C4.91683 19.1666 0.833496 15.0833 0.833496 9.99992C0.833496 4.91658 4.91683 0.833252 10.0002 0.833252C15.0835 0.833252 19.1668 4.91658 19.1668 9.99992C19.1668 15.0833 15.0835 19.1666 10.0002 19.1666ZM10.0002 2.49992C5.8335 2.49992 2.50016 5.83325 2.50016 9.99992C2.50016 14.1666 5.8335 17.4999 10.0002 17.4999C14.1668 17.4999 17.5002 14.1666 17.5002 9.99992C17.5002 5.83325 14.1668 2.49992 10.0002 2.49992Z"/>
+                        </svg>
+                        <div class="tip tip--centered" style="width: 160px">
+                            <div class="tip__title">Активных уровней согласо статусам:</div>
+                            <div class="tip__content">
+                                <p>Partner: <span>2</span></p>
+                                <p>Leader: <span>2</span></p>
+                                <p>Top Leader: <span>2</span></p>
+                                <p>Director: <span>2</span></p>
+                                <p>Co-founder: <span>2</span></p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+                <div class="programm-status__row"><span>Общее количество:</span><span>140</span></div>
+                <div class="programm-status__row"><span>Активные партнёры:</span><span>17</span></div>
+                <div class="programm-status__row"><span>Не активные партнёры:</span><span>123</span></div>
+                <div class="programm-status__row"><span>Лично приглашенные:</span><span>6</span></div>
+            </section>
+            <section class="programm-income def-module">
+                <h2 class="programm__subtitle">
+                    <img src="./assets/svg/programm-titles-icons/profits.svg" alt="profits-icon"> Доход от партнерки
+                </h2>
+                <div class="programm-income-grid">
+                    <div class="programm-income__block">
+                        <div class="programm-income__item"><span>За сегодня (USDtz):</span><span>9 222</span></div>
+                        <div class="programm-income__item"><span>Вего партнёров:</span><span>9 222</span></div>
+                    </div>
+                    <div class="programm-income__block">
+                        <div class="programm-income__item"><span>За Месяц (USDtz)</span><span>9 222</span></div>
+                        <div class="programm-income__item"><span>Партёнов за месяц:</span><span>9 222</span></div>
+                    </div>
+                    <div class="programm-income__block">
+                        <div class="programm-income__item"><span>Все время (USDtz)</span><span>9 222</span></div>
+                        <div class="programm-income__item"><span>Общий оборот структуры  (USDtz)</span><span>9 222</span></div>
+                    </div>
+                </div>
+            </section>
+            <section class="programm-link def-module">
+                <h2 class="programm__subtitle">
+                    <img src="./assets/svg/programm-titles-icons/link.svg" alt="link-icon"> Referal link
+                </h2>
+                <div class="programm-link-inner">
+                    <div class="programm-link__holder">http://joxi.ru/xAek53EuXVlg7mek53EuXVlg7m</div>
+                    <button class="btn btn--small-fs programm-link__copy">Скопировать</button>
+                </div>
+            </section>
+            <section class="programm-partner def-module">
+                <h2 class="programm__subtitle">
+                    <img src="./assets/svg/programm-titles-icons/users.svg" alt="users-icon"> Senior partner
+                </h2>
+                <div class="programm-partner__inner">
+                    Login:
+                    <span>USD24214</span>
+                </div>
+            </section>
+            <section class="programm-chart stats def-module">
+                <div class="stats-tabs">
+                    <!-- .is-active - класс для активного элемента; .is-blocked - класс для заблокированного элемента -->
+                    <button class="stats-tabs__item is-active" data-url="./statsdata1.json">
+                        <span>Общий оборот сруктуры</span>
+                    </button>
+                    <button class="stats-tabs__item" data-url="./statsdata2.json">
+                        <span>Доход партнской программы:</span>
+                    </button>
+                </div>
+                <!-- //stats chart// -->
+                <div class="stats-chart">
+                    <div class="stats-chart__holder" id="statsChart"></div>
+                    <div class="stats-chart__error is-hidden">
+                        Во время загрузки данных произошла ошибка <br> Пожалуйста обновите страницу
+                    </div>
+                </div>
+            </section>
         </section>
+
 
         <!-- @@ Footer -->
         <footer class="footer">
@@ -355,15 +472,48 @@
 </body>
 <!-- End of content -->
 
+<!-- modals -->
+<div class="overlay">
+    <div class="modal status-modal">
+        <div class="status-modal__title" style="color: var(--bg-yellow)">Top Leader</div>
+        <ul class="status-modal__list">
+            <li> The turnover of the structure is $ 30,000 or the volume of the personal active investment portfolio $ 3,000</li>
+            <li>Weekly investment limit $ 3000</li>
+            <li>Withdrawal $ 1000</li>
+        </ul>
+        <div class="status-modal-row">
+            <div class="status-modal-row__item">
+                <span style="display: inline-block;min-height: 40px;">Affiliate bonus:</span> <br> 1 line - 10% <br> 2nd line - 3% <br> 3 line - 1% <br> 4 line - 1% <br> 5 line - 1%
+            </div>
+            <div class="status-modal-row__item">
+                <span style="display: inline-block;min-height: 40px;">Affiliate Profit Custom bonus:</span> <br> 1 line - 7% <br> 2nd line - 3% <br> 3 line - 3% <br> 4 line - 1% <br> 5 line - 1%
+            </div>
+        </div>
+        <div class="status-modal__icon" style="background-color: var(--bg-yellow)">
+            <img src="./assets/svg/stars/stars-3-black.svg" alt="stars">
+        </div>
+        <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
+    </div>
+    <div class="overlay-trigger"></div>
+</div>
+<!-- end of modals-->
+
 <!-- Connecting scripts -->
 
 <!-- jquery -->
 <script src="assets/js/jquery-3.2.1.min.js"></script>
 
+<!-- modals -->
+<script src="assets/js/core.modals.js"></script>
+
+<!-- amcharts -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
 <!-- connecting custom scripts -->
-<script src="./assets/js/new.formMethods.js"></script>
 <script src="assets/js/new.navbar.js"></script>
 <script src="assets/js/new.theme-changer.js"></script>
-<script src="assets/js/new.dropdown.js"></script>
+<script src="assets/js/chart.stats-chart.js"></script>
 
 </html>

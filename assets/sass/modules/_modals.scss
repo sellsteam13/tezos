@@ -218,3 +218,28 @@
         margin-top: 30px;
     }
 }
+
+.custom-modal {
+    .info__title {
+        padding-bottom: 0;
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+    .info__subtitle+.info-block {
+        margin-top: 15px;
+    }
+    hr {
+        margin: 20px -20px;
+        border: none;
+        height: 1px;
+        background: var(--bg-main);
+    }
+    &__btn {
+        width: 100%;
+        margin-top: 5px;
+    }
+    .info__subdescr {
+        color: var(--text-color-silver);
+        margin-top: -3px;
+    }
+}
