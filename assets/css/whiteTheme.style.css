@@ -73,3 +73,7 @@
 .is-white .partners-search__input {
     background-color: #d4d5de;
 }
+
+.is-white body::-webkit-scrollbar-thumb {
+    background-color: #c8c9d1;
+}

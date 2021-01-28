@@ -6,6 +6,11 @@
 body {
   -webkit-transition: opacity .3s ease-in-out;
   transition: opacity .3s ease-in-out; }
+  body::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--text-color-black); }
+    body::-webkit-scrollbar-thumb {
+      background-color: #171920; }
 
 button {
   cursor: pointer; }

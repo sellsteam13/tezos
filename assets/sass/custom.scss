@@ -25,7 +25,14 @@ sans-serif;
 /** general styles **/
 
 body {
-    transition: opacity .3s ease-in-out
+    transition: opacity .3s ease-in-out;
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: var(--text-color-black);
+        &-thumb {
+            background-color: #171920;
+        }
+    }
 }
 
 button {
