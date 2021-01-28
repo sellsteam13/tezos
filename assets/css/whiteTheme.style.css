@@ -77,3 +77,7 @@
 .is-white body::-webkit-scrollbar-thumb {
     background-color: #c8c9d1;
 }
+
+.text-modal-track::-webkit-scrollbar-thumb {
+    background-color: #c8c9d1;
+}

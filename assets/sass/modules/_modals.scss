@@ -258,3 +258,28 @@
         }
     }
 }
+
+.text-modal {
+    &-track {
+        max-height: 50vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin-bottom: 20px;
+        padding-right: 10px;
+        &::-webkit-scrollbar {
+            width: 5px;
+            background-color: var(--bg-main);
+            &-thumb {
+                background-color: #171920;
+            }
+        }
+    }
+    .info__cancel {
+        min-width: 180px;
+        margin: 0 auto;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+    }
+}

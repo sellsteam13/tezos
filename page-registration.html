@@ -71,7 +71,7 @@
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2164 0.866963C10.4279 1.0785 10.4279 1.42146 10.2164 1.633L4.25802 7.59133C4.04648 7.80286 3.70352 7.80286 3.49198 7.59133L0.783651 4.883C0.572116 4.67146 0.572116 4.3285 0.783651 4.11696C0.995184 3.90543 1.33815 3.90543 1.54968 4.11696L3.875 6.44228L9.45032 0.866963C9.66185 0.655429 10.0048 0.655429 10.2164 0.866963Z" fill="#21232F"/>
                     </svg>
                 </label>
-            <span>I agree to the terms of service </span>
+            <span>I agree to <button aria-label="button" type="button" onclick="openModal(document.querySelector('.text-modal'))">the terms of service</button></span>
             </label>
             <button class="registration-form__submit btn" type="submit" aria-label="button">Register now</button>
             <a href="#" class="registration-form__login">I already have an account</a>
@@ -103,6 +103,31 @@
 </body>
 <!-- End of content -->
 
+<!-- modals -->
+<div class="overlay">
+    <div class="modal modal-info text-modal def-modal">
+        <div class="info">
+            <div class="info__title">Terms</div>
+            <div class="text-modal-track">
+                <div class="info__subdescr">Доход от созданной инвестиции начисляется каждый рабочий день и сразу же доступен к выводу</div>
+                <div class="info__subdescr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias expedita perferendis quas maxime eveniet eligendi assumenda cumque itaque deserunt enim tenetur voluptatem accusamus unde, voluptas autem beatae architecto et. Deserunt
+                    libero iste illum soluta vitae sapiente magnam dolorum placeat mollitia dolorem quos quae cupiditate voluptate blanditiis sunt quasi magni voluptatibus ad facere eligendi, nobis esse debitis nihil nam? Nemo, qui asperiores vero dolores
+                    debitis similique nihil fugiat vitae sint, eius, consequatur placeat excepturi distinctio eaque nostrum nulla enim natus laboriosam. Vel, vitae recusandae? Magni deserunt perferendis officia! Sit non, asperiores assumenda, odio harum
+                    magni eveniet, laborum maiores sunt obcaecati ex.</div>
+                <div class="info__subdescr">Доход от созданной инвестиции начисляется каждый рабочий день и сразу же доступен к выводу</div>
+                <div class="info__subdescr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias expedita perferendis quas maxime eveniet eligendi assumenda cumque itaque deserunt enim tenetur voluptatem accusamus unde, voluptas autem beatae architecto et. Deserunt
+                    libero iste illum soluta vitae sapiente magnam dolorum placeat mollitia dolorem quos quae cupiditate voluptate blanditiis sunt quasi magni voluptatibus ad facere eligendi, nobis esse debitis nihil nam? Nemo, qui asperiores vero dolores
+                    debitis similique nihil fugiat vitae sint, eius, consequatur placeat excepturi distinctio eaque nostrum nulla enim natus laboriosam. Vel, vitae recusandae? Magni deserunt perferendis officia! Sit non, asperiores assumenda, odio harum
+                    magni eveniet, laborum maiores sunt obcaecati ex.</div>
+            </div>
+            <button class="btn btn--small-fs info__cancel" type="button" aria-label="button" onclick="closeModal(this.parentNode.parentNode)">Понятно</button>
+        </div>
+        <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
+    </div>
+    <div class="overlay-trigger"></div>
+</div>
+<!-- end of modals-->
+
 <!-- Connecting scripts -->
 
 <!-- jquery -->
@@ -110,6 +135,9 @@
 
 <!-- swiper -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- modals -->
+<script src="assets/js/core.modals.js"></script>
 
 <!-- custom scripts -->
 <script src="./assets/js/new.formMethods.js"></script>
