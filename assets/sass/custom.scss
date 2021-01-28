@@ -229,6 +229,15 @@ button {
     pointer-events: none;
 }
 
+.is-colored {
+    &-red {
+        color: var(--bg-red) !important;
+    }
+    &-green {
+        color: var(--color-green-tow) !important;
+    }
+}
+
 
 /** styles for white mode **/
 

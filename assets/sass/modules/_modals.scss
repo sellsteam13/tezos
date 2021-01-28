@@ -243,3 +243,18 @@
         margin-top: -3px;
     }
 }
+
+.modal-sell,
+.modal-sell-confirm {
+    .info {
+        &__subdescr {
+            font-size: var(--main-font-size);
+            line-height: 140%;
+            color: var(--text-silver);
+            span {
+                color: var(--text-color-white);
+                font-weight: 500;
+            }
+        }
+    }
+}

@@ -381,7 +381,7 @@
                             <span style="width: 66.66%;"></span>
                         </div>
                     </div>
-                    <button class="btn btn--small-fs case-info__sell">Продать кейс</button>
+                    <button class="btn btn--small-fs case-info__sell" aria-label="button" onclick="openModal(document.querySelector('.modal-sell'))">Продать кейс</button>
                 </div>
             </div>
             <div class="case__chart def-module">
@@ -413,86 +413,58 @@
 
 <!-- modals -->
 <div class="overlay">
-    <div class="modal modal-invest def-modal">
-        <div class="modal__title">Make an investment</div>
-        <!-- //invest calculator// -->
-        <form onsubmit="calculateInvest.submit(this); return false;" class="invest-manage">
-            <div class="invest-manage__label">Enter the amount:</div>
-            <div class="invest-manage__input">
-                <input name="investAmount" type="text" maxlength="7" onfocus="input.focus(this)" onblur="input.blur(this, true)" oninput="calculateInvest.input(this)" data-label="USDtz" value="500 USDtz" class="def-input">
-            </div>
-            <div class="invest-manage__label">Expected profit:</div>
-            <div class=" invest-manage__result">
-                <span class="invest-manage__result-holder" id="investCalculateResult">50-100USDtz</span> per month
-            </div>
-            <div class="invest-manage-btns">
-                <button type="submit" aria-label="button" class="btn invest-manage__submit">Open deposit</button>
-                <button type="button" aria-label="button" class="invest-manage__more" onclick="openModal(document.querySelector('.modal-descr'))">
-                    <img src="./assets/svg/def/question.svg" alt="question-icon">
-                </button>
-            </div>
-        </form>
-        <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
-    </div>
-    <div class="modal modal-info def-modal">
+    <div class="modal modal-info modal-sell def-modal">
         <div class="info">
-            <div class="info__title">Создать инвестицию</div>
+            <div class="info__title">Продать кейс?</div>
             <div class="info-block">
                 <div class="info-block__icon">
                     <svg width="14" height="26" viewBox="0 0 14 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.52122 11.504C4.4886 10.7016 3.51336 9.87201 3.51336 8.58001C3.51336 7.09761 4.86267 6.06401 7.12043 6.06401C9.49843 6.06401 10.3802 7.22001 10.4603 8.92001H13.4128C13.3193 6.58081 11.9165 4.43201 9.12436 3.73841V0.76001H5.1165V3.69761C2.52475 4.26881 0.440667 5.98241 0.440667 8.60721C0.440667 11.7488 2.99234 13.3128 6.71964 14.224C10.0595 15.04 10.7275 16.2368 10.7275 17.5016C10.7275 18.44 10.0729 19.936 7.12043 19.936C4.36837 19.936 3.28625 18.6848 3.13929 17.08H0.200195C0.36051 20.0584 2.55147 21.7312 5.1165 22.2888V25.24H9.12436V22.316C11.7295 21.8128 13.8002 20.276 13.8002 17.488C13.8002 13.6256 10.5538 12.3064 7.52122 11.504Z" fill="#A6A7AC"/>
                     </svg>
                 </div>
-                <div class="info-block__amount">45646 USDt</div>
-                <div class="info-block__descr">Сумма инвестиции</div>
+                <div class="info-block__amount is-colored-green">45646 USDt</div>
+                <div class="info-block__descr">Вы получите:</div>
             </div>
             <div class="info-block">
                 <div class="info-block__icon">
-                    <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.4404 0.840088L22.5548 3.95449L15.918 10.5913L10.478 5.15129L0.400391 15.2425L2.31799 17.1601L10.478 9.00009L15.918 14.4401L24.486 5.88569L27.6004 9.00009V0.840088H19.4404Z" fill="#A6A7AC"/>
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.3773 14.574C15.985 13.9561 16.3198 13.1272 16.3198 12.2398C16.3198 10.5502 15.0325 8.83984 12.5717 8.83984C11.4265 8.83984 10.4603 9.2086 9.77758 9.90622C9.17281 10.5243 8.83984 11.353 8.83984 12.2398C8.83984 13.9295 10.1217 15.6398 12.5717 15.6398C13.7212 15.6399 14.6915 15.2714 15.3773 14.574ZM12.5717 10.4207C13.92 10.4207 14.5341 11.3643 14.5341 12.241C14.5341 12.7179 14.3629 13.1594 14.0518 13.484C13.7047 13.8465 13.2003 14.0382 12.5936 14.0382C11.2111 14.0382 10.5813 13.0947 10.5813 12.2181C10.5813 11.3236 11.1969 10.4207 12.5717 10.4207Z" fill="#CF5959"/>
+                        <path d="M22.1344 10.2301C21.9092 10.2343 21.6016 10.3793 21.451 10.5522L10.2703 23.3847C10.1197 23.5577 10.2264 23.8002 10.4516 23.8002H11.915C12.1402 23.8002 12.4474 23.6584 12.5978 23.4853L23.7094 10.6553C23.8597 10.482 23.8497 10.2001 23.4775 10.2002L22.1344 10.2301Z" fill="#CF5959"/>
+                        <path d="M21.4119 18.3599C20.267 18.3599 19.3009 18.7288 18.6181 19.4264C18.0133 20.0442 17.6802 20.8731 17.6802 21.7599C17.6802 23.4495 18.962 25.1599 21.412 25.1599C22.5617 25.1599 23.5318 24.7913 24.2177 24.094C24.8255 23.476 25.1602 22.6471 25.1602 21.7599C25.1601 20.0704 23.8727 18.3599 21.4119 18.3599ZM21.434 23.5996C20.063 23.5996 19.4383 22.6344 19.4383 21.738C19.4383 21.2499 19.6127 20.7981 19.9296 20.466C20.2828 20.0953 20.7954 19.8994 21.412 19.8994C22.7831 19.8994 23.4075 20.8645 23.4075 21.7611C23.4075 22.2492 23.2331 22.701 22.9164 23.0332C22.5631 23.4037 22.0505 23.5996 21.434 23.5996Z" fill="#CF5959"/>
                     </svg>
                 </div>
-                <div class="info-block__amount">456498756 USDt</div>
-                <div class="info-block__descr">Получите прибыль</div>
+                <div class="info-block__amount is-colored-red">350 USDt</div>
+                <div class="info-block__descr">Комиссия:</div>
             </div>
-            <div class="info__subtitle">Дополнительная информация</div>
-            <div class="info__subdescr">Доход от созданной инвестиции начисляется каждый рабочий день и сразу же доступен к выводу</div>
+            <div class="info__subtitle">О комисии</div>
+            <div class="info__subdescr">*Коммисия за досрочный вывод <br> средств - <span>40%</span> <br> Снимите депозит через <span>40</span> дней без комисии</div>
             <div class="info-manage">
                 <button class="btn btn--trans btn--small-fs info__cancel" type="button" aria-label="button" onclick="closeModal(this.parentNode.parentNode.parentNode)">Отменить</button>
-                <button aria-label="button" class="btn btn--small-fs info__submit">
-                    Создать
+                <button aria-label="button" class="btn btn--small-fs info__submit" onclick="openModal(document.querySelector('.modal-sell-confirm'))">
+                    Продать
                 </button>
             </div>
         </div>
         <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
     </div>
-    <div class="modal def-modal modal-descr">
+    <div class="modal modal-info modal-sell-confirm def-modal">
         <div class="info">
-            <div class="info__title">Информация о инвестициях</div>
-            <div class="info__subdescr">Вы можете создать инвестицию на любую сумму, больше 10 USDT. И получать доход каждый рабочий день</div>
-            <div class="info__subtitle">Приемущества</div>
+            <div class="info__title">Продать кейс?</div>
             <div class="info-block">
                 <div class="info-block__icon">
                     <svg width="14" height="26" viewBox="0 0 14 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.52122 11.504C4.4886 10.7016 3.51336 9.87201 3.51336 8.58001C3.51336 7.09761 4.86267 6.06401 7.12043 6.06401C9.49843 6.06401 10.3802 7.22001 10.4603 8.92001H13.4128C13.3193 6.58081 11.9165 4.43201 9.12436 3.73841V0.76001H5.1165V3.69761C2.52475 4.26881 0.440667 5.98241 0.440667 8.60721C0.440667 11.7488 2.99234 13.3128 6.71964 14.224C10.0595 15.04 10.7275 16.2368 10.7275 17.5016C10.7275 18.44 10.0729 19.936 7.12043 19.936C4.36837 19.936 3.28625 18.6848 3.13929 17.08H0.200195C0.36051 20.0584 2.55147 21.7312 5.1165 22.2888V25.24H9.12436V22.316C11.7295 21.8128 13.8002 20.276 13.8002 17.488C13.8002 13.6256 10.5538 12.3064 7.52122 11.504Z" fill="#A6A7AC"/>
                     </svg>
                 </div>
-                <div class="info-block__amount">С понедельника по пятницу</div>
-                <div class="info-block__descr">Выплаты по инвестициям</div>
+                <div class="info-block__amount is-colored-green">45646 USDt</div>
+                <div class="info-block__descr">Вы получите:</div>
             </div>
-            <div class="info-block">
-                <div class="info-block__icon">
-                    <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19.4404 0.840088L22.5548 3.95449L15.918 10.5913L10.478 5.15129L0.400391 15.2425L2.31799 17.1601L10.478 9.00009L15.918 14.4401L24.486 5.88569L27.6004 9.00009V0.840088H19.4404Z" fill="#A6A7AC"/>
-                    </svg>
-                </div>
-                <div class="info-block__amount">Бесконечно</div>
-                <div class="info-block__descr">Время жизни инвестиции</div>
-            </div>
+            <div class="info__subtitle">Подтвердите действие</div>
+            <div class="info__subdescr">Вы действительно хотите продать кейс?</div>
             <div class="info-manage">
                 <button class="btn btn--trans btn--small-fs info__cancel" type="button" aria-label="button" onclick="closeModal(this.parentNode.parentNode.parentNode)">Отменить</button>
-                <button aria-label="button" class="btn btn--small-fs info__submit" onclick="$('.invest-manage').submit()">
-                    Создать
+                <button aria-label="button" class="btn btn--small-fs info__submit">
+                    Продать
                 </button>
             </div>
         </div>

@@ -224,6 +224,12 @@ button {
   word-break: break-word;
   pointer-events: none; }
 
+.is-colored-red {
+  color: var(--bg-red) !important; }
+
+.is-colored-green {
+  color: var(--color-green-tow) !important; }
+
 /** styles for white mode **/
 .btnNavWhiteMode + .btnNav {
   display: none !important; }
@@ -1714,6 +1720,16 @@ h1.page__title {
   color: var(--text-color-silver);
   margin-top: -3px; }
 
+.modal-sell .info__subdescr,
+.modal-sell-confirm .info__subdescr {
+  font-size: var(--main-font-size);
+  line-height: 140%;
+  color: var(--text-silver); }
+  .modal-sell .info__subdescr span,
+  .modal-sell-confirm .info__subdescr span {
+    color: var(--text-color-white);
+    font-weight: 500; }
+
 .form-message {
   margin-bottom: 20px;
   background: var(--bg-red);
@@ -2482,7 +2498,8 @@ h1.page__title {
   display: grid;
   -ms-grid-columns: 1fr 22.8% 31%;
       grid-template-columns: 1fr 22.8% 31%;
-  gap: 30px; }
+  gap: 30px;
+  overflow: hidden; }
   @media (max-width: 1000px) {
     .programm {
       -ms-grid-columns: 1fr 192px;
@@ -2520,9 +2537,6 @@ h1.page__title {
         grid-column: 1/3;
         -ms-grid-row: 4;
         grid-row: 4; } }
-    @media (max-width: 600px) {
-      .programm-income {
-        display: none; } }
   .programm-chart {
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
@@ -2729,10 +2743,22 @@ h1.page__title {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     height: calc(100% - 51px); }
+    @media (max-width: 600px) {
+      .programm-income-grid {
+        height: unset;
+        -ms-grid-columns: 1fr;
+            grid-template-columns: 1fr; } }
   .programm-income__block {
     border-right: 1px solid var(--bg-main);
     height: 100%;
     padding: 20px; }
+    @media (max-width: 600px) {
+      .programm-income__block {
+        border-right: none;
+        padding: 15px;
+        border-bottom: 1px solid var(--bg-main); }
+        .programm-income__block:last-child {
+          border-bottom: none; } }
     .programm-income__block:nth-child(3n) {
       border-right: none; }
   .programm-income__item span {
@@ -2745,8 +2771,14 @@ h1.page__title {
       font-weight: bold;
       font-size: 18px;
       color: var(--color-green-tow); }
+      @media (max-width: 600px) {
+        .programm-income__item span:nth-child(2) {
+          font-size: 16px; } }
   .programm-income__item + * {
     margin-top: 13px; }
+    @media (max-width: 600px) {
+      .programm-income__item + * {
+        margin-top: 10px; } }
   .programm-link-inner {
     padding: 20px; }
     @media (max-width: 1000px) {
@@ -2819,6 +2851,9 @@ h1.page__title {
     font-size: var(--main-font-size);
     line-height: 140%;
     color: var(--text-color-white);
+    -moz-appearance: none;
+         appearance: none;
+    -webkit-appearance: none;
     -webkit-transition: border-color 0.175s ease;
     transition: border-color 0.175s ease; }
     @media (max-width: 600px) {

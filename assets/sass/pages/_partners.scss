@@ -17,6 +17,8 @@
             font-size: var(--main-font-size);
             line-height: 140%;
             color: var(--text-color-white);
+            appearance: none;
+            -webkit-appearance: none;
             transition: border-color $trans;
             @media (max-width: 600px) {
                 height: 50px;
