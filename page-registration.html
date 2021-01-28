@@ -63,15 +63,15 @@
                 <span class="registration-form__input-label form__label">Partner</span>
                 <input type="text" class="custom-input" name="partner">
             </label>
-            <label class="registration-form__checkbox">
+            <label class="registration-form__checkbox" onclick="openModal(document.querySelector('.text-modal'))">
                 <label class="custom-checkbox" aria-label="checkbox">
-                    <input type="checkbox" checked required>
+                    <input type="checkbox" required>
                     <span class="custom-checkbox__bg"></span>
                     <svg class="custom-checkbox__check" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2164 0.866963C10.4279 1.0785 10.4279 1.42146 10.2164 1.633L4.25802 7.59133C4.04648 7.80286 3.70352 7.80286 3.49198 7.59133L0.783651 4.883C0.572116 4.67146 0.572116 4.3285 0.783651 4.11696C0.995184 3.90543 1.33815 3.90543 1.54968 4.11696L3.875 6.44228L9.45032 0.866963C9.66185 0.655429 10.0048 0.655429 10.2164 0.866963Z" fill="#21232F"/>
                     </svg>
                 </label>
-            <span>I agree to <button aria-label="button" type="button" onclick="openModal(document.querySelector('.text-modal'))">the terms of service</button></span>
+            <span>I agree to the terms of service</span>
             </label>
             <button class="registration-form__submit btn" type="submit" aria-label="button">Register now</button>
             <a href="#" class="registration-form__login">I already have an account</a>
