@@ -335,7 +335,8 @@
             </div>
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
-                    const addingInterval = setInterval(() => {
+                    var queue = new Queue;
+                    queue.add_function(function() {
                         briefcase.createModule(
                             '.briefcases-list-inner', {
                                 title: '25,039 USDtz',
@@ -344,10 +345,27 @@
                             },
                             generateChartData
                         )
-                    }, 500);
-                    setTimeout(() => {
-                        clearInterval(addingInterval)
-                    }, 2500);
+                    });
+                    queue.add_function(function() {
+                        briefcase.createModule(
+                            '.briefcases-list-inner', {
+                                title: '25,034 USDtz',
+                                link: '#',
+                                percentsAmount: '10%'
+                            },
+                            generateChartData
+                        )
+                    });
+                    queue.add_function(function() {
+                        briefcase.createModule(
+                            '.briefcases-list-inner', {
+                                title: '25,037 USDtz',
+                                link: '#',
+                                percentsAmount: '10%'
+                            },
+                            generateChartData
+                        )
+                    });
                 })
             </script>
         </section>
@@ -474,5 +492,6 @@
 <script src="assets/js/new.dropdown.js"></script>
 <script src="assets/js/module.briefcase.js"></script>
 <script src="assets/js/calculate.invest.js"></script>
+<script src="assets/js/methods.core.js"></script>
 
 </html>
