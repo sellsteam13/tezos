@@ -47,6 +47,9 @@ button {
 
 .btn {
   height: 40px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   white-space: nowrap; }
   .btn--trans {
     background-color: transparent;
@@ -849,7 +852,7 @@ h1.page__title {
       .balance-widget-manage {
         margin-top: 15px; } }
     .balance-widget-manage .btn {
-      padding: 12px 0;
+      padding: 12px 10px;
       width: 100%; }
 
 .status-widget {
