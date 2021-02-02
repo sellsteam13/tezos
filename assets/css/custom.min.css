@@ -55,6 +55,8 @@ button {
     background-color: transparent;
     border: 1px solid #4F515D;
     color: var(--text-color-silver); }
+    .btn--trans:disabled {
+      color: black; }
   .btn--back {
     width: 25px;
     height: 25px;
@@ -528,6 +530,12 @@ h1.page__title {
       font-weight: 500; }
   .dropdownNtfItem + .dropdownNtfItem {
     border-top: 1px solid var(--bg-main); }
+
+@media (min-width: 851px) {
+  .dropdownUser {
+    min-width: 180px; }
+    .dropdownUser > button {
+      width: 100%; } }
 
 .dropdownUser .name {
   height: 100%;
@@ -1709,7 +1717,11 @@ h1.page__title {
 .custom-modal .info__title {
   padding-bottom: 0;
   border-bottom: none;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 80%; }
 
 .custom-modal .info__subtitle + .info-block {
   margin-top: 15px; }
@@ -2123,7 +2135,8 @@ h1.page__title {
               flex-direction: column;
       -webkit-box-align: center;
           -ms-flex-align: center;
-              align-items: center; }
+              align-items: center;
+      overflow: hidden; }
     .registration-slider__item {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -2936,20 +2949,25 @@ h1.page__title {
               filter: brightness(0.9); }
 
 .partners-list {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  gap: 28px; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -14px; }
+  .partners-list .partners-item {
+    width: calc(33.33% - 28px);
+    margin: 0 14px 28px; }
   @media (max-width: 800px) {
-    .partners-list {
-      -ms-grid-columns: (1fr)[2];
-          grid-template-columns: repeat(2, 1fr); } }
+    .partners-list .partners-item {
+      width: calc(50% - 28px);
+      margin: 0 14px 28px; } }
   @media (max-width: 500px) {
     .partners-list {
-      -ms-grid-columns: 1fr;
-          grid-template-columns: 1fr;
-      gap: 15px; } }
+      margin: 0 -7px; }
+      .partners-list .partners-item {
+        width: calc(100% - 14px);
+        margin: 0 7px 28px; } }
 
 .partners-sort {
   display: -webkit-box;
@@ -3093,6 +3111,12 @@ h1.page__title {
       font-size: var(--main-font-size);
       line-height: 140%;
       color: var(--text-color-silver); }
+      .partners-item-heading__name:hover {
+        text-decoration: underline; }
+    .partners-item-heading__title, .partners-item-heading__name {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
   .partners-item__block {
     padding: 0 20px 0 63px;
     position: relative;

@@ -147,6 +147,12 @@
 }
 
 .dropdownUser {
+    @media (min-width: 851px) {
+        min-width: 180px;
+        >button {
+            width: 100%;
+        }
+    }
     .name {
         height: 100%;
         position: relative;
