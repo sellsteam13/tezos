@@ -287,3 +287,24 @@
         flex-direction: column;
     }
 }
+
+.modal-settings {
+    .modal__title {
+        margin: 0 0 20px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 16px;
+        font-family: inherit;
+        text-transform: unset;
+        letter-spacing: normal;
+    }
+    .form-manage {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 20px;
+        gap: 10px 20px;
+    }
+    input {
+        text-align: left;
+    }
+}

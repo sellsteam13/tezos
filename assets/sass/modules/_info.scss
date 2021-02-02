@@ -75,4 +75,10 @@
         line-height: 140%;
         color: #4F515D;
     }
+    hr {
+        margin: 20px -20px;
+        border: none;
+        height: 1px;
+        background: var(--bg-main);
+    }
 }

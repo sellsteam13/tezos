@@ -94,7 +94,8 @@
                     }
                 }
             }
-            &.is-blocked {
+            &.is-blocked,
+            &:disabled {
                 pointer-events: none;
                 &:after {
                     display: none;
@@ -103,7 +104,8 @@
                     color: #4F515D;
                 }
             }
-            &.is-disabled {
+            &.is-disabled,
+            &:disabled {
                 pointer-events: none;
             }
             &:hover span:nth-child(2) {

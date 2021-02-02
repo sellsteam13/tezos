@@ -295,11 +295,9 @@
     &-link {
         &-inner {
             padding: 20px;
-            @media (max-width: 1000px) {
-                display: flex;
-                flex-direction: column;
-                height: calc(100% - 51px);
-            }
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 51px);
             @media (max-width: 600px) {
                 padding: 15px;
             }
@@ -313,7 +311,7 @@
         }
         &__copy {
             width: 100%;
-            @media (max-width: 1000px) and (min-width: 601px) {
+            @media (min-width: 601px) {
                 margin-top: auto;
             }
         }

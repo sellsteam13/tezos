@@ -5,7 +5,7 @@
     <!-- Page settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Верстка Tezos - Главная</title>
+    <title>Верстка Tezos - Settings</title>
 
     <!-- Connecting styles -->
     <link rel="stylesheet" href="assets/css/new.style.css">
@@ -79,7 +79,13 @@
             </svg>
         </a>
 
-        <button class="btnNav" title="Вызов меню" view="tablet" hidden="mobile" onclick="navbar.open(this)">MU</button>
+        <button class="btnNav" title="Вызов меню" view="tablet" hidden="mobile" onclick="navbar.open(this)">
+            <svg width="20" height="17" viewBox="0 0 20 17" stroke="none" fill="#A6A7AC" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="2"/>
+                <rect y="8" width="15" height="2"/>
+                <rect y="15" width="20" height="2"/>
+            </svg>
+        </button>
 
         <ul class="itemLink">
             <li>
@@ -253,7 +259,7 @@
                             <img src="./assets/svg/def/bell.svg" alt="bell-icon">
                         </button>
                         <div class="dropdownContainer dropdownNtfContainer">
-                            <div class="dropdownNtfItem">
+                            <!-- <div class="dropdownNtfItem">
                                 <time>21.09.2020 18:00</time>
                                 <p>Investment Income <span> 120 USDtz</span></p>
                             </div>
@@ -264,12 +270,12 @@
                             <div class="dropdownNtfItem">
                                 <time>21.09.2020 18:00</time>
                                 <p>New answer to the question "Question name"</p>
-                            </div>
-                            <!-- <div class="dropdownNtfContainerEmpty">
+                            </div> -->
+                            <div class="dropdownNtfContainerEmpty">
                                 <img src="./assets/svg/empty-illstr/ntf-empty.svg" alt="ntf empty icon">
                                 <span>Нет уведомлений</span>
                                 <span>Не волнуйтесь, все ещё впереди!</span>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
 
@@ -316,35 +322,156 @@
             </div>
         </nav>
 
-        <!-- @@ Home section-->
-        <section class="home">
-
-            <style>
-                ol li a {
-                    color: var(--text-color-white);
-                }
-                
-                ol li a:hover {
-                    text-decoration: underline;
-                }
-                
-                ol li {
-                    margin-bottom: 15px;
-                }
-            </style>
-
-            <ol>
-                <li><a href="./page-main.html">Главная</a></li>
-                <li><a href="./page-registration.html">Регистрация</a></li>
-                <li><a href="./page-briefcases.html">Активные брифкейсы</a></li>
-                <li><a href="./page-case.html">Просмотр брифкейса</a></li>
-                <li><a href="./page-affiliate-programm.html">Affiliate programm</a></li>
-                <li><a href="./page-partners.html">Партнёры</a></li>
-                <li><a href="./page-history.html">История</a></li>
-                <li><a href="./page-settings.html">Настройки - NEW!</a></li>
-            </ol>
-
+        <!-- @@ settings section-->
+        <section class="settings">
+            <h1 class="page__title settings__title">
+                Настройки профиля
+            </h1>
+            <div class="settings-info def-module info">
+                <div class="settings-info-heading">
+                    <div style="background: #9668D1;" class="settings-info-heading__icon">
+                        <img src="./assets/svg/stars/stars-4-red.svg" alt="stars">
+                    </div>
+                    <div class="settings-info-heading__name">Сергей Долматов</div>
+                </div>
+                <hr>
+                <div class="info-block">
+                    <div class="info-block__icon">
+                        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.2952 28.7424L26.0095 20.6301C26.6902 19.9144 26.6902 18.7213 26.0095 18.0056L24.4213 16.3354C24.1187 16.0173 23.665 15.7787 23.2112 15.7787C22.7574 15.7787 22.3036 15.9378 22.0011 16.3354L19.8835 18.5623L19.8835 7.34824C19.8835 6.31434 19.0515 5.43945 18.0683 5.43945L15.875 5.43945C14.9675 5.43945 14.2112 6.31429 14.2112 7.34824L14.2112 18.4827L12.1691 16.3353C11.8666 16.0172 11.4128 15.7787 10.8834 15.7787C10.4296 15.7787 9.97586 15.9377 9.5977 16.3353L8.00945 18.0055C7.70692 18.3237 7.48002 18.8008 7.48002 19.278C7.48002 19.7553 7.63129 20.2324 8.00945 20.5506L15.7238 28.6628C16.1019 29.0605 16.5557 29.2196 17.0095 29.2196C17.4632 29.2991 17.917 29.14 18.2952 28.7424ZM16.7826 27.6289L9.06827 19.5166C8.917 19.3576 8.917 19.2781 9.06827 19.119L10.6565 17.4488C10.7321 17.3693 10.8078 17.3693 10.8834 17.3693C10.959 17.3693 11.0346 17.3693 11.1102 17.4488L14.4379 20.9482C14.6648 21.1867 14.9674 21.2663 15.2699 21.1073C15.5724 20.9482 15.7237 20.7096 15.7237 20.3915L15.7237 7.34824C15.7237 7.18917 15.7993 7.0301 15.875 7.0301L18.0682 7.0301C18.2195 7.0301 18.3708 7.18917 18.3708 7.34824L18.3708 20.5506C18.3708 20.8687 18.522 21.1869 18.8246 21.2664C19.1271 21.3459 19.4296 21.3459 19.6565 21.1073L23.0599 17.5284C23.1355 17.4488 23.2111 17.4488 23.2111 17.4488C23.2868 17.4488 23.2868 17.4488 23.3624 17.5284L24.9506 19.1986C25.0262 19.2781 25.1019 19.4371 24.9506 19.5962L17.2363 27.7085C17.1607 27.788 17.0851 27.788 17.0095 27.788C16.9338 27.7085 16.8582 27.7085 16.7826 27.6289Z" fill="#A6A7AC"/>
+                        </svg>
+                    </div>
+                    <div class="info-block__amount">1000 USDt</div>
+                    <div class="info-block__descr">Доступно к выводу:</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-block__icon">
+                        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.9121 22.5252H18.0881V21.4202H19.1761C19.7745 21.4202 20.2641 20.9229 20.2641 20.3152V17.0002C20.2641 16.3924 19.7745 15.8952 19.1761 15.8952H15.9121V14.7902L20.2641 14.7902V12.5802L18.0881 12.5802V11.4752H15.9121V12.5802H14.8241C14.2257 12.5802 13.7361 13.0774 13.7361 13.6852L13.7361 17.0002C13.7361 17.6079 14.2257 18.1052 14.8241 18.1052H18.0881V19.2102H13.7361V21.4202H15.9121V22.5252ZM25.7041 8.16016L8.29612 8.16016C7.08844 8.16016 6.131 9.14361 6.131 10.3702L6.12012 23.6302C6.12012 24.8567 7.08844 25.8402 8.29612 25.8402L25.7041 25.8402C26.9118 25.8402 27.8801 24.8567 27.8801 23.6302L27.8801 10.3702C27.8801 9.14361 26.9118 8.16016 25.7041 8.16016ZM25.7041 23.6302L8.29612 23.6302L8.29612 10.3702L25.7041 10.3702L25.7041 23.6302Z" fill="#A6A7AC"/>
+                        </svg>
+                    </div>
+                    <div class="info-block__amount">350 USDt</div>
+                    <div class="info-block__descr">Доступно для депозитов:</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-block__icon">
+                        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.2001 14.8701L19.5155 14.8701L22.6211 11.6741C19.5269 8.61411 14.5172 8.50078 11.423 11.5608C8.32877 14.6321 8.32877 19.5848 11.423 22.6561C14.5172 25.7274 19.5269 25.7274 22.6211 22.6561C24.1625 21.1374 24.9332 19.3581 24.9332 17.1141H27.2001C27.2001 19.3581 26.2027 22.2708 24.2078 24.2428C20.2296 28.1868 13.7691 28.1868 9.79087 24.2428C5.82394 20.3101 5.78993 13.9181 9.7682 9.98545C13.7465 6.05278 20.1276 6.05278 24.1058 9.98545L27.2001 6.80078V14.8701ZM17.5661 12.4674V17.2841L21.533 19.6414L20.7169 21.0128L15.866 18.1341V12.4674H17.5661Z" fill="#A6A7AC"/>
+                        </svg>
+                    </div>
+                    <div class="info-block__amount">23.02.2021</div>
+                    <div class="info-block__descr">Обновление лимитов</div>
+                </div>
+                <div class="info__subtitle">Информация о лимитах:</div>
+                <div class="info__subdescr">Лимиты обновляются автоматически раз в неделю. Выводы средств и депозиты привышающие доступные лимиты будут отклонены</div>
+            </div>
+            <div class="settings-manage">
+                <div class="settings-manage-block w50">
+                    <div class="settings-manage-block__info">
+                        <span>Dolmatov_Sergey</span><span>Логин:</span>
+                    </div>
+                </div>
+                <div class="settings-manage-block w50">
+                    <div class="settings-manage-block__info">
+                        <span>xhjg2ui1</span><span>Реферальный код:</span>
+                    </div>
+                </div>
+                <div class="settings-manage-block">
+                    <div class="settings-manage-block__icon">
+                        <img src="./assets/svg/settings-icons/user.svg" alt="user-icon">
+                    </div>
+                    <div class="settings-manage-block__info">
+                        <span>Сергей</span><span>Имя</span>
+                    </div>
+                    <button aria-label="button" class="btn btn--trans settings-manage-block__change" onclick="openModal(document.querySelector('.modal-settings'))">Изменить</button>
+                </div>
+                <div class="settings-manage-block">
+                    <div class="settings-manage-block__icon">
+                        <img src="./assets/svg/settings-icons/user.svg" alt="user-icon">
+                    </div>
+                    <div class="settings-manage-block__info">
+                        <span>Долматов</span><span>Фамилия</span>
+                    </div>
+                    <button aria-label="button" class="btn btn--trans settings-manage-block__change">Изменить</button>
+                </div>
+                <div class="settings-manage-block">
+                    <div class="settings-manage-block__icon">
+                        <img src="./assets/svg/settings-icons/mail.svg" alt="mail-icon">
+                    </div>
+                    <div class="settings-manage-block__info">
+                        <span>Sergey@dolmatov.com</span><span>E-mail</span>
+                    </div>
+                    <button aria-label="button" class="btn btn--trans settings-manage-block__change">Изменить</button>
+                </div>
+                <div class="settings-manage-block">
+                    <div class="settings-manage-block__icon">
+                        <img src="./assets/svg/settings-icons/pass.svg" alt="pass-icon">
+                    </div>
+                    <div class="settings-manage-block__info">
+                        <span>*************</span><span>Пароль</span>
+                    </div>
+                    <button aria-label="button" class="btn btn--trans settings-manage-block__change">Изменить</button>
+                </div>
+                <div class="settings-manage-block">
+                    <div class="settings-manage-block__icon">
+                        <img src="./assets/svg/settings-icons/auth.svg" alt="auth -icon">
+                    </div>
+                    <div class="settings-manage-block__info">
+                        <span>Отключено</span><span>2FAutch </span>
+                    </div>
+                    <button aria-label="button" class="btn btn--trans settings-manage-block__change">Изменить</button>
+                </div>
+            </div>
+            <div class="settings-sessions">
+                <div class="settings-sessions-heading">
+                    <div class="settings-sessions-heading__title">История авторизации:</div>
+                    <div class="settings-sessions-heading__count">Последних 5</div>
+                </div>
+                <div class="settings-sessions-list def-module">
+                    <div class="settings-sessions__item">
+                        <span>Текущая сессия: <span>192.ХХХ.1.1</span></span>
+                        <button data-status="active">
+                            <div class="tooltip">
+                                Текущая сессия
+                            </div>
+                        </button>
+                    </div>
+                    <div class="settings-sessions__item">
+                        <span>23.02.2021 * Завершена: <span>192.ХХХ.1.1</span></span>
+                        <button data-status="disactive">
+                            <div class="tooltip">
+                                Текущая сессия
+                            </div>
+                        </button>
+                    </div>
+                    <div class="settings-sessions__item">
+                        <span>22.02.2021 * Завершена: <span>192.ХХХ.1.1</span></span>
+                        <button data-status="disactive">
+                            <div class="tooltip">
+                                Текущая сессия
+                            </div>
+                        </button>
+                    </div>
+                    <div class="settings-sessions__item">
+                        <span>21.02.2021 * Завершена: <span>192.ХХХ.1.1</span></span>
+                        <button data-status="disactive">
+                            <div class="tooltip">
+                                Текущая сессия
+                            </div>
+                        </button>
+                    </div>
+                    <div class="settings-sessions__item">
+                        <span>20.02.2021 * Завершена: <span>192.ХХХ.1.1</span></span>
+                        <button data-status="disactive">
+                            <div class="tooltip">
+                                Текущая сессия
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </section>
+
 
         <!-- @@ Footer -->
         <footer class="footer">
@@ -356,15 +483,47 @@
 </body>
 <!-- End of content -->
 
+<!-- modals -->
+<div class="overlay">
+    <div class="modal modal-settings def-modal">
+        <div class="modal__title">Изменить имя:</div>
+        <form class="modal-settings-form">
+            <div class="form-message is-shown">Пожaлуйста введите корректное имя, больше 2 символов и меньше 65</div>
+            <label class="form-input">
+                <span class="form__label">Имя:</span>
+                <input type="text" class="def-input" value="Сергей">
+            </label>
+            <div class="form-manage">
+                <button type="button" onclick="closeModal(document.querySelector('.modal-settings'))" aria-label="button" class="btn btn--trans modal-settings__cancel">Отменить</button>
+                <button type="submit" aria-label="button" class="btn modal-settings__submit">
+                    Сохранить
+                </button>
+            </div>
+        </form>
+        <button aria-label="button" onclick="closeModal(this.parentNode)" class="modal-close"></button>
+    </div>
+    <div class="overlay-trigger"></div>
+</div>
+<!-- end of modals-->
+
+
 <!-- Connecting scripts -->
 
 <!-- jquery -->
 <script src="assets/js/jquery-3.2.1.min.js"></script>
 
+<!-- modals -->
+<script src="assets/js/core.modals.js"></script>
+
+<!-- amcharts -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
 <!-- connecting custom scripts -->
-<script src="./assets/js/new.formMethods.js"></script>
+<script src="assets/js/new.input.js"></script>
 <script src="assets/js/new.navbar.js"></script>
 <script src="assets/js/new.theme-changer.js"></script>
-<script src="assets/js/new.dropdown.js"></script>
+<script src="assets/js/chart.stats-chart.js"></script>
 
 </html>
