@@ -1,42 +1,58 @@
 const themeToggler = {
     // Проверяем текущее значение переключателя
     change: (el) => {
-        // Проверяем текущее значение переключателя
-        if (el.checked === true) {
-            // Включаем светлую тему
-            window.localStorage.setItem('wmode', true);
-            themeToggler.toggle(true);
-        } else {
-            // Включаем темную тему
-            window.localStorage.setItem('wmode', false);
-            themeToggler.toggle(false);
-        }
-    },
-
-    load: () => {
-        // Получаем значение из localStorage
-        const wmode = window.localStorage.getItem('wmode', '');
-        // Меняем текущий стейт переключателя
-        if (wmode === 'true') {
-            themeToggler.toggle(true);
-        } else {
-            themeToggler.toggle(false);
-        }
-    },
-
-    toggle: (state) => {
+        const dModeStyles = document.querySelector('#whiteThemeLink');
         const rootElement = document.querySelector('html');
-        if (state) {
-            $('#themeStateHolder').prop("checked", true);
+        if (dModeStyles.hasAttribute('disabled')) {
+            dModeStyles.removeAttribute('disabled');
+            window.localStorage.setItem('whitemode', true);
             rootElement.classList.add('is-white');
-            $('#whiteThemeLink').prop('disabled', false);
-            $('#darkThemeLink').prop('disabled', true);
         } else {
-            $('#themeStateHolder').prop("checked", false);
+            dModeStyles.setAttribute('disabled', true);
+            window.localStorage.setItem('whitemode', false);
             rootElement.classList.remove('is-white');
-            $('#whiteThemeLink').prop('disabled', true);
-            $('#darkThemeLink').prop('disabled', false);
         }
     }
 
 }
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        window.location.reload()
+    }
+};
+document.addEventListener("DOMContentLoaded", () => {
+    // переключение темы сайта
+    const dmode = window.localStorage.getItem('whitemode', '');
+    const modeSwtch = [...document.querySelectorAll('.btnNavWhiteMode, .btnNavDarkMode')];
+    const dModeStyles = document.querySelector('#whiteThemeLink');
+    const rootElement = document.querySelector('html');
+
+    if (localStorage.whitemode == 'true') {
+        dModeStyles.removeAttribute('disabled');
+        rootElement.classList.add('is-white');
+        $('#themeStateHolder').prop("checked", true);
+    } else {
+        dModeStyles.setAttribute('disabled', true);
+        rootElement.classList.remove('is-white');
+        $('#themeStateHolder').prop("checked", false);
+    }
+
+    if (modeSwtch) {
+        modeSwtch.map(x => {
+            x.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (dModeStyles.hasAttribute('disabled')) {
+                    dModeStyles.removeAttribute('disabled');
+                    window.localStorage.setItem('whitemode', true);
+                    rootElement.classList.add('is-white');
+                    $('#themeStateHolder').prop("checked", true);
+                } else {
+                    dModeStyles.setAttribute('disabled', true);
+                    window.localStorage.setItem('whitemode', false);
+                    rootElement.classList.remove('is-white');
+                    $('#themeStateHolder').prop("checked", false);
+                }
+            });
+        })
+    }
+})

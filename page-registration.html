@@ -11,13 +11,7 @@
     <link rel="stylesheet" href="assets/css/new.style.css">
     <link rel="stylesheet" href="assets/css/custom.min.css">
     <link rel="stylesheet" href="assets/css/whiteTheme.style.css" disabled id="whiteThemeLink">
-    <link rel="stylesheet" href="assets/css/darkTheme.style.css" disabled id="darkThemeLink">
     <script>
-        if (window.localStorage.getItem('wmode', '') === 'true') {
-            document.getElementById('whiteThemeLink').removeAttribute('disabled')
-        } else {
-            document.getElementById('darkThemeLink').removeAttribute('disabled')
-        }
         document.addEventListener('DOMContentLoaded', () => {
             document.body.style.opacity = 1
         })
@@ -26,7 +20,7 @@
 
 <!-- Begin of content -->
 
-<body onload="registrationSlider.init(); themeToggler.load();" style="opacity: 0;">
+<body onload="registrationSlider.init();" style="opacity: 0;">
 
     <!-- @@ Register module -->
     <section class="registration">

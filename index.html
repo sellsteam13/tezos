@@ -11,13 +11,7 @@
     <link rel="stylesheet" href="assets/css/new.style.css">
     <link rel="stylesheet" href="assets/css/custom.min.css">
     <link rel="stylesheet" href="assets/css/whiteTheme.style.css" disabled id="whiteThemeLink">
-    <link rel="stylesheet" href="assets/css/darkTheme.style.css" disabled id="darkThemeLink">
     <script>
-        if (window.localStorage.getItem('wmode', '') === 'true') {
-            document.getElementById('whiteThemeLink').removeAttribute('disabled')
-        } else {
-            document.getElementById('darkThemeLink').removeAttribute('disabled')
-        }
         document.addEventListener('DOMContentLoaded', () => {
             document.body.style.opacity = 1
         })
@@ -26,7 +20,7 @@
 
 <!-- Begin of content -->
 
-<body class="cont flex" onload='themeToggler.load()' style="opacity: 0;">
+<body class="cont flex" style="opacity: 0;">
 
     <!-- @@ Aside module -->
     <aside>
@@ -178,7 +172,7 @@
                             <rect y="15" width="20" height="2"/>
                         </svg>
                     </button>
-                    <button class="btnNav brdr btnNavWhiteMode" view="mobile" title="Иконка выбора темы" view="mobile" onclick="themeToggler.toggle(true)">
+                    <button class="btnNav brdr btnNavWhiteMode" view="mobile" title="Иконка выбора темы" view="mobile">
                         <svg width="24" height="24" viewBox="0 0 16 16" fill="#A6A7AC" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.99911 13.3556C7.69758 13.3556 7.45312 13.6 7.45312 13.9016V15.4539C7.45312 15.7555 7.69758 15.9999 7.99911 15.9999C8.30071 15.9999 8.54509 15.7555 8.54509 15.4539V13.9016C8.54509 13.6 8.30064 13.3556 7.99911 13.3556Z" fill="#A6A7AC"/>
                             <path d="M7.99911 2.64471C8.30071 2.64471 8.54509 2.40025 8.54509 2.09872V0.54623C8.54509 0.2447 8.30071 0.000244141 7.99911 0.000244141C7.69758 0.000244141 7.45312 0.2447 7.45312 0.54623V2.09872C7.45312 2.40025 7.69758 2.64471 7.99911 2.64471Z" fill="#A6A7AC"/>
@@ -191,7 +185,7 @@
                             <path d="M7.99968 3.75037C5.65653 3.75037 3.75024 5.6568 3.75024 8.0001C3.75024 10.3433 5.65653 12.2497 7.99968 12.2497C10.3431 12.2497 12.2495 10.3433 12.2495 8.0001C12.2495 5.6568 10.343 3.75037 7.99968 3.75037ZM7.99968 11.1577C6.25865 11.1577 4.84221 9.74121 4.84221 8.0001C4.84221 6.25892 6.25865 4.84234 7.99968 4.84234C9.74094 4.84234 11.1575 6.25892 11.1575 8.0001C11.1575 9.74121 9.74094 11.1577 7.99968 11.1577Z" fill="#A6A7AC"/>
                         </svg>
                     </button>
-                    <button class="btnNav brdr" title="Иконка выбора темы" view="mobile" onclick="themeToggler.toggle(false)">
+                    <button class="btnNav brdr btnNavDarkMode" title="Иконка выбора темы" view="mobile">
                         <svg width="20" height="20" viewBox="0 0 16 16" fill="#A6A7AC" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.865 6.53159C15.8245 6.31313 15.6362 6.15309 15.414 6.14841C15.1907 6.14356 14.9969 6.29566 14.9473 6.51222C14.4704 8.59028 12.6459 10.0416 10.5104 10.0416C8.00041 10.0416 5.95834 7.99956 5.95834 5.48956C5.95834 3.35409 7.40969 1.52962 9.48778 1.05281C9.70434 1.00312 9.85625 0.808219 9.85163 0.586125C9.84697 0.364 9.68697 0.175625 9.46853 0.135063C8.98578 0.0454375 8.49172 0 8 0C5.86312 0 3.85416 0.832156 2.34313 2.34316C0.832156 3.85416 0 5.86312 0 8C0 10.1369 0.832156 12.1458 2.34313 13.6568C3.85416 15.1678 5.86312 16 8 16C10.1369 16 12.1458 15.1678 13.6569 13.6568C15.1678 12.1458 16 10.1369 16 8C16 7.50869 15.9546 7.01466 15.865 6.53159ZM8 15.0625C4.10572 15.0625 0.9375 11.8943 0.9375 8C0.9375 4.30541 3.7895 1.26425 7.40737 0.962125C6.96859 1.26306 6.57225 1.62784 6.23509 2.04591C5.45203 3.01688 5.02081 4.23987 5.02081 5.48956C5.02081 8.51653 7.48344 10.9791 10.5104 10.9791C11.7601 10.9791 12.9831 10.5479 13.9541 9.76484C14.3721 9.42769 14.7369 9.03137 15.0379 8.59262C14.7358 12.2105 11.6946 15.0625 8 15.0625Z"/>
                         </svg>
