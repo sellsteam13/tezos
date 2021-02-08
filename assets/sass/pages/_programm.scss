@@ -300,6 +300,7 @@
             height: calc(100% - 51px);
             @media (max-width: 600px) {
                 padding: 15px;
+                height: unset;
             }
         }
         &__holder {
@@ -330,6 +331,7 @@
             height: calc(100% - 51px);
             @media (max-width: 600px) {
                 padding: 15px;
+                height: unset;
             }
             span {
                 margin-top: 3px;

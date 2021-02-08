@@ -2865,7 +2865,8 @@ h1.page__title {
     height: calc(100% - 51px); }
     @media (max-width: 600px) {
       .programm-link-inner {
-        padding: 15px; } }
+        padding: 15px;
+        height: unset; } }
   .programm-link__holder {
     word-break: break-word;
     margin-bottom: 15px;
@@ -2899,7 +2900,8 @@ h1.page__title {
     height: calc(100% - 51px); }
     @media (max-width: 600px) {
       .programm-partner__inner {
-        padding: 15px; } }
+        padding: 15px;
+        height: unset; } }
     .programm-partner__inner span {
       margin-top: 3px;
       font-size: var(--main-font-size); }
