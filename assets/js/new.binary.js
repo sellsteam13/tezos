@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     adjustLine(parentRow[parentBlockIndex], eachBlock, eachBlock.querySelector('.binary__item-line'))
                 });
             }
-            if (parentRow && (eachBlock.dataset.status == 'active' || eachBlock.dataset.status == 'invited') || eachBlock.dataset.status == 'me') {
+            if (parentRow && (eachBlock.dataset.status == 'active' || eachBlock.dataset.status == 'invited')) {
 
                 eachBlock.addEventListener('mouseenter', () => {
                     let tempRowIndex = rowIndex - 1,
