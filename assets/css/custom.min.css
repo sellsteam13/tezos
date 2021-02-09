@@ -3771,7 +3771,9 @@ h1.page__title {
           .binary-grid-row.r2 .binary__item-line {
             left: 40px;
             -webkit-transform: none;
-                    transform: none;
+                    transform: none; } }
+        @media (max-width: 600px) {
+          .binary-grid-row.r2 .binary__item-line {
             height: 69px; } }
         .binary-grid-row.r2 .binary__item-line:after {
           content: '';
