@@ -3881,6 +3881,9 @@ h1.page__title {
       outline: none; }
       .binary__item-inner:focus .tip, .binary__item-inner:active .tip {
         opacity: 1; }
+    @media (max-width: 1060px) {
+      .binary__item-inner:hover .tip {
+        opacity: 1; } }
     .binary__item-inner svg {
       position: absolute;
       left: 50%;

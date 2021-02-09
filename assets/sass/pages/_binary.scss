@@ -205,6 +205,11 @@
                     opacity: 1;
                 }
             }
+            @media (max-width: 1060px) {
+                &:hover .tip {
+                    opacity: 1;
+                }
+            }
             svg {
                 position: absolute;
                 left: 50%;
