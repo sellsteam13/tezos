@@ -3707,3 +3707,77 @@ h1.page__title {
         background-color: var(--color-green-tow); }
       .settings-sessions__item > button[data-status=disactive]:after {
         background-color: var(--bg-red); }
+
+@media (max-width: 850px) {
+  .binary {
+    padding: 30px 16px 0; } }
+
+.binary__title {
+  margin-bottom: 20px; }
+
+.binary-grid-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .binary-grid-row + * {
+    margin-top: 40px; }
+  .binary-grid-row.r1 .binary__item {
+    min-width: 255px;
+    height: 100px; }
+    .binary-grid-row.r1 .binary__item:before {
+      padding-bottom: 0; }
+  .binary-grid-row.r2 {
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+    .binary-grid-row.r2 .binary__item {
+      width: 223px;
+      height: 100px; }
+      .binary-grid-row.r2 .binary__item:before {
+        padding-bottom: 0; }
+  .binary-grid-row.r3 {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .binary-grid-row.r3 .binary__item {
+      width: calc(25% - 15px);
+      height: 100px; }
+      .binary-grid-row.r3 .binary__item:before {
+        padding-bottom: 0; }
+  .binary-grid-row.r4 {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .binary-grid-row.r4 .binary__item {
+      width: calc(12.5% - 17.5px); }
+  .binary-grid-row.r5 {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .binary-grid-row.r5 .binary__item {
+      width: calc(6.25% - 18.75px); }
+
+.binary__item {
+  background: #323445;
+  border: 2px dashed #21232F;
+  position: relative; }
+  .binary__item:before {
+    content: '';
+    display: inline-block;
+    padding-bottom: calc(100% - 4px); }
+  .binary__item-line {
+    position: absolute;
+    height: 2px;
+    background-color: #21232F;
+    bottom: 100%;
+    left: 50%; }
+  .binary__item-center {
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
