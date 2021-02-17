@@ -85,6 +85,7 @@ if (document.querySelector('.overlay')) {
                 document.body.style.overflow = '';
                 closingModal.style.display = 'none';
             }, 300);
+            closingModal.dispatchEvent(new CustomEvent("close-modal"));
             return true;
         } else {
             console.warn(`Cant find modal (${closingModal}) or its already closed!`);
